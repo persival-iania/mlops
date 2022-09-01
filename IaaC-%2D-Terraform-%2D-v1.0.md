@@ -117,6 +117,6 @@ Está sendo usada uma abordagem de criação em 5 níveis:
 
 # Template do projeto CCR Dataplat
 
-<Inseir descrição e imagem>
+![Tf.png](/.attachments/Tf-f214f252-074f-4fed-bc9f-d3637caf47fa.png)
 
 
