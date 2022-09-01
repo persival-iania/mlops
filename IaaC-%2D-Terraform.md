@@ -26,37 +26,26 @@ Seguindo o portal [Bluelight](https://bluelight.co/blog/best-infrastructure-as-c
 | AWS Cloud Formation | 2 | 
 | Azure Resource Manager | 3 | 
 | Google Cloud Deployment Manager | 4
- | 
-| --------- | ------- | 
-| --------- | ------- | 
-| --------- | ------- | 
-| --------- | ------- | 
+| Pulumi | 5 | 
+| Ansible |6 | 
+| Chef| 7 | 
+| Puppet | 8 | 
+| Crossplane | 9 | 
+| Vagrant | 10 | 
 
 
+## Infrastructure as a Code - IaaC
 
+Para começar a entender o conceito de IaaC, primeiro é preciso tratar da cultura DevOps, que tomou conta das empresas mundo afora. Ao implantar cultura DevOps, as empresas buscam simplificar processos com a finalidade de alcançar os melhores resultados de forma mais ágil. Essa metodologia surgiu da necessidade de integrar os times de desenvolvimento e de operação, trazendo consigo um conjunto de estratégias aplicadas com a finalidade de solucionar problemas e otimizar os processos para desenvolver projetos com maior velocidade e qualidade. Trazendo o foco no cumprimento de tarefas, e no modelo de responsabilidade compartilhada dentro da equipe, a cultura DevOps tem a capacidade de aumentar os esforços na otimização de processos, além de desenvolver um fluxo de trabalho mais seguro, eficiente e rápido. E o conceito de Infrastructure as a Code (IaaC), tem muita relação com a cultura DevOps.
 
+## Benefícios da IaaC
+Agilidade: A capacidade de automação da IaaC acelera o processo de provisionamento de uma infraestrutura para desenvolver, testar e produzir aplicações. Permitindo a configuração de uma infraestrutura completa executando apenas um script. Assim possuindo os mesmos princípios seguidos na cultura DevOps no quesito da velocidade e consistência do ciclo de vida de entrega do projeto.
 
-| Terraform. Terraform is one of the most popular IaC tools in the market. ...
-AWS CloudFormation. ...
-Azure Resource Manager. ...
-Google Cloud Deployment Manager. ...
-Pulumi. ...
-Ansible. ...
-Chef. ...
-Puppet.%       |
+Consistência: Com a automatização de processos oriundos da IaaC, falhas e discrepâncias que seriam criadas por um processo manual são praticamente eliminadas. A infraestrutura como código tem a capacidade de evitar esses possíveis problemas, pois seus arquivos de configuração possuem apenas uma única fonte de informação, assim garantindo a possibilidade de realizar repetidas implantações de forma consistente e sem disparidade de informações.
 
-## Infrastructure as a Code - IaC
+Segurança: Assim como todos os serviços de cloud computing, a IaaC traz mais segurança para o ambiente de TI da sua empresa. As ferramentas de infraestrutura como código permitem a correção rápida de erros e a solução de problemas de forma automatizada, deixando assim uma infraestrutura mais segura e gerenciada pela empresa.
 
-Para começar a entender o conceito de IaC, primeiro é preciso tratar da cultura DevOps, que tomou conta das empresas mundo afora. Ao implantar cultura DevOps, as empresas buscam simplificar processos com a finalidade de alcançar os melhores resultados de forma mais ágil. Essa metodologia surgiu da necessidade de integrar os times de desenvolvimento e de operação, trazendo consigo um conjunto de estratégias aplicadas com a finalidade de solucionar problemas e otimizar os processos para desenvolver projetos com maior velocidade e qualidade. Trazendo o foco no cumprimento de tarefas, e no modelo de responsabilidade compartilhada dentro da equipe, a cultura DevOps tem a capacidade de aumentar os esforços na otimização de processos, além de desenvolver um fluxo de trabalho mais seguro, eficiente e rápido. E o conceito de Infrastructure as Code (IaC), tem muita relação com a cultura DevOps.
-
-## Benefícios da IaC
-Agilidade: A capacidade de automação da IaC acelera o processo de provisionamento de uma infraestrutura para desenvolver, testar e produzir aplicações. Permitindo a configuração de uma infraestrutura completa executando apenas um script. Assim possuindo os mesmos princípios seguidos na cultura DevOps no quesito da velocidade e consistência do ciclo de vida de entrega do projeto.
-
-Consistência: Com a automatização de processos oriundos da IaC, falhas e discrepâncias que seriam criadas por um processo manual são praticamente eliminadas. A infraestrutura como código tem a capacidade de evitar esses possíveis problemas, pois seus arquivos de configuração possuem apenas uma única fonte de informação, assim garantindo a possibilidade de realizar repetidas implantações de forma consistente e sem disparidade de informações.
-
-Segurança: Assim como todos os serviços de cloud computing, a IaC traz mais segurança para o ambiente de TI da sua empresa. As ferramentas de infraestrutura como código permitem a correção rápida de erros e a solução de problemas de forma automatizada, deixando assim uma infraestrutura mais segura e gerenciada pela empresa.
-
-#UaaC No projeto Dataplat
+#IaaC no Projeto Dataplat
 Está sendo criado via Terraform os recursos:
 - Databricks
   - Cluster
@@ -67,7 +56,8 @@ Está sendo criado via Terraform os recursos:
 - Storage Account
   - Containers e Regra de Recycle Life
   - Private EndPoints
-  - Configurações 
+  - Configurações
+  - Máquina Virtual 
 - Synapse
   - Pool Built-In
   - Pool Dedicado
@@ -75,13 +65,14 @@ Está sendo criado via Terraform os recursos:
 A seguir ilustração de código do Terraform:
 ![image.png](/.attachments/image-926994b2-27f9-47b1-8350-36c63a66f055.png)
 
-# CI/CD - Terraform
+# Automação do Desenvolvimento - Pipelines CI/CD
 ## Introdução de CI/CD
 CI/CD designa respectivamente Continuous Integration e Continuous Delivery traduzindo: Integração Contínua e Entrega Contínua.
 
 Ambas as siglas designam processos e técnicas modernas para tornar o processo de desenvolvimento, teste e entrega de ferramentas mais ágil e eficiente. 
 
 **Continuous Integration, CI**
+
 Integração Contínua ou CI, significa uma automação para que todas às vezes que haja uma mudança em código de aplicação, ela seja integrada, testada e implementada.
 
 E todo esse processo acontecendo em um ambiente compartilhado, com todos os envolvidos no processo. 
@@ -92,12 +83,19 @@ Dessa forma com o CI, é possível que todas as mudanças sejam realizadas no �
 
 Por meio dessa técnica há a diminuição de conflitos e problemas quando diversos projetos acontecem simultaneamente.
 
+Na construção da Pipeline de Build (CI) do Terraform, será gerado
+um Artifact com o código selecionado no Repositório.
+
 **Continuous Delivery, CD**
+
 Entrega contínua ou CD, por sua vez, reúne a integração contínua e a testagem que podem ser agrupados em contêineres e depois colocado em produção.
 
 Ou seja, ele ajunta esses códigos e testes realizados, e coloca-os em produção de forma automatizada. 
 
 Mesmo que necessite da ação humana, ele se torna automatizado ao colocar tudo o que foi feito “no ar” de maneira integrada e completa. 
+Na construção da Pipeline de Deploy (CD) do Terraform, será gerado
+um Artifact com o arquivo de estado (tfstate) dos recursos criados.
+
 ## Aplicação no projeto Dataplat
 O código do Iaac do Terraform está sendo versionado no Gitlab, Branch de Dataplat-Dev/Terraform. 
 Está sendo usada uma abordagem de criação em 5 níveis:
@@ -120,4 +118,3 @@ Está sendo usada uma abordagem de criação em 5 níveis:
 <Inseir descrição e imagem>
 
 
-**OBS: Poderão haver alterações no processo e padrões tendo em vista estarmos em fase de desenvolvimento.**
