@@ -23,8 +23,8 @@ Seguindo o portal [Bluelight](https://bluelight.co/blog/best-infrastructure-as-c
 | Plataform | Number | 
 | --------- | ------- | 
 | Terraform |     1   | 
-| --------- | ------- | 
-| --------- | ------- | 
+| AWS Cloud Formation | 2 | 
+| Azure Resource Manager | 3 | 
 
 
 
