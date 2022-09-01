@@ -116,6 +116,5 @@ Está sendo usada uma abordagem de criação em 5 níveis:
   - Execução e validação de toda esteira 
 
 # Template do projeto CCR Dataplat
-
-![Sem título.jpg](/.attachments/Sem%20título-d245193d-545f-401a-9ce6-8d4fb52d8208.jpg)
+![Tf.png](/.attachments/Tf-f009c0be-e116-42cb-bfa0-c45490587aed.png)
 
