@@ -17,7 +17,7 @@ Atualmente o terraform é uma das ferramentas de IaaC mais utilizadas no mundo:
   - Fork: 7.4K
   - Star: 31.7K
 
-https://bluelight.co/blog/best-infrastructure-as-code-tools
+
 Seguindo o portal [Bluelight](https://bluelight.co/blog/best-infrastructure-as-code-tools), temos a seguinte classificação:
 
 | Plataform | Number | 
