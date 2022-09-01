@@ -1,4 +1,4 @@
-![Logo-grupo-ccr-Editado-v3.png](/.attachments/Logo-grupo-ccr-Editado-v3-ee9c8edf-c25d-4e6d-8679-126684339c3a.png)
+![ccr.png](/.attachments/ccr-2b22bf34-55cc-4ec1-898e-058e4f44259c.png)                                ![terraform.png](/.attachments/terraform-c1363d8b-397f-4030-a388-1ece33a1fe7a.png)
 # Introdução
 
 Como política de implantação seguindo o modelo de Infraestrutura como um código ( IaaC ). Foi adotado o uso do terraform como plataforma de implantação dos recursos de nuvem do Lab-Dataplat.
