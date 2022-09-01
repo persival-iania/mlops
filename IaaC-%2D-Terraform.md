@@ -25,6 +25,12 @@ Seguindo o portal [Bluelight](https://bluelight.co/blog/best-infrastructure-as-c
 | Terraform |     1   | 
 | AWS Cloud Formation | 2 | 
 | Azure Resource Manager | 3 | 
+| Google Cloud Deployment Manager | 4
+ | 
+| --------- | ------- | 
+| --------- | ------- | 
+| --------- | ------- | 
+| --------- | ------- | 
 
 
 
