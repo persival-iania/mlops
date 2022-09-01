@@ -7,7 +7,9 @@ Como política de implantação seguindo o modelo de Infraestrutura como um cód
 
 Seguindo a documentação do Terraform, temos:
 
-> HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
+>O HashiCorp Terraform é uma infraestrutura como ferramenta de código que permite definir recursos na nuvem e no local em arquivos de configuração legíveis por humanos que você pode versionar, reutilizar e compartilhar. Você pode então usar um fluxo de trabalho consistente para provisionar e gerenciar toda a sua infraestrutura ao longo de seu ciclo de vida. O Terraform pode gerenciar componentes de baixo nível, como recursos de computação, armazenamento e rede, bem como componentes de alto nível, como entradas DNS e recursos SaaS.
+
+
 > --<cite>https://www.terraform.io/intro#what-is-terraform</cite>
 
 ## Por que terraform ?
