@@ -17,13 +17,27 @@ Atualmente o terraform é uma das ferramentas de IaaC mais utilizadas no mundo:
   - Fork: 7.4K
   - Star: 31.7K
 
-Seguindo o portal [Datanyze](https://www.datanyze.com/market-share/configuration-management--313/hashicorp-terraform-market-share), temos a seguinte tabela de market share:
+https://bluelight.co/blog/best-infrastructure-as-code-tools
+Seguindo o portal [Bluelight](https://bluelight.co/blog/best-infrastructure-as-code-tools), temos a seguinte classificação:
 
-| Plataform | Website | Market Share |
-| --------- | ------- | ------------ |
-| Terraform | 4.906   | 13.21%       |
-| Ansible   | 9.440   | 25.42%       |
-| Puppet    | 7.699   | 20.73%       |
+| Plataform | Number | 
+| --------- | ------- | 
+| Terraform |     1   | 
+| --------- | ------- | 
+| --------- | ------- | 
+
+
+
+
+
+| Terraform. Terraform is one of the most popular IaC tools in the market. ...
+AWS CloudFormation. ...
+Azure Resource Manager. ...
+Google Cloud Deployment Manager. ...
+Pulumi. ...
+Ansible. ...
+Chef. ...
+Puppet.%       |
 
 ## Infrastructure as a Code - IaC
 
