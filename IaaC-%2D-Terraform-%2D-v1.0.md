@@ -67,7 +67,7 @@ Está sendo criado via Terraform os recursos:
 A seguir ilustração de código do Terraform:
 ![image.png](/.attachments/image-926994b2-27f9-47b1-8350-36c63a66f055.png)
 
-# Automação do Desenvolvimento - Pipelines CI/CD
+# Automação do Desenvolvimento para Build e Deploy - Pipelines CI/CD
 ## Introdução de CI/CD
 CI/CD designa respectivamente Continuous Integration e Continuous Delivery traduzindo: Integração Contínua e Entrega Contínua.
 
