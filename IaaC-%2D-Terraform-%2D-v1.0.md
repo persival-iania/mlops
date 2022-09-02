@@ -117,6 +117,8 @@ Está sendo usada uma abordagem de criação em 5 níveis:
 
 # Template do projeto CCR Dataplat
 ![template.jpg](/.attachments/template-af87a1e7-da0d-4a4a-a525-36d42926d96b.jpg)
+**1a Etapa - Inicialização dos Módulos** 
 
-Para inicializar o diretório raiz do terraform com todos os módulos é utilizado o comando terraform init.
+Para inicializar todos os módulos indicados no diretório raiz
+através do arquivo main.tf é utilizado o comando terraform init 
 
