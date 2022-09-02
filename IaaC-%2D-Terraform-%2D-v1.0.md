@@ -127,10 +127,12 @@ através do arquivo main.tf é utilizado o comando terraform init
 Para verificar os recursos que estão provisionados para a criação
 na Azure Cloud é utilizado o comando terraform plan
 ![plan.jpg](/.attachments/plan-4200dd88-7250-4c8f-a357-2ad5ef20069a.jpg)
+
 **3.a Etapa - Criação dos Recursos**
 
 Para a efetiva criação dos recursos na Azure Cloud é utilizado o
 comando terraform apply
+![apply.jpg](/.attachments/apply-45597914-8212-4e77-ad0b-6994ff61d433.jpg)
 
 
 
