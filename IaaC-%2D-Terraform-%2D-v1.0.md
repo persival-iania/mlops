@@ -121,4 +121,5 @@ Está sendo usada uma abordagem de criação em 5 níveis:
 
 Para inicializar todos os módulos indicados no diretório raiz
 através do arquivo main.tf é utilizado o comando terraform init 
+![init.jpg](/.attachments/init-9475f1df-77c4-4bb5-ae31-5f6caf410af0.jpg)
 
