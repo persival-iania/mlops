@@ -154,6 +154,6 @@ Estes comandos são as tasks do stage do Release.
 
 ![image.png](/.attachments/image-567c99c7-1c05-439b-b058-a1fc86fd2ac6.png)
 
-Recursos criados no Portas da Azure pela Pipeline do Terraform:
+Recursos criados no Portal da Azure pela Pipeline do Terraform:
 
 ![image.png](/.attachments/image-f2d0df21-e234-4a33-8d49-7264bc74062d.png)
