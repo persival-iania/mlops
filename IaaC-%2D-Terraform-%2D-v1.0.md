@@ -141,13 +141,15 @@ repositório Terraform no AzureDevops - Projeto ccr-gbs-labinov-dataplat.
 
 ![image.png](/.attachments/image-84168631-4c26-45e4-a117-6b725ed26cb4.png)
 
-Para construção do artefato do processo de build é construído
-uma Pipeline na branch feature com todos os arquivos e pastas
-de todos os módulos do template:
+Para construção do artefato do processo de build é construído uma Pipeline na branch feature com todos os arquivos e pastas de todos os módulos do template:
 
 ![image.png](/.attachments/image-7a2e0974-2da7-4631-8f69-189004e52ed2.png)
 
 
-Para construção dos recursos provisionados nos módulos do template é construído uma Pipeline de Release com os comandos Init, Plan e Apply do Terraform. Estes comandos são as tasks do stage do Release.
+Para construção dos recursos provisionados nos módulos do template é construído uma Pipeline de Release com os comandos Init, Plan e Apply do Terraform. 
 
 ![image.png](/.attachments/image-df055ce7-0623-4459-af7d-a95f5669b1bc.png)
+
+Estes comandos são as tasks do stage do Release.
+
+![image.png](/.attachments/image-567c99c7-1c05-439b-b058-a1fc86fd2ac6.png)
