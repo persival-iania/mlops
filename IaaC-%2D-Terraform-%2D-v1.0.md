@@ -67,6 +67,26 @@ Está sendo criado via Terraform os recursos:
 A seguir ilustração de código do Terraform:
 ![image.png](/.attachments/image-926994b2-27f9-47b1-8350-36c63a66f055.png)
 
+
+# Template do projeto CCR Dataplat
+![template.jpg](/.attachments/template-af87a1e7-da0d-4a4a-a525-36d42926d96b.jpg)
+**1a Etapa - Inicialização dos Módulos** 
+
+Para inicializar todos os módulos indicados no diretório raiz
+através do arquivo main.tf é utilizado o comando terraform init 
+![init.jpg](/.attachments/init-9475f1df-77c4-4bb5-ae31-5f6caf410af0.jpg) 
+**2.a Etapa - Planejamento dos Recursos**
+
+Para verificar os recursos que estão provisionados para a criação
+na Azure Cloud é utilizado o comando terraform plan
+![plan.jpg](/.attachments/plan-4200dd88-7250-4c8f-a357-2ad5ef20069a.jpg)
+
+**3.a Etapa - Criação dos Recursos**
+
+Para a efetiva criação dos recursos na Azure Cloud é utilizado o
+comando terraform apply
+![apply.jpg](/.attachments/apply-45597914-8212-4e77-ad0b-6994ff61d433.jpg)
+
 # Automação do Desenvolvimento para Build e Deploy - Pipelines CI/CD
 ## Introdução de CI/CD
 CI/CD designa respectivamente Continuous Integration e Continuous Delivery traduzindo: Integração Contínua e Entrega Contínua.
@@ -115,24 +135,19 @@ Está sendo usada uma abordagem de criação em 5 níveis:
   - Adequação de ambiente QAS no código
   - Execução e validação de toda esteira 
 
-# Template do projeto CCR Dataplat
-![template.jpg](/.attachments/template-af87a1e7-da0d-4a4a-a525-36d42926d96b.jpg)
-**1a Etapa - Inicialização dos Módulos** 
+## Pipeline do Template Terraform
+Os códigos dos módulos terraform (template) estão armazenados no
+repositório Terraform no AzureDevops - Projeto ccr-gbs-labinov-dataplat.
 
-Para inicializar todos os módulos indicados no diretório raiz
-através do arquivo main.tf é utilizado o comando terraform init 
-![init.jpg](/.attachments/init-9475f1df-77c4-4bb5-ae31-5f6caf410af0.jpg) 
-**2.a Etapa - Planejamento dos Recursos**
+![image.png](/.attachments/image-84168631-4c26-45e4-a117-6b725ed26cb4.png)
 
-Para verificar os recursos que estão provisionados para a criação
-na Azure Cloud é utilizado o comando terraform plan
-![plan.jpg](/.attachments/plan-4200dd88-7250-4c8f-a357-2ad5ef20069a.jpg)
+Para construção do artefato do processo de build é construído
+uma Pipeline na branch feature com todos os arquivos e pastas
+de todos os módulos do template:
 
-**3.a Etapa - Criação dos Recursos**
-
-Para a efetiva criação dos recursos na Azure Cloud é utilizado o
-comando terraform apply
-![apply.jpg](/.attachments/apply-45597914-8212-4e77-ad0b-6994ff61d433.jpg)
+![image.png](/.attachments/image-7a2e0974-2da7-4631-8f69-189004e52ed2.png)
 
 
+Para construção dos recursos provisionados nos módulos do template é construído uma Pipeline de Release com os comandos Init, Plan e Apply do Terraform. Estes comandos são as tasks do stage do Release.
 
+![image.png](/.attachments/image-df055ce7-0623-4459-af7d-a95f5669b1bc.png)
