@@ -105,8 +105,7 @@ Dessa forma com o CI, é possível que todas as mudanças sejam realizadas no �
 
 Por meio dessa técnica há a diminuição de conflitos e problemas quando diversos projetos acontecem simultaneamente.
 
-Na construção da Pipeline de Build (CI) do Terraform, será gerado
-um Artifact com o código selecionado no Repositório.
+Na construção da Pipeline de Build (CI) do Terraform, será gerado um Artifact com o código selecionado no Repositório.
 
 **Continuous Delivery, CD**
 
