@@ -61,5 +61,8 @@ A versão do MLFlow que iremos utilizar já está totalmente gerenciada dentro d
 
 Veja: https://learn.microsoft.com/pt-br/azure/databricks/mlflow/
 
+# 6. Como fica todo um fluxo de MLOps dentro de uma squad de dados?
+
+![Captura de Tela 2022-12-14 às 19.28.30.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2019.28.30-dae6ba6d-86b7-4634-8440-114bbcca9974.png)
 
 
