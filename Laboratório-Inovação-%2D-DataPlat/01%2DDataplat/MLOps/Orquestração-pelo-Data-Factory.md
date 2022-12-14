@@ -138,21 +138,35 @@ Assim que a execução inicia, o status muda para **Em Andamento**
 
 Caso o cluster de execução não esteja no ar, ele será ligado automaticamente e assim que estiver no ar a execução se inicia
 
-### Acompanhamento da execução
-
-Clicando no ícone 
 
 ![Captura de Tela 2022-12-14 às 17.04.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.04.58-4f04a663-6a39-480b-a473-48fc58e09ca2.png)
 
+### Acompanhamento da execução
+
+Clicando no ícone onde tem um **óculos** na lista de execução, veremos a URL onde está ocorrendo a execução do job no Databricks
+
+
+![Captura de Tela 2022-12-14 às 17.50.32.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.50.32-9f0c369c-30b0-459f-9eed-500ffc2f97bd.png)
+
 ![Captura de Tela 2022-12-14 às 17.08.01.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.08.01-a7c7c2aa-4cba-4508-bd6d-4bcbdb5015b6.png)
+
+### Clicando no Link somos transportados até o Databricks e podemos acompanhar a execução tem tempo real
 
 ![Captura de Tela 2022-12-14 às 17.08.20.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.08.20-3808dde3-fc13-48e5-8668-1554f4702210.png)
 
+### Ao final da execução a linha de status mudará para **Bem Sucedido**
+
 ![Captura de Tela 2022-12-14 às 17.37.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.37.58-f05ba37b-5d2d-4967-80a2-d6869d8d1150.png)
+
+### Clicando no ícone dos **óculos** novamente temos acesso à URL da execução como fizemos antes
 
 ![Captura de Tela 2022-12-14 às 17.38.13.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.38.13-76da1814-4c46-4807-b122-aacdad1f22eb.png)
 
+### Aqui podemos verificar a log de execução do job no Databricks, assim como o notebook todo já processado.
+
 ![Captura de Tela 2022-12-14 às 17.38.26.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.38.26-a802f327-2be7-4d5a-a572-e4aaa1aa40df.png)
+
+
 
 
 
