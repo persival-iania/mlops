@@ -8,23 +8,36 @@ Uma abreviação para operações de machine learning, MLOps (Machine Learning O
 
 MLOps é um campo relativamente novo, pois o uso comercial da AI é bastante recente.
 
-##MLOps: Priorizando a AI Corporativa
-O Big Bang da AI foi em 2012 quando um pesquisador ganhou um concurso de reconhecimento de imagens usando deep learning. A repercussão foi rápida.
+# _OPs
 
-Hoje, a AI traduz páginas da web e roteia automaticamente as chamadas de atendimento ao cliente. Ela ajuda hospitais a ler exames de raios X, bancos a calcular os riscos de crédito e varejistas a planejarem suas prateleiras para otimizar as vendas.
+Tudo o que temos referente à **"Ops"** em tecnologia nos remete à gestão de processos e automação de pipelines, como por exemplo:
 
-Em resumo, o machine learning, uma parte do amplo campo da AI, deve se tornar tão comum quanto as aplicações de software. É por isso que o processo de executar ML precisa ser tão sério quanto o trabalho de execução de sistemas de IT.
+<B style="font-weight:normal"  id="docs-internal-guid-76a84f6e-7fff-89cd-02a8-3387453e7a94"><IMG  width="146px;"  height="84px;"  src="https://lh3.googleusercontent.com/wDQ07MSvb7H1_j0BqX85LLeSVKS0CoRzfOoqDWatv7DLp5wPCSuah_lcjoFxRuB44yQ7xjRiOiCNPs4oTQ_vMUtHRbG_0wXCtW_0zmD-0f3xJ8ooUcmgT0MLV5iWKr47x3tCkCsrJyjTZpWyKwmEYqlqATJ1ifdyF8Q4yJ6U2O7f2Bkm1FDGF-4zBXpFdXCa=nw"/></B>
 
-##Machine Learning Chega ao DevOps
-MLOps é modelado na disciplina existente de DevOps, a prática moderna de escrever, implementar e executar aplicações empresariais. O DevOps começou há uma década como uma maneira em que equipes opostas de desenvolvedores de software (os Devs) e de operações de IT (Ops) poderiam colaborar.
+**DevOps** onde utilizamos técnicas de engenharia de software específicas para que possamos automatizar pipelines automatizados para gerenciamento de esteiras de deploy de código em sistemas tradicionais.
 
-O MLOps adiciona à equipe os cientistas de dados, que preparam conjuntos de dados e criam modelos de AI que os analisam. Também são incluídos engenheiros de ML que executam esses conjuntos de dados nos modelos de maneiras disciplinadas e automatizadas.
+### em **DevOps** criamos pipelines para deploy de **Código**
 
 
-## MLOps combina machine learning, desenvolvimento de aplicações e operações de IT.
+<B style="font-weight:normal"  id="docs-internal-guid-1234ddd2-7fff-47ff-2230-7da21bd7923b"><IMG  width="296px;"  height="90px;"  src="https://lh6.googleusercontent.com/um47LlxmqtEnT9nYp-X0AGu4rOWtZcywNuxdGYeDpqhDJUbdCCwDnkYUhYdTleaNPHpVgilYtUH_fyum7EspyG3B1Sy9MCplntZwGAtgK3KO54ki8NPsDLBy9cNf5ZZr31ZmlZlVcuiZL6d7yRiJ32o6msJnnf-C1JTeGDzbc4Doj--vvSydThOlyE0aycTs=nw"  alt="Diagrama Descrição gerada automaticamente"/></B>
 
-É um grande desafio tanto no desempenho bruto quanto no rigor de gerenciamento. Os conjuntos de dados são enormes, crescentes e podem mudar em tempo real. Os modelos de AI exigem monitoramento cuidadoso por ciclos de experimentos, ajuste e retreinamento para manter a alta precisão.
+**DataOps** criamos esteiras automatizadas para captura, ingestão, higienização, tratamento e transformação de dados para consumo em Analytics, seja análise de dados, dashboards, data science ou machine learning.
 
-##Conclusão
-Portanto, o MLOps precisa de uma poderosa infraestrutura de AI que pode ser dimensionada à medida que as empresas crescem. Para essa base, muitas empresas usam os sistemas NVIDIA DGX, o CUDA-X e outros componentes de software disponíveis no centro de software da NVIDIA, o NGC.
+### em **DataOps** criamos pipelines para entrega de **Dados**
 
+
+<B style="font-weight:normal"  id="docs-internal-guid-cfe3b61c-7fff-b7c0-7f0a-08d1bf5de57a"><IMG  width="187px;"  height="75px;"  src="https://lh5.googleusercontent.com/Wd3Y8SroOGS7gj1iCxmd7aSs_qoz1nddPAD-eB7JF_A3Q19NtZyrgr88jZL11JFF06SeOv0MLaucMKrLsx07i6fXHrontRnZxNIxiffIQ2vtBTSEYwYj_8XmqjZnoJH1_31tylk4n6CrWknH0iLwIuyrtu3bSi1iRuKRZ31K33XMkfio7-nq5PpLPd3wLwHA=nw"/></B>
+
+**MLOps** MLOps remete a uma esteira de ML, onde o pipeline gerencia:
+
+- os dados de treino (e teste) se tornam features, que alimentam os modelos
+- notebooks são código e também precisam ser governados
+- modelos são o resultado do treino e teste com as features 
+- modelos carregam os dados junto dos binários que gera
+
+
+em **MLOps** criamos esteiras automatizadas que permitem executar todo o ciclo, efetuando governança das features de treinamento e testes de modelos, os códigos dos notebooks, artefatos e hiperparâmetros dos modelos, os "binários" dos modelos, deploy e monitoramento da performance dos modelos em produção.
+
+#Ciclo MLOps
+
+<B style="font-weight:normal"  id="docs-internal-guid-6adfe2ef-7fff-ff45-542a-74a42d2eb79a"><IMG  width="728px;"  height="383px;"  src="https://lh6.googleusercontent.com/l9QAgn8bQF5nbLxD5_ZNMs6slBVWdk3RmCnlNhH0uU6FttgQS3ikc-3fbpggKkVMPOAQpvDPk6XuMJBk8PzTksV6ie6Xo8dp5Kq0twMps2GfKLyL3XW_SFQZZOeoA5aOMJOiF3iEYt1Uzmr6c8ZIuv57kWcxJaMIv6x79LKVa1Pmztokq5ZGNElPP-Ggof6L=nw"/></B>
