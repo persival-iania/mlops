@@ -1,5 +1,8 @@
 <B style="font-weight:normal"  id="docs-internal-guid-e6a0872f-7fff-8e55-ca21-c86d6677794d"><IMG  width="298px;"  height="95px;"  src="https://lh6.googleusercontent.com/_kpsT2JiazSgVJM-kphphhw3LLdWyWmGID4XnWZ0eF9lPM57SX87plHtPqsVodk2nnzknkKaWlRQ_TKdY64ROWxc4YErThy8p--S6IqBzQxeZJB3lrqN197z6uSYiBYTX6_9nGLnytKKCifvmelEsnc2FCLLG-hM5BVpOmVOw--ZMgT_meUyheP8AV3BA3phIPDtSeY6lw=nw"/></B>
 
+#MLOPs
+#
+
 <B style="font-weight:normal"  id="docs-internal-guid-ca47c632-7fff-1bc9-7f72-617e6caada01"><IMG  width="1008px;"  height="544px;"  src="https://lh6.googleusercontent.com/8JFF-nPLAk9a17ljQWVMUlwa9zbRXv0cUA7cvrP4_FQeVn_QDnvDqBS4Tpfna_75xPwxaR4oBBRj3rq31v5VdJCWSgMuKO-qs0rcTMb_juITKTWBLDoxVTKBQavm8oKhCqE4kC9RFHOBc_dyyQsd4Fml7bfjZuzJz362-gHWEu2HdywOV_33JNzBnJNxv0Xy8y8=nw"/></B>
 
 # Definição MLOps
@@ -41,3 +44,5 @@ em **MLOps** criamos esteiras automatizadas que permitem executar todo o ciclo, 
 #Ciclo MLOps
 
 <B style="font-weight:normal"  id="docs-internal-guid-6adfe2ef-7fff-ff45-542a-74a42d2eb79a"><IMG  width="728px;"  height="383px;"  src="https://lh6.googleusercontent.com/l9QAgn8bQF5nbLxD5_ZNMs6slBVWdk3RmCnlNhH0uU6FttgQS3ikc-3fbpggKkVMPOAQpvDPk6XuMJBk8PzTksV6ie6Xo8dp5Kq0twMps2GfKLyL3XW_SFQZZOeoA5aOMJOiF3iEYt1Uzmr6c8ZIuv57kWcxJaMIv6x79LKVa1Pmztokq5ZGNElPP-Ggof6L=nw"/></B>
+
+Aqui na Wiki você vai encontrar tópicos explicando tudo que diz respeito à Machine Learning e MLOps
