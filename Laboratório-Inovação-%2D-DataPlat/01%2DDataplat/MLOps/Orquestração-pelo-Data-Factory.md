@@ -122,11 +122,25 @@ Navegue nas pastas do workspace e selecione o modelo que quer usar no pipeline e
 ![Captura de Tela 2022-12-14 às 17.02.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.02.58-841ff910-4faf-4d79-804c-f6956252ca8e.png)
 
 
-![Captura de Tela 2022-12-14 às 17.02.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.02.58-996595e6-4790-43c5-89e0-c72732a3d7e8.png)
+### O status vai modificar para **Na Fila**
+
+A execução então entra na fila do Data Factory
 
 ![Captura de Tela 2022-12-14 às 17.04.19.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.04.19-c4089630-5ba0-4617-b203-db5aa2422dd7.png)
 
+### Em andamento
+
+Assim que a execução inicia, o status muda para **Em Andamento**
+
 ![Captura de Tela 2022-12-14 às 17.04.31.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.04.31-38fef5da-e4f1-4608-b059-f6de3ec812e9.png)
+
+### Ativação do cluster
+
+Caso o cluster de execução não esteja no ar, ele será ligado automaticamente e assim que estiver no ar a execução se inicia
+
+### Acompanhamento da execução
+
+Clicando no ícone 
 
 ![Captura de Tela 2022-12-14 às 17.04.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.04.58-4f04a663-6a39-480b-a473-48fc58e09ca2.png)
 
