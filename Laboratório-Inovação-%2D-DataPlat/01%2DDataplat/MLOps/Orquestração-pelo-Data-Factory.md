@@ -122,6 +122,24 @@ Navegue nas pastas do workspace e selecione o modelo que quer usar no pipeline e
 ![Captura de Tela 2022-12-14 às 17.02.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.02.58-841ff910-4faf-4d79-804c-f6956252ca8e.png)
 
 
+![Captura de Tela 2022-12-14 às 17.02.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.02.58-996595e6-4790-43c5-89e0-c72732a3d7e8.png)
+
+![Captura de Tela 2022-12-14 às 17.04.19.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.04.19-c4089630-5ba0-4617-b203-db5aa2422dd7.png)
+
+![Captura de Tela 2022-12-14 às 17.04.31.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.04.31-38fef5da-e4f1-4608-b059-f6de3ec812e9.png)
+
+![Captura de Tela 2022-12-14 às 17.04.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.04.58-4f04a663-6a39-480b-a473-48fc58e09ca2.png)
+
+![Captura de Tela 2022-12-14 às 17.08.01.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.08.01-a7c7c2aa-4cba-4508-bd6d-4bcbdb5015b6.png)
+
+![Captura de Tela 2022-12-14 às 17.08.20.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.08.20-3808dde3-fc13-48e5-8668-1554f4702210.png)
+
+![Captura de Tela 2022-12-14 às 17.37.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.37.58-f05ba37b-5d2d-4967-80a2-d6869d8d1150.png)
+
+![Captura de Tela 2022-12-14 às 17.38.13.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.38.13-76da1814-4c46-4807-b122-aacdad1f22eb.png)
+
+![Captura de Tela 2022-12-14 às 17.38.26.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.38.26-a802f327-2be7-4d5a-a572-e4aaa1aa40df.png)
+
 
 
 
