@@ -104,6 +104,24 @@ Na aba **Configurações** em **Caminho do Notebook** clique no botão **PROCURA
 ![Captura de Tela 2022-12-14 às 16.59.06.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.59.06-3036be10-1f9f-45a7-931a-8d8983e98053.png)
 
 
+### Navegue até o notebook
+
+Navegue nas pastas do workspace e selecione o modelo que quer usar no pipeline e clique **OK** no final da página
+
+![Captura de Tela 2022-12-14 às 17.00.15.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.00.15-9d83038f-1618-4099-894e-126d258d7ee4.png)
+
+
+### Notebook pronto para execução
+
+![Captura de Tela 2022-12-14 às 17.02.06.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.02.06-89a56d09-e123-4398-9d94-8ebbf7444bdb.png)
+
+## 8. Testando o pipeline
+
+### Clique no botão **DEPURAR** acima da imagem do notebook
+
+![Captura de Tela 2022-12-14 às 17.02.58.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2017.02.58-841ff910-4faf-4d79-804c-f6956252ca8e.png)
+
+
 
 
 
