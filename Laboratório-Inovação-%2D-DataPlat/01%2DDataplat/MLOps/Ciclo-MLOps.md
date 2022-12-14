@@ -1,10 +1,10 @@
 
-#Conceito MLOps
+# Conceito MLOps
 
 
-#_OPs
+# _OPs
 
-Tudo o que temos referente à "Ops" em tecnologia geralmente nos remete à gestão de processos e automação de pipelines, como por exemplo:
+Tudo o que temos referente à **"Ops"** em tecnologia nos remete à gestão de processos e automação de pipelines, como por exemplo:
 
 <B style="font-weight:normal"  id="docs-internal-guid-76a84f6e-7fff-89cd-02a8-3387453e7a94"><IMG  width="146px;"  height="84px;"  src="https://lh3.googleusercontent.com/wDQ07MSvb7H1_j0BqX85LLeSVKS0CoRzfOoqDWatv7DLp5wPCSuah_lcjoFxRuB44yQ7xjRiOiCNPs4oTQ_vMUtHRbG_0wXCtW_0zmD-0f3xJ8ooUcmgT0MLV5iWKr47x3tCkCsrJyjTZpWyKwmEYqlqATJ1ifdyF8Q4yJ6U2O7f2Bkm1FDGF-4zBXpFdXCa=nw"/></B>
 
@@ -13,20 +13,24 @@ Tudo o que temos referente à "Ops" em tecnologia geralmente nos remete à gest�
 ### em **DevOps** criamos pipelines para deploy de **Código**
 
 
-<B style="font-weight:normal"  id="docs-internal-guid-454c47a5-7fff-91ac-70b2-6d32e79aa927"><IMG  width="296px;"  height="90px;"  src="https://lh6.googleusercontent.com/um47LlxmqtEnT9nYp-X0AGu4rOWtZcywNuxdGYeDpqhDJUbdCCwDnkYUhYdTleaNPHpVgilYtUH_fyum7EspyG3B1Sy9MCplntZwGAtgK3KO54ki8NPsDLBy9cNf5ZZr31ZmlZlVcuiZL6d7yRiJ32o6msJnnf-C1JTeGDzbc4Doj--vvSydThOlyE0aycTs=nw"  alt="Diagrama
-
-Descrição gerada automaticamente"/></B>
-
-<B style="font-weight:normal"  id="docs-internal-guid-551b5027-7fff-7cad-e4fb-89e52e3298d9"><IMG  width="296px;"  height="90px;"  src="https://lh6.googleusercontent.com/um47LlxmqtEnT9nYp-X0AGu4rOWtZcywNuxdGYeDpqhDJUbdCCwDnkYUhYdTleaNPHpVgilYtUH_fyum7EspyG3B1Sy9MCplntZwGAtgK3KO54ki8NPsDLBy9cNf5ZZr31ZmlZlVcuiZL6d7yRiJ32o6msJnnf-C1JTeGDzbc4Doj--vvSydThOlyE0aycTs=nw"  alt="Diagrama
-
-Descrição gerada automaticamente"/></B>
+<B style="font-weight:normal"  id="docs-internal-guid-1234ddd2-7fff-47ff-2230-7da21bd7923b"><IMG  width="296px;"  height="90px;"  src="https://lh6.googleusercontent.com/um47LlxmqtEnT9nYp-X0AGu4rOWtZcywNuxdGYeDpqhDJUbdCCwDnkYUhYdTleaNPHpVgilYtUH_fyum7EspyG3B1Sy9MCplntZwGAtgK3KO54ki8NPsDLBy9cNf5ZZr31ZmlZlVcuiZL6d7yRiJ32o6msJnnf-C1JTeGDzbc4Doj--vvSydThOlyE0aycTs=nw"  alt="Diagrama Descrição gerada automaticamente"/></B>
 
 **DataOps** criamos esteiras automatizadas para captura, ingestão, higienização, tratamento e transformação de dados para consumo em Analytics, seja análise de dados, dashboards, data science ou machine learning.
 
 ### em **DataOps** criamos pipelines para entrega de **Dados**
 
 
+<B style="font-weight:normal"  id="docs-internal-guid-cfe3b61c-7fff-b7c0-7f0a-08d1bf5de57a"><IMG  width="187px;"  height="75px;"  src="https://lh5.googleusercontent.com/Wd3Y8SroOGS7gj1iCxmd7aSs_qoz1nddPAD-eB7JF_A3Q19NtZyrgr88jZL11JFF06SeOv0MLaucMKrLsx07i6fXHrontRnZxNIxiffIQ2vtBTSEYwYj_8XmqjZnoJH1_31tylk4n6CrWknH0iLwIuyrtu3bSi1iRuKRZ31K33XMkfio7-nq5PpLPd3wLwHA=nw"/></B>
+
+**MLOps** MLOps remete a uma esteira de ML, onde o pipeline gerencia:
+
+- os dados de treino (e teste) se tornam features, que alimentam os modelos
+- notebooks são código e também precisam ser governados
+- modelos são o resultado do treino e teste com as features 
+- modelos carregam os dados junto dos binários que gera
 
 
+em **MLOps** criamos esteiras automatizadas que permitem executar todo o ciclo, efetuando governança das features de treinamento e testes de modelos, os códigos dos notebooks, artefatos e hiperparâmetros dos modelos, os "binários" dos modelos, deploy e monitoramento da performance dos modelos em produção.
 
-<B style="font-weight:normal"  id="docs-internal-guid-f7a664da-7fff-4a66-a6e6-558e481ad88e"><SPAN style="font-size:11pt;font-family:'Century Gothic',sans-serif;color:#000000;background-color:transparent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap"><SPAN style="border:none;width:649px;height:258px"><IMG  src="https://lh6.googleusercontent.com/udEoQr5ExcqraeAS2y_kj3EDChLQahARFiZzmKNPX52LpEp40FYvKmAAfiHQ435Sa_YyayXiYp8xeYc1Q1i2Sale29U2bDUyTBlrYtGdjyrGrkBAWITlZMDpd05rdDFFbFdJrz7L8qdNsEhO_TQy3PBCiQXoIrlX7nN2pRLR-ja4neiko2NiCE3em7WcJg"  width="649"  height="258" style="margin-left:0px;margin-top:0px"/></SPAN></SPAN></B>
+#Ciclo MLOps
+
