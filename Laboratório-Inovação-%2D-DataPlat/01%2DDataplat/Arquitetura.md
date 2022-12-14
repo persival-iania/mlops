@@ -88,11 +88,11 @@ Uma vez que os dados estão armazenados no Data Lake (Bronze, Silver e Gold), o 
 # Arquitetura do Projeto Data Plat
 - A arquitetura foi idealizada para suportar uma grande quantidade de dados de diversas áreas da CCR, seja em esteira batch como Stream. A estratégia de elasticidade foi adotada com a criação de no mínimo um recurso por área, melhor elucidado na figura abaixo:
 
-![Arquitetura_All-V2-Arquitetura Simplificada.png](/.attachments/Arquitetura_All-V2-Arquitetura%20Simplificada-a4791bdf-e228-4999-971a-a75c65d3ef17.png)
+![Arquitetura_All-V2-Arquitetura Simplificada v2.jpg](/.attachments/Arquitetura_All-V2-Arquitetura%20Simplificada%20v2-c4e35398-c51e-447c-adc3-b5deccf83b75.jpg)
 _Segunda versão Arquitetura da plataforma._ 
 
 A seguir documento em formato original, em drawio.
-[Arquitetura_All-V2.zip](/.attachments/Arquitetura_All-V2-e7889d65-5048-4d54-9f13-81aa78696695.zip)
+[Arquitetura_All-V2.zip](/.attachments/Arquitetura_All-V2-9c25b670-74bd-4deb-8c10-1a37c893d9b9.zip)
 
 #Datamarts
 - Iniciado pela parte de rodovias, trará dados do SUAT, sistema que armazena dados no Oracle em diversas instancias apartadas nas estações e sites. Outras Squads podem ser iniciadas em conjunto, tais como Datamarts de Aeroportos e Mobilidade. 
