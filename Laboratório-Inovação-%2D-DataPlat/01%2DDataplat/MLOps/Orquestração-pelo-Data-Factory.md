@@ -67,6 +67,31 @@ Para nosso tipo de pipeline iremos conectar diretamente à um **Notebook** (nest
 
 
 
+## 5. Integrando com um Notebook no Databricks
+
+Clique e arraste a opção **Caderno** (ou **Notebook** na versão original em inglês)
+
+![Captura de Tela 2022-12-14 às 16.49.50.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.49.50-e026904f-3ea2-40f0-99b6-04fd98279856.png)
+
+### Vamos preencher os dados gerais
+
+![Captura de Tela 2022-12-14 às 16.52.26.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.52.26-24e591bc-6ebd-438e-a6ac-64131d7d77b2.png)
+
+Nesta aba informamos dados descritivos da tarefa que estamos criando.
+
+## 6. Conectando ao Databricks
+
+Na aba **Azure Databricks** iremos informar o serviço vinculado, este serviço já vir totalmente configurado pelos nossos Arquitetos da Plataforma, basta selecionarmos.
+
+![Captura de Tela 2022-12-14 às 16.53.35.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.53.35-89f6b579-5b9f-4102-816b-509da539838c.png)
+
+### recomendável testar a conexão, 
+
+- basta clicar no botão **Testar Conexão** 
+- caso ocorra algum tipo de erro, contatar algum administrador da Plataforma
+
+![Captura de Tela 2022-12-14 às 16.55.27.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.55.27-fc3e5e53-830d-4a96-b307-e8aa230a7df0.png)
+
 
 
 
