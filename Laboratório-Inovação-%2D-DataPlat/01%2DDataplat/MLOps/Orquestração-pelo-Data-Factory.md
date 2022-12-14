@@ -25,5 +25,34 @@ Podemos utilizar o Azure Data Factory como um orquestrador de todo o ciclo de ML
 - monitoramento de modelos em produção
 
 
+# Fazendo uma predição de um modelo no Databricks através do DataFactory
+
+## 1. Iniciando o Data Factory
+
+
+Primeiramente iniciamos o serviço ##Data Factory Studio#
+
+![Captura de Tela 2022-12-14 às 16.31.45.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.31.45-3b99e335-eb5a-454d-9686-a8ec08480594.png)
+
+#
+
+## 2. Iniciando uma orquestração
+
+Uma vez iniciada, esta é a interface do Data Factory Studio
+
+![Captura de Tela 2022-12-14 às 16.32.57.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.32.57-59da0678-855c-4b82-aae6-460ef2b0037d.png)
+
+Nesta página vamos escolher a opção do 2o botão **ORQUESTRAR**
+
+![Captura de Tela 2022-12-14 às 16.34.33.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.34.33-8aa877ec-7f24-4bbc-8a98-eccae61ce911.png)
+
+## 3. Criando um pipeline
+
+Na interface de *pipelines* selecione no menu à esquerda a opção de criar um novo pipeline
+
+![Captura de Tela 2022-12-14 às 16.41.47.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.41.47-fbad29d4-c051-46ce-b623-ae55c51fc2cb.png)
+
+
+
 
 
