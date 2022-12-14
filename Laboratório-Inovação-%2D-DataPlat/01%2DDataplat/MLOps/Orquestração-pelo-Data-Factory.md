@@ -52,6 +52,23 @@ Na interface de *pipelines* selecione no menu à esquerda a opção de criar um 
 
 ![Captura de Tela 2022-12-14 às 16.41.47.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.41.47-fbad29d4-c051-46ce-b623-ae55c51fc2cb.png)
 
+## 4. Integrando ao Databricks
+
+Assim que iniciar a criação do novo pipeline abrirá uma janela de **Atividades** e em seguida clique na 5a opção **Databricks**
+
+![Captura de Tela 2022-12-14 às 16.45.11.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.45.11-ee8b27f2-2c7d-4c79-8227-357bf29625ae.png)
+
+Aqui veremos que temos 3 opções
+- **Caderno** (aqui a versão está traduzida, mas é **Notebook**)
+- **Jar** para acionamento direto de um Jar no Databricks (pergunte para um arquiteto o conceito de Jar)
+- **Python** para execução de código Python diretamente
+
+Para nosso tipo de pipeline iremos conectar diretamente à um **Notebook** (neste exemplo traduzido, opção **Caderno**)
+
+
+
+
+
 
 
 
