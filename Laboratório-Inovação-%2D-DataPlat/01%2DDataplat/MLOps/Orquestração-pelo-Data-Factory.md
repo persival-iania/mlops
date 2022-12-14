@@ -168,7 +168,15 @@ Clicando no ícone onde tem um **óculos** na lista de execução, veremos a URL
 
 
 
+# Recomendações
 
+Antes de criar um pipeline, sugerimos que verifiquem com os administradores da Plaforma:
+
+- Acesso ao Data Factory
+- Acesso aos notebooks do Databricks
+- Para MLOps é necessário um cluster configurado para **Data Science**
+- Confirmar se seu perfil de acesso dá direito a acompanhar as execuções no Databricks
+- Qual o nome do **Serviço Vinculado** ao Databricks que deve utilizar
 
 
 
