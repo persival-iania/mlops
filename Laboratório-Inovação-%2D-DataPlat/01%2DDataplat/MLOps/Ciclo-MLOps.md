@@ -49,7 +49,7 @@ Sendo MLOps uma *esteira** e segue um fluxo de processos, o experimento precisa 
 
 **MLFLow** é um framework *open source* criado pela *Databricks* que no nosso caso já é totalmente gerenciado na Azure e permite a toda a governança do ciclo **MLOPs** em todas as etapas, mais informações em [https://mlflow.org/docs/latest/index.html]()
 
-# 5. MLFlow gerenciado na Azure
+# 5. MLFlow gerenciado pelo Azure Databricks
 
 A versão do MLFlow que iremos utilizar já está totalmente gerenciada dentro do Azure Databricks, o que nos permite:
 
@@ -60,4 +60,6 @@ A versão do MLFlow que iremos utilizar já está totalmente gerenciada dentro d
 - Serviço de Modelo: permite hospedar Modelos de MLflow como pontos de extremidade REST.
 
 Veja: https://learn.microsoft.com/pt-br/azure/databricks/mlflow/
+
+
 
