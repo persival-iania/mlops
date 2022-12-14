@@ -46,3 +46,7 @@ em **MLOps** criamos esteiras automatizadas que permitem executar todo o ciclo, 
 <B style="font-weight:normal"  id="docs-internal-guid-6adfe2ef-7fff-ff45-542a-74a42d2eb79a"><IMG  width="728px;"  height="383px;"  src="https://lh6.googleusercontent.com/l9QAgn8bQF5nbLxD5_ZNMs6slBVWdk3RmCnlNhH0uU6FttgQS3ikc-3fbpggKkVMPOAQpvDPk6XuMJBk8PzTksV6ie6Xo8dp5Kq0twMps2GfKLyL3XW_SFQZZOeoA5aOMJOiF3iEYt1Uzmr6c8ZIuv57kWcxJaMIv6x79LKVa1Pmztokq5ZGNElPP-Ggof6L=nw"/></B>
 
 Aqui na Wiki você vai encontrar tópicos explicando tudo que diz respeito à Machine Learning e MLOps
+
+#Como funciona uma squad de dados executando o ciclo de ML?
+
+![Captura de Tela 2022-12-14 às 19.28.30.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2019.28.30-3f67b220-421e-4621-9fdd-ac73d00b06dd.png)
