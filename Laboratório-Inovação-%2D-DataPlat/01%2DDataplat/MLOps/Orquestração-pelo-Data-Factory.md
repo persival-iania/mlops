@@ -92,6 +92,17 @@ Na aba **Azure Databricks** iremos informar o serviço vinculado, este serviço 
 
 ![Captura de Tela 2022-12-14 às 16.55.27.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.55.27-fc3e5e53-830d-4a96-b307-e8aa230a7df0.png)
 
+## 7. Conectando ao notebook no Workspace
+
+Na aba **Configurações** em **Caminho do Notebook** clique no botão **PROCURAR**
+
+![Captura de Tela 2022-12-14 às 16.57.24.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.57.24-7138ed44-eb2a-4902-8155-b739c7177056.png)
+
+
+### O Data Factory irá abrir as pastas do Workspace onde seu usuário do AD permite acesso
+
+![Captura de Tela 2022-12-14 às 16.59.06.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.59.06-3036be10-1f9f-45a7-931a-8d8983e98053.png)
+
 
 
 
