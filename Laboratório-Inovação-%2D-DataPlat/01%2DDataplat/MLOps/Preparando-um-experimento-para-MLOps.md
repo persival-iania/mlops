@@ -73,7 +73,7 @@ Conforme mencionamos anteriormente, em tempo de EDA e experimento, não é neces
 Desta maneira temos como efetuar a orquestração de todo o ciclo MLOps em qualquer um dos níveis de MLOPs (0, 1 e 2, há um tópico explicando cada um deles na Wiki)
 
 
-# 3.1 Exemplos de notebooks para cada etapa
+# 3.1 Exemplos de notebooks para efetuar o *split* para cada etapa
 
 - Data prep https://adb-622288559698745.5.azuredatabricks.net/?o=622288559698745#notebook/3141394032348943/command/3141394032348944
 - Featurization: https://adb-622288559698745.5.azuredatabricks.net/?o=622288559698745#notebook/3125591493654637/command/3125591493654638
