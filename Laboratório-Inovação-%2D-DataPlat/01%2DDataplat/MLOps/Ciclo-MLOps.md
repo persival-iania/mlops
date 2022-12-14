@@ -43,3 +43,21 @@ Sendo MLOps uma *esteira** e segue um fluxo de processos, o experimento precisa 
 - **Model Monitoring** as métricas de performance do modelo precisam ser acompanhadas para verificar se o modelo necessita ser re-treinado.
 
 
+# 4. Arquitetura MLOps baseada em **MLFLow**
+
+<B style="font-weight:normal"  id="docs-internal-guid-034922d5-7fff-c249-ec0c-dab0e2e87026"><IMG  width="960px;"  height="504px;"  src="https://lh6.googleusercontent.com/OZdoaxYvMQiu_cLNguQZxIL9hZnj5lOKvS2w2Vhp89wl2NCECxScqvm2VB6hNhTxcUOmRupJlkB8kxSCCfvJD-9HyZJyStTaTfCIWVAXp9qSacJB-7pwtKNkbW-wolKUIugE0JgaYVlPq0hIUA_t6UFZlgLywjJXnt2jny08DicyRbQyVcbRGa2ODHSM2k--=nw"/></B>
+
+**MLFLow** é um framework *open source* criado pela *Databricks* que no nosso caso já é totalmente gerenciado na Azure e permite a toda a governança do ciclo **MLOPs** em todas as etapas, mais informações em [https://mlflow.org/docs/latest/index.html]()
+
+# 5. MLFlow gerenciado na Azure
+
+A versão do MLFlow que iremos utilizar já está totalmente gerenciada dentro do Azure Databricks, o que nos permite:
+
+- Acompanhamento: Permite que você acompanhe experimentos para registrar e comparar parâmetros e resultados:
+- Modelos: Permitem que você gerencie e implante modelos de uma variedade de bibliotecas de - ML para uma variedade de plataformas de serviço e inferência de modelos.
+- Projetos: Permite que você empacote o código ML em um formulário reutilizável e reproduzível para compartilhar com outros cientistas de dados ou transferir para produção.
+- Registro de Modelos: permite centralizar um repositório de modelos para gerenciar transições completas de fase do ciclo de vida dos modelos: do preparo à produção, com recursos para controle de versão e anotação.
+- Serviço de Modelo: permite hospedar Modelos de MLflow como pontos de extremidade REST.
+
+Veja: https://learn.microsoft.com/pt-br/azure/databricks/mlflow/
+
