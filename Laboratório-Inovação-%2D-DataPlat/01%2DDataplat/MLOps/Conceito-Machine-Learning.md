@@ -21,20 +21,26 @@ Em Machine Learning fornecemos as transações e os dados históricos rotulados 
 <B style="font-weight:normal"  id="docs-internal-guid-5133ecf9-7fff-22fb-6085-378f7a146520"><IMG  width="928px;"  height="392px;"  src="https://lh6.googleusercontent.com/FcqgxDHOynR5EYGEiOqZr149Ob3tY_muvIIPFnqh6T-0uXAXdbGyIEPwB7Zvi4IiJxYuJ7DSDgCaHudB2j6nvscT2QYBLVkxJNixoh70n5WdaoH661NqYj9KZ4InqwJarwztn-eqMeYlJbFHwmu_7nC1WLerTdKiJjHpt4-I86dRZ8p2WU1fEFw1DlqJORyi=nw"/></B>
 
 
-##Reforçando um pouco mais os conceitos
+#Reforçando um pouco mais os conceitos
 
 <B style="font-weight:normal"  id="docs-internal-guid-d7d900b7-7fff-74d5-927e-8ea4e29700c5"><IMG  width="681px;"  height="505px;"  src="https://lh5.googleusercontent.com/2gR8NMNC7QVTh3F3Gp4yWYxppgdq6trKAxbqHF-j1YPzx3fwYjxxfnNqpx0dOWHtdvwJ28yUyEtduhVCsInGcStfND9mwEF9DAPM5e22rUsyZSFRrvBY57czv-3Y6rzWyeX41fpJfBB1sAyUOoWG5oK0HBhAq2q2HTf5lrxhXbnWgTrYKLE3wUryLFW8jmgQ=nw"/></B>
 
 Quando criamos modelos de uma forma mais tradicional, as regras são programadas manualmente através do domínio conhecido pelos humanos e este programa escrito pelos humanos que será executado no computador.
 
-## Machine Learning
+# Machine Learning
 
-Utilizamos os dados disponíveis dentro da área de domínio, preferencialmente conhecendo os resultados possíveis e o cientista de dados(ou um engenheiro de machine learning), aplica as técnicas de aprendizagem em cima dos dados e a máquina que cria o programa que será executado.
-Quando chegam novos dados, é este modelo gerado que vai efetuar as predições e apresentar os resultados.
-Em linhas gerais, um modelo tradicional só consegue atuar em regras já mapeadas pelos humanos e um modelo de machine learning "aprende" com os dados e é capaz de encontrar regras não visíveis aos humanos e também responder de forma probabilística.
+- Utilizamos os dados disponíveis dentro da área de domínio, preferencialmente conhecendo os resultados possíveis e o cientista de dados(ou um engenheiro de machine learning), aplica as técnicas de aprendizagem em cima dos dados e a máquina que cria o programa que será executado.
+- Quando chegam novos dados, é este modelo gerado que vai efetuar as predições e apresentar os resultados.
+- Em linhas gerais, um modelo tradicional só consegue atuar em regras já mapeadas pelos humanos e um modelo de machine learning "aprende" com os dados e é capaz de encontrar regras não visíveis aos humanos e também responder de forma probabilística.
 
 
-## Metodologia
+# Diferenças básicas da software tradicional vs machine learning
+
+<B style="font-weight:normal"  id="docs-internal-guid-db8c98af-7fff-ac26-b7f2-0de57d077b35"><IMG  width="671px;"  height="378px;"  src="https://lh6.googleusercontent.com/rtayvdBPpMc3BqEtgR3fyo69cOom3jE_9feiDorDv4EzUOp7LYLJDc1pesGXvF-sMa_L1S6GDS_mTU23B8JKxKLOstnoQVG1FkhHxSPRgYrwVz4d03SlZSZQvEZKqwzUK_6xh_qY07g0z9EwWIwSKU-KZNnGqpa0VDrOz58cVzIEQkrw6LaCebHTruLLBJq7=nw"/></B>
+
+
+
+# Metodologia
 
 Existem várias metodologias voltadas para o desenvolvimento de projetos de Machine Learning, tais como o CRISP-DM
 
