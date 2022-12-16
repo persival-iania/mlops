@@ -179,5 +179,9 @@ Antes de criar um pipeline, sugerimos que verifiquem com os administradores da P
 - Qual o nome do **Serviço Vinculado** ao Databricks que deve utilizar
 
 
+# Evolução MLOps
+
+Esta documentação foi elaborada à época em que implementamos MLOps no nível 0, porém este procedimento permite também que possamos acionar notebooks de treino e teste de modelos também, permitindo a orquestração do ciclo MLOps Nivel 1.
+
 
 
