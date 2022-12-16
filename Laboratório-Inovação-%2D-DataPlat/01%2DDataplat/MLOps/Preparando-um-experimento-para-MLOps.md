@@ -1,6 +1,7 @@
 # MLOps no Databricks
 
-O Databricks tem um ambiente integrado de aprendizado de máquina de ponta a ponta que incorpora serviços gerenciados para rastreamento de experimentos, treinamento de modelos, desenvolvimento e gerenciamento de recursos e serviço de recursos e modelos. O diagrama mostra como os recursos do Databricks são mapeados para as etapas do processo de desenvolvimento e implantação do modelo.
+
+O Databricks provê um ambiente integrado de aprendizado de máquina de ponta a ponta que incorpora serviços gerenciados para rastreamento de experimentos, treinamento de modelos, desenvolvimento e gerenciamento de recursos e serviço de recursos e modelos. O diagrama mostra como os recursos do Databricks são mapeados para as etapas do processo de desenvolvimento e implantação do modelo.
 
 
 <IMG  src="https://docs.databricks.com/_images/ml-diagram.png"  alt="Machine learning diagram"/>
@@ -34,8 +35,8 @@ Para aplicativos de aprendizado de máquina, Databricks recomenda usar um cluste
 - **Data Acquisition** Acessa as *Delta Tables* e/ou outras fontes de dadso para análise
 - **Exploratory Data Analysis** para analisar os dados 
 - **Feature Selection** elenca as features que vai submenter aos modelos  
-- ***Model Training and Testing**  MLFlow permite toda a gestão dos experimentos 
-- *** Produtos finais gerados ** notebooks Python, features e Model.
+- **Model Training and Testing**  MLFlow permite toda a gestão dos experimentos 
+- **Produtos finais gerados** notebooks Python, features e Model.
 
 
 ### 2.2 ML Engineer
@@ -53,8 +54,8 @@ Para aplicativos de aprendizado de máquina, Databricks recomenda usar um cluste
 <B style="font-weight:normal"  id="docs-internal-guid-b2f1e3de-7fff-2ec9-4669-12a3cc33c02b"><IMG  width="108px;"  height="76px;"  src="https://lh5.googleusercontent.com/xHhXZu7d4aVXzlR1DE6BkzBUWa-39wwy82MXlps32JFF7BgWf1naPpo9gonzW5i09k9JwDRT2tCdEiqiPEmhx2OTr8itEaKTTnyYojXreLKDQuUBE3h23v6TqYIcSChFHWLZMUlQXIACSXqqptG5MoJJnA=nw"/></B>
 
 - Consomem os modelos como serviços
-- *Batch* efetua predições *batch* através da integração com Data Factory ou em fluxos de trabalho em Python
-- *on-line* predições através de chamadas REST acionando modelos como APIs, Dockers ou Containers.
+- **Batch** efetua predições *batch* através da integração com Data Factory ou em fluxos de trabalho em Python
+- **on-line** predições através de chamadas REST acionando modelos como APIs, Dockers ou Containers.
 
 
 
