@@ -16,14 +16,14 @@ Reconhecemos 3 níveis de maturidade aqui na CCR:
 Fonte de referência no Medium: https://towardsdatascience.com/mlops-level-0-manual-pipelines-7278b9949e59
 
 
-# Level 2:  Continuous Trainning
+# Level 1:  Continuous Trainning
 
 <B style="font-weight:normal"  id="docs-internal-guid-45ea7c10-7fff-1445-31bd-5ace1ca8b736"><IMG  width="775px;"  height="434px;"  src="https://lh5.googleusercontent.com/Ltbw-JuDrXYhItvo2r2ES8qHjGfysu6E7Y2iYkVdmvns5lQWXdiVQeiEiC4u0IqcPRpf517He5v52Th52ZmbllA9aTrBxI4ceSFAiXmzsa-UutR1NtoJ6nyP4UQrOznAT2ENyZ2NkcQj6CsCAQ0NRctFGnKd41-MJqlpHZKI0cGaj2agFQI66NNvh5MwmOQe=nw"/></B>
 
 
 Fonte de referência no Medium: https://towardsdatascience.com/mlops-level-1-continuous-training-b2a633e27d47
 
-# Level 3:  Continuous Deployment 
+# Level 2:  Continuous Deployment 
 ### CI/CD + Continuous training
 
 <B style="font-weight:normal"  id="docs-internal-guid-b38f8c24-7fff-593b-83fd-0a2532b87b04"><IMG  width="832px;"  height="434px;"  src="https://lh3.googleusercontent.com/_bhMJpTmKEPK_ae1POUfjC8iJYQ2aDqsSiLfsGUkUUPS9PY7nLBOVqmvl8SvMzL8iJBwGrJGkiHI-bK6gnoMlxG9luSOD_81JGC4QgQERplkB39BYdFtRmJCi6vEw0KX1h8Imm7FsVwm5DD4vGHZkdtzAEAskwI81-RDBMu6m_34AnE2Nliy86U9n6jWrLBL=nw"/></B>
