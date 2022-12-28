@@ -92,9 +92,9 @@ Na aba **Azure Databricks** iremos informar o serviço vinculado, este serviço 
 
 ![Captura de Tela 2022-12-14 às 16.55.27.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.55.27-fc3e5e53-830d-4a96-b307-e8aa230a7df0.png)
 
-## 7. Conectando ao notebook no Workspace
+## 7. Conectando ao notebook no Repo do Databricks
 
-Na aba **Configurações** em **Caminho do Notebook** clique no botão **PROCURAR**
+Na aba **Configurações** em **Caminho do Notebook no Repo (Git)** clique no botão **PROCURAR**
 
 ![Captura de Tela 2022-12-14 às 16.57.24.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.57.24-7138ed44-eb2a-4902-8155-b739c7177056.png)
 
@@ -104,7 +104,7 @@ Na aba **Configurações** em **Caminho do Notebook** clique no botão **PROCURA
 ![Captura de Tela 2022-12-14 às 16.59.06.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2016.59.06-3036be10-1f9f-45a7-931a-8d8983e98053.png)
 
 
-### Navegue até o notebook
+### Navegue até o notebook através do Repo
 
 Navegue nas pastas do workspace e selecione o modelo que quer usar no pipeline e clique **OK** no final da página
 
@@ -173,7 +173,7 @@ Clicando no ícone onde tem um **óculos** na lista de execução, veremos a URL
 Antes de criar um pipeline, sugerimos que verifiquem com os administradores da Plaforma:
 
 - Acesso ao Data Factory
-- Acesso aos notebooks do Databricks
+- Acesso aos notebooks do Databricks pelo Repo
 - Para MLOps é necessário um cluster configurado para **Data Science**
 - Confirmar se seu perfil de acesso dá direito a acompanhar as execuções no Databricks
 - Qual o nome do **Serviço Vinculado** ao Databricks que deve utilizar
