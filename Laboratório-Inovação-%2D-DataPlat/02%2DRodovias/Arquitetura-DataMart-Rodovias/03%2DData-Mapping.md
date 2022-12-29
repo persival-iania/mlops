@@ -1,0 +1,15 @@
+Rodovias com concessão CCR que possuem o sistema SUAT.
+[[_TOC_]]
+RODOVIAS:
+1. VIAOESTE 
+1. RODOANEL 
+1. AUTOBAN  
+1. SPVIAS   
+1. RODONORTE
+1. VIALAGOS 
+1. MSVIA    
+1. VIASUL   
+1. VIARIO   
+1. COSTEIRA
+1. VIADUTRA
+
