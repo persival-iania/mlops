@@ -1,5 +1,5 @@
 # Mapa de Dados
-Mapeamento de Dados do sistema SUAT referente as rodovias sob concessão da CCR.
+Mapeamento de dados do sistema SUAT referente as rodovias sob concessão da CCR.
 
 
 **RODOVIAS:**
