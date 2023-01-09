@@ -1,4 +1,4 @@
-O nosso Datalake e composto de de 4 camadas landing, bronze, silver e gold subdivididos em SUAT, TOR e KCOR
+O a estrutura do nosso Datalake é composta de de 4 camadas landing, bronze, silver e gold subdivididos em SUAT, TOR e KCOR e com um arquivo de configuração para cada objeto\tabela dentro dele. 
 
 imagem ......
 
