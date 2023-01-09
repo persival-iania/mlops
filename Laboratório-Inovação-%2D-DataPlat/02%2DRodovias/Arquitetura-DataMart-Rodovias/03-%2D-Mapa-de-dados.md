@@ -17,7 +17,7 @@ Mapeamento de dados do sistema SUAT referente as rodovias sob concessão da CCR.
 
 **MAPA DE TABELAS:**
 
-VIAOESTE/SUAT - 
+VIAOESTE/SUAT - [MAPA_TBL_SUAT_VIAOESTE.xlsx](/.attachments/MAPA_TBL_SUAT_VIAOESTE-e82c331e-1ab6-4946-9423-af5c1a60bc42.xlsx)
 AUTOBAN/SUAT - [MAPA_TBL_SUAT_AUTOBAN.xlsx](/.attachments/MAPA_TBL_SUAT_AUTOBAN-f850c0ec-8d0a-4dd8-a4a4-15f7dabfe058.xlsx)
 
 
