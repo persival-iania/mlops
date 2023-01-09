@@ -8,7 +8,7 @@ A camada landing armazena os dados extraídos das fontes de dados, já preparado
 
 **Bronze**
 
-A camada bronze armazena os dados extraídos das fontes de dados, já preparado para a execução do processo de batch. Esses dados, nessa camada, estão dividido por origem e domínio. Aqui, ainda não temos nenhum tipo de tratamento sobre o dado. - Raw Data
+A camada bronze armazena os dados extraídos da camada landing sendo armazenados apenas o delta
 
 **Silver**
 
