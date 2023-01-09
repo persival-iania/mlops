@@ -8,6 +8,7 @@ A Estrutura do Datalake é composta de 4 camadas landing, bronze, silver e gold 
 Para a camada landing os dados vão ficar de forma de raw, ou seja, vamos manter uma cópia fiel dos dados de de acordo com origem, na camada bronze faremos o armazenamento dos dados deltas, na silver teremos os dados delta e transformados ja na camada gold o dado estará pronto para o consumo pela companhia.
 
 
+
 ![image.png](/.attachments/image-90831555-4f82-4b70-a1e4-89657bd5c14b.png)
 
 
