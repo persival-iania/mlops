@@ -1,14 +1,14 @@
 ![Logo-grupo-ccr-Editado-v3.png](/.attachments/Logo-grupo-ccr-Editado-v3-0259b883-c48a-46a1-8aea-9da7c5b138aa.png)
 
-A Estrutura do Datalake é composta de 4 camadas **Landing**, **Bronze**, **Silver** e **Gold** subdivididos em **SUAT**, **TOR** e **KCOR** e com um arquivo de configuração para cada objeto\tabela dentro dele. 
+A Estrutura do Datalake é composta de 4 camadas **Landing**, **Bronze**, **Silver** e **Gold** subdivididos em domínios **SUAT**, **TOR** e **KCOR** e com um arquivo de configuração para cada objeto\tabela dentro dele. 
 
 **Landing**
 
-A camada landing armazena os dados extraídos das fontes de dados, já preparado para a execução do processo de batch. Esses dados, nessa camada, estão dividido por origem e domínio. Aqui, ainda não temos nenhum tipo de tratamento sobre o dado. - Raw Data
+A camada Landing armazena os dados extraídos das fontes de dados de forma bruta Raw Data. 
 
 **Bronze**
 
-A camada bronze armazena os dados extraídos da camada landing sendo armazenados apenas o delta
+Armazena os dados extraídos da camada Landing sendo armazenados apenas o delta sem histórico.
 
 **Silver**
 
