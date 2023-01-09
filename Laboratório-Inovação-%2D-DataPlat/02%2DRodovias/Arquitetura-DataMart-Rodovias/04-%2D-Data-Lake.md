@@ -1,3 +1,5 @@
+![Logo-grupo-ccr-Editado-v3.png](/.attachments/Logo-grupo-ccr-Editado-v3-0259b883-c48a-46a1-8aea-9da7c5b138aa.png)
+
 A Estrutura do Datalake é composta de 4 camadas landing, bronze, silver e gold subdivididos em SUAT, TOR e KCOR e com um arquivo de configuração para cada objeto\tabela dentro dele. 
 
 ![Captura de Tela 2023-01-09 às 12.39.06.png](/.attachments/Captura%20de%20Tela%202023-01-09%20às%2012.39.06-0b560f91-bab2-4a1b-8fe2-501d40764630.png)
