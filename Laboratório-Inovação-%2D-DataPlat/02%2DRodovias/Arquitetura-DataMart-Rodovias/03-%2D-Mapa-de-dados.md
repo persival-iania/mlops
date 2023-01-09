@@ -11,19 +11,19 @@ Obs: A rodovia AUTOBAN foi parâmetro para O rastreamento de colunas diferentes 
 - AUTOBAN  
 - SPVIAS   
 - RODONORTE
-  * Tabela ADMCOB não possui as colunas FLEMV e CDORIGEM_EMV que estão presentes na AUTOBAN.
-  * Tabela PRACA não possui a coluna CDORIGEM_EMV que está presente na AUTOBAN.
+  * Tabela **ADMCOB** não possui as colunas **FLEMV** e **CDORIGEM_EMV** que estão presentes na AUTOBAN.
+  * Tabela **PRACA** não possui a coluna **CDORIGEM_EMV** que está presente na AUTOBAN.
 - VIALAGOS 
 - MSVIA
-  * Tabela CATEGORIA possui a coluna FLEXPORTA_SEFAZ que não está presente na AUTOBAN.
-  * Tabela PISTA possui as colunas PIST_NO_LATITUDE e PIST_NO_LONGITUDE que não estão presentes na AUTOBAN.
-  * Tabela PRACA possui as colunas TXLOCALIZACAO e TPSENTIDO_SEFAZ que não estão presentes na AUTOBAN.
+  * Tabela **CATEGORIA** possui a coluna **FLEXPORTA_SEFAZ** que não está presente na AUTOBAN.
+  * Tabela **PISTA** possui as colunas **PIST_NO_LATITUDE** e **PIST_NO_LONGITUDE** que não estão presentes na AUTOBAN.
+  * Tabela **PRACA** possui as colunas **TXLOCALIZACAO** e **TPSENTIDO_SEFAZ** que não estão presentes na AUTOBAN.
 - VIASUL   
-  * Tabela PISTA possui a coluna PIST_CD_CABINE que não está presente na AUTOBAN.
+  * Tabela **PISTA** possui a coluna **PIST_CD_CABINE** que não está presente na AUTOBAN.
 - VIARIO   
-  * Tabela TIPO_LBRANCA possui a coluna FLEXIBARREC que não está prestente na AUTOBAN.
+  * Tabela **TIPO_LBRANCA** possui a coluna **FLEXIBARREC** que não está presente na AUTOBAN.
 - COSTEIRA
-  * Tabela PISTA possui a coluna PIST_CD_CABINE que não está presente na AUTOBAN.
+  * Tabela **PISTA** possui a coluna **PIST_CD_CABINE**__ que não está presente na AUTOBAN.
 
 **MAPA DE TABELAS:**
 
