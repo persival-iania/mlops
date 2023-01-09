@@ -1,4 +1,4 @@
-O a estrutura do Datalake é composta de 4 camadas landing, bronze, silver e gold subdivididos em SUAT, TOR e KCOR e com um arquivo de configuração para cada objeto\tabela dentro dele. 
+(/.attachments/Captura%20de%20Tela%202023-01-09%20às%2012.39.06-3bcee43f-57c1-43eb-875e-645c6075ddf9.png)O a estrutura do Datalake é composta de 4 camadas landing, bronze, silver e gold subdivididos em SUAT, TOR e KCOR e com um arquivo de configuração para cada objeto\tabela dentro dele. 
 
 imagem ......
 
@@ -10,6 +10,6 @@ Nossa repositório ja está conectado com o Git utilizando conceito de master e 
 
 ![image.png](/.attachments/image-f64b0d3e-02f1-4966-87d0-5d5d43e1448a.png)
 
-
+![Captura de Tela 2023-01-09 às 12.39.06.png]
 
 
