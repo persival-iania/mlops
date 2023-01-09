@@ -1,6 +1,8 @@
 # Mapa de dados
 Mapeamento de dados do sistema SUAT referente as rodovias sob concessão da CCR.
 
+Obs: A rodovia AUTOBAN foi parâmetro para O rastreamento de colunas diferentes em  tabelas que são utilizadas em todas as rodovias.
+
 
 **RODOVIAS:**
 
@@ -9,11 +11,19 @@ Mapeamento de dados do sistema SUAT referente as rodovias sob concessão da CCR.
 - AUTOBAN  
 - SPVIAS   
 - RODONORTE
+  * Tabela ADMCOB não possui as colunas FLEMV e CDORIGEM_EMV que estão presentes na AUTOBAN.
+  * Tabela PRACA não possui a coluna CDORIGEM_EMV que está presente na AUTOBAN.
 - VIALAGOS 
-- MSVIA    
+- MSVIA
+  * Tabela CATEGORIA possui a coluna FLEXPORTA_SEFAZ que não está presente na AUTOBAN.
+  * Tabela PISTA possui as colunas PIST_NO_LATITUDE e PIST_NO_LONGITUDE que não estão presentes na AUTOBAN.
+  * Tabela PRACA possui as colunas TXLOCALIZACAO e TPSENTIDO_SEFAZ que não estão presentes na AUTOBAN.
 - VIASUL   
+  * Tabela PISTA possui a coluna PIST_CD_CABINE que não está presente na AUTOBAN.
 - VIARIO   
+  * Tabela TIPO_LBRANCA possui a coluna FLEXIBARREC que não está prestente na AUTOBAN.
 - COSTEIRA
+  * Tabela PISTA possui a coluna PIST_CD_CABINE que não está presente na AUTOBAN.
 
 **MAPA DE TABELAS:**
 
@@ -36,6 +46,9 @@ VIASUL - [MAPA_TBL_SUAT_VIASUL.xlsx](/.attachments/MAPA_TBL_SUAT_VIASUL-c1c0fabc
 VIARIO - [MAPA_TBL_SUAT_VIARIO.xlsx](/.attachments/MAPA_TBL_SUAT_VIARIO-ff04fb36-3169-4c8e-8a00-19f005aa40e1.xlsx)
 
 COSTEIRA - [MAPA_TBL_SUAT_COSTEIRA.xlsx](/.attachments/MAPA_TBL_SUAT_COSTEIRA-eee3e8d9-0350-43a3-8596-87f00ef9d790.xlsx)
+ 
+
+Todos os mapeamentos estão disponíveis também no Sharepoint abaixo.
 
 Sharepoint:
 https://grupoccr.sharepoint.com/sites/LaboratriodeInovao/Documentos%20Compartilhados/Forms/AllItems.aspx?ga=1&id=%2Fsites%2FLaboratriodeInovao%2FDocumentos%20Compartilhados%2FProjetos%2FDocumenta%C3%A7%C3%A3o%20Projetos%2FRodovias%2FDataMart%2DRodovias%2FMapaTabelas%5FOracle%5FSuat%2FEngenharia&viewid=92e83c7e%2D1932%2D4368%2Dbf46%2Dfac1f2309c17
