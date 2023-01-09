@@ -1,4 +1,4 @@
-O nosso Datalake e composto de de 4 camadas landing, staging, trusted e refined subdivididos em SUAT, TOR e KCOR
+O nosso Datalake e composto de de 4 camadas landing, bronze, silver e gold subdivididos em SUAT, TOR e KCOR
 
 ![image.png](/.attachments/image-90831555-4f82-4b70-a1e4-89657bd5c14b.png)
 
