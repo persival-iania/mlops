@@ -43,15 +43,4 @@ Adicionalmente se olharmos as pesquisas no Google, o CRISP-DM também é uma das
 
 <B style="font-weight:normal"  id="docs-internal-guid-92057892-7fff-087c-8740-705feb532467"><IMG  width="1023px;"  height="658px;"  src="https://lh4.googleusercontent.com/3TpYwiuxpM0L6HHeGoeuomCtSc7KGZYpuNn20lya_3EsuoJAE2OSr065JDohGPK3THBvSvTZDAfhJDbEbeWkrhelynfC2SNLJDZ1L-Nlk5m6cfIGxjcdd70BT9PKTWxBpHurX5CFr6SdO8hzO5pXFo_S9Q=nw"/></B>
 
-Existem várias metodologias voltadas para o desenvolvimento de projetos de Machine Learning, tais como o CRISP-DM
-
-<IMG  src="https://www.datascience-pm.com/wp-content/uploads/2021/02/CRISP-DM.png"  alt="CRISP DM"/>
-
-Para mais informações visite: [https://www.datascience-pm.com/crisp-dm-2/]()
-
-
-Ou o mais moderno método Machine Learning Canvas do Dr Louis Dourard mentor da comunidade de Inteligência Artifical [papis.io]
-
-<IMG  src="https://images.squarespace-cdn.com/content/v1/5206b718e4b0bdc26006bae2/1615220769462-N6F4SNC2EET6VZ9WIR3F/Machine+Learning+Canvas+template+v1.0.jpg?format=1500w"  alt="Machine Learning Canvas template v1.0.jpg"/>
-
-Para mais informações, [https://medium.com/louis-dorard/from-data-to-ai-with-the-machine-learning-canvas-part-i-d171b867b047]() 
+Como efeito de referência, vamos considerar o **CRISP-DM** como metodologia para balizarmos a migração das etapas de Data Science para uma esteira de MLOps
