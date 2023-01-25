@@ -67,4 +67,4 @@ Depois, há o Como, que pode ser dividido em duas partes: Aprendendo e Fazendo P
 
 
 Para mais informações, consulte a página do Medium do Louis Dorard
-[https://medium.com/louis-dorard/from-data-to-ai-with-the-machine-learning-canvas-part-i-d171b867b047]() 
+https://medium.com/louis-dorard/from-data-to-ai-with-the-machine-learning-canvas-part-ii-b02c71067da8
