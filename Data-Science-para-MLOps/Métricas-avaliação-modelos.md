@@ -82,4 +82,29 @@ Cada uma dessas métricas tem suas próprias vantagens e desvantagens, e a escol
 - Índice Calinski-Harabasz: O índice Calinski-Harabasz é uma métrica que mede a relação entre a variância dentro de um cluster e a variância entre clusters. Quanto maior for o valor do índice, melhor é o agrupamento.
 
 
+#**VISÃO COMPUTACIONAL**
 
+- Acurácia: a porcentagem de imagens classificadas corretamente pelo modelo.
+
+- Precisão e revocação: medem a capacidade do modelo de detectar corretamente objetos de interesse, com precisão medindo a proporção de verdadeiros positivos em relação aos falsos positivos e revocação medindo a proporção de verdadeiros positivos em relação aos falsos negativos.
+
+- F1-score: média harmônica entre precisão e revocação.
+
+- Intersecção sobre união (IoU): mede a sobreposição entre a região prevista pelo modelo e a região verdadeira do objeto de interesse.
+
+- Erro de medida de distância: mede a distância entre as coordenadas previstas pelo modelo e as coordenadas verdadeiras do objeto de interesse.
+
+
+#**PROCESSAMENTO DE LINGUAGEM NATURAL**
+
+- Acurácia: a porcentagem de sentenças ou palavras classificadas corretamente pelo modelo.
+
+- Perplexidade: mede a capacidade do modelo de prever a próxima palavra ou sentença em um texto, sendo geralmente usada em modelos de linguística estatística.
+
+- F1-score: média harmônica entre precisão e revocação, é amplamente utilizada para tarefas de classificação binária e multi-classe.
+
+- BLEU, METEOR, ROUGE, CIDEr são métricas de avaliação de gerador de texto, que medem a similaridade entre a saída gerada pelo modelo e o texto de referência.
+
+- Em tarefas de tradução automática, a métrica mais comum é o índice de similaridade de BLEU.
+
+- Em tarefas de reconhecimento de fala, a métrica mais comum é o Word Error Rate (WER) ou o índice de similaridade de Levenshtein.
