@@ -21,7 +21,14 @@ Em linhas gerais, o cientista de dados nesta etapa faz:
 
 Normalmente o ciclo é recursivo, pois os modelos vão evoluindo.
 
-# 2. Experimento vs MLOps
+
+# 2. Ciclo completo MLOps
+
+<IMG  src="https://learn.microsoft.com/en-us/azure/architecture/example-scenario/mlops/media/mlops-conceptual-model.png"  alt="A diagram of the final MLOps model concept."/>
+
+
+
+# 3. Experimento vs MLOps
 
 Cientistas de dados durante a fase de experimentos não tem necessidade de seguirem à risca métodos de engenharia de software, pois o foco é na análise de dados através de métodos estatísticos e matemáticos, porém para efeito de esteira, temos alguns componentes adicionais.
 
@@ -31,7 +38,7 @@ Cientistas de dados durante a fase de experimentos não tem necessidade de segui
 
 <B style="font-weight:normal"  id="docs-internal-guid-31451edb-7fff-52de-65fc-0baa459b81d6"><IMG  width="723px;"  height="478px;"  src="https://lh4.googleusercontent.com/Qjq0Tdt_3LWi1_ldq03DHP7FEfC5dLOUBCwjGPIo-liPULYxhE2WbNRPQld4GC67ILbunDlUUXz86mKwu-vZVFP8HrNhioHkQf-kAhLf1qbtbMhoaZ3bENZu5dn5SZxkGNHac1P_UVuYlc_EkthHL3L4OB9WTQZosqfu-TVWuDRbAHE70FN6yhBEdp-3-fcX=nw"  alt="Linha do tempo"/></B>
 
-# 3. Adequando um experimento para aderência ao ciclo MLOps
+# 4. Adequando um experimento para aderência ao ciclo MLOps
 
 Sendo MLOps uma *esteira** e segue um fluxo de processos, o experimento precisa ser desmembrado nas seguintes etapas:
 
@@ -43,13 +50,13 @@ Sendo MLOps uma *esteira** e segue um fluxo de processos, o experimento precisa 
 - **Model Monitoring** as métricas de performance do modelo precisam ser acompanhadas para verificar se o modelo necessita ser re-treinado.
 
 
-# 4. Arquitetura MLOps baseada em **MLFLow**
+# 5. Arquitetura MLOps baseada em **MLFLow**
 
 <B style="font-weight:normal"  id="docs-internal-guid-034922d5-7fff-c249-ec0c-dab0e2e87026"><IMG  width="960px;"  height="504px;"  src="https://lh6.googleusercontent.com/OZdoaxYvMQiu_cLNguQZxIL9hZnj5lOKvS2w2Vhp89wl2NCECxScqvm2VB6hNhTxcUOmRupJlkB8kxSCCfvJD-9HyZJyStTaTfCIWVAXp9qSacJB-7pwtKNkbW-wolKUIugE0JgaYVlPq0hIUA_t6UFZlgLywjJXnt2jny08DicyRbQyVcbRGa2ODHSM2k--=nw"/></B>
 
 **MLFLow** é um framework *open source* criado pela *Databricks* que no nosso caso já é totalmente gerenciado na Azure e permite a toda a governança do ciclo **MLOPs** em todas as etapas, mais informações em [https://mlflow.org/docs/latest/index.html]()
 
-# 5. MLFlow gerenciado pelo Azure Databricks
+# 6. MLFlow gerenciado pelo Azure Databricks
 
 A versão do MLFlow que iremos utilizar já está totalmente gerenciada dentro do Azure Databricks, o que nos permite:
 
@@ -61,7 +68,7 @@ A versão do MLFlow que iremos utilizar já está totalmente gerenciada dentro d
 
 Veja: https://learn.microsoft.com/pt-br/azure/databricks/mlflow/
 
-# 6. Como fica todo um fluxo de MLOps dentro de uma squad de dados?
+# 7. Como fica todo um fluxo de MLOps dentro de uma squad de dados?
 
 ![Captura de Tela 2022-12-14 às 19.28.30.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2019.28.30-dae6ba6d-86b7-4634-8440-114bbcca9974.png)
 
