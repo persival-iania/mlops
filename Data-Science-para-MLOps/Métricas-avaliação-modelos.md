@@ -22,12 +22,64 @@ Cada uma dessas métricas tem suas próprias vantagens e desvantagens, e a escol
 
 
 
-#Regressão
+#**REGRESSÃO**
 
-* Erro médio absoluto (MAE): é a média dos erros absolutos entre as previsões e os valores reais. Ele fornece uma medida da magnitude do erro, mas não considera a direção do erro. Imagine que você está tentando prever o preço de uma casa e seu modelo prevê um valor de $500.000 quando o preço real é $450.000. O erro absoluto seria $50.000. Se você fizer isso para várias casas, o MAE seria a média dos erros absolutos desses casos.
 
-* Erro médio quadrático (MSE): é a média dos erros ao quadrado entre as previsões e os valores reais. Ele fornece uma medida da magnitude do erro, dando mais peso para erros maiores. Ele é frequentemente usado para avaliar a qualidade de um modelo de regressão. Imagine que você está jogando uma bola para uma cesta e seu modelo prevê que a bola vai cair a 1 metro à esquerda da cesta, mas na verdade ela cai a 1 metro à direita da cesta. O erro quadrático seria 1^2 = 1. Se você fizer isso para várias bolas, o MSE seria a média dos erros quadráticos desses casos.
+- Erro Quadrático Médio (MSE - Mean Squared Error): MSE é a média dos erros ao quadrado entre as previsões do modelo e os valores reais. Ele é fácil de calcular e interpretar, mas pode ser sensível a outliers.
 
-* Raiz do erro médio quadrático (RMSE): é a raiz quadrada do MSE. Ele fornece a mesma informação que o MSE, mas ao invés de estar no espaço de erros ao quadrado, ele está no espaço de erros. Imagine que você está medindo a distância entre dois pontos e o seu modelo prevê que a distância é de 1 metro, mas na verdade é de 1,41 metros. O RMSE seria a raiz quadrada de 1,41^2 = 1,41 metros.
+- Erro Absoluto Médio (MAE - Mean Absolute Error): MAE é a média dos erros absolutos entre as previsões do modelo e os valores reais. Ele é menos sensível a outliers do que o MSE.
 
-* Coeficiente de determinação (R²): é uma medida de quão bem o modelo se ajusta aos dados. Ele varia entre 0 e 1, onde 1 indica que o modelo explica completamente a variabilidade dos dados e 0 indica que o modelo não explica a variabilidade dos dados. Imagine que você está tentando prever o preço de uma casa com base em sua área. Se o seu modelo prevê o preço com precisão, então R² seria próximo de 1. Se o seu modelo não tem nenhuma relação com o preço da casa, então R² seria próximo de 0.
+- Raíz do Erro Quadrático Médio (RMSE - Root Mean Squared Error): RMSE é a raiz quadrada do MSE. Ele tem as mesmas propriedades que o MSE, mas as unidades de medida são os mesmos que os dados de treinamento.
+
+- R-Quadrado (R² - Coefficient of determination): R² é uma medida de quão bem o modelo se ajusta aos dados. Ele varia entre 0 e 1, onde 1 indica um ajuste perfeito.
+
+- Mediana do Erro Absoluto (MedAE - Median Absolute Error): MedAE é a mediana dos erros absolutos entre as previsões do modelo e os valores reais. Ele é menos sensível a outliers do que o MAE.
+
+- Resíduos: os resíduos são a diferença entre os valores previstos e os valores observados. É possível plotar esses resíduos para verificar se eles seguem uma distribuição normal e se eles são homocedásticos.
+
+
+#**FORECAST**
+
+Modelos de forecast possuem muitas métricas semelhantes aos modelos de regressão, porém com algumas métricas adicionais
+
+- Erro Quadrático Médio (MSE - Mean Squared Error): MSE é a média dos erros ao quadrado entre as previsões do modelo e os valores reais. Ele é fácil de calcular e interpretar, mas pode ser sensível a outliers.
+
+- Erro Absoluto Médio (MAE - Mean Absolute Error): MAE é a média dos erros absolutos entre as previsões do modelo e os valores reais. Ele é menos sensível a outliers do que o MSE.
+
+- Raíz do Erro Quadrático Médio (RMSE - Root Mean Squared Error): RMSE é a raiz quadrada do MSE. Ele tem as mesmas propriedades que o MSE, mas as unidades de medida são os mesmos que os dados de treinamento.
+
+- Mediana do Erro Absoluto (MedAE - Median Absolute Error): MedAE é a mediana dos erros absolutos entre as previsões do modelo e os valores reais. Ele é menos sensível a outliers do que o MAE.
+
+- Symmetric mean absolute percentage error (SMAPE): Ele mede a porcentagem de erro absoluto médio relativo, é utilizado para séries temporais.
+
+- Coeficiente de Determinação (R² - Coefficient of determination): R² é uma medida de quão bem o modelo se ajusta aos dados. Ele varia entre 0 e 1, onde 1 indica um ajuste perfeito.
+
+- logarithmic loss (logloss) : mede a precisão das probabilidades, utilizado quando o modelo produz probabilidades de previsão, geralmente utilizado em problemas de classificação binaria
+
+- Índice de Previsão (PI - Prediction Interval): O PI é uma medida de incerteza na previsão do modelo, geralmente expressa como uma faixa de previsão (por exemplo, 95% de confiança). Ele é útil para avaliar a robustez do modelo e para tomar decisões com base na incerteza.
+
+- Índice de Acurácia (AC - Accuracy): O AC é a proporção de previsões corretas do modelo em relação ao total de previsões. Ele é útil para avaliar a precisão geral do modelo, mas pode ser enganoso se houver desequilíbrio de classes nos dados.
+
+- Índice de Previsão de Classe (CP - Class Prediction Index): O CP é a proporção de previsões corretas para cada classe específica. Ele é útil para avaliar a precisão do modelo para cada classe e para identificar quais classes o modelo tem dificuldade em prever.
+
+Cada uma dessas métricas tem suas próprias vantagens e desvantagens, e a escolha de qual usar dependerá do problema específico e do que é importante para o seu objetivo. Algumas métricas são mais adequadas para problemas de séries temporais, enquanto outras são mais adequadas para problemas de classificação ou regressão. Em alguns casos, pode ser útil usar mais de uma métrica para obter uma visão mais completa do desempenho do modelo.
+
+
+
+#**CLUSTERING**
+
+
+- Medida de Silhueta: A medida de silhueta é uma medida de quanto similar um ponto é aos outros pontos dentro de sua própria classe versus aos pontos em outra classe. Ela varia entre -1 e 1, onde valores maiores são melhores.
+
+- Coeficiente de Davies-Bouldin: O coeficiente de Davies-Bouldin mede a similaridade entre cada classe e suas vizinhas mais próximas. Ele varia entre 0 e infinito, onde valores menores são melhores.
+
+- Coeficiente de V-measure: O coeficiente de V-measure é uma medida harmônica entre precisão e recall para avaliar o desempenho de agrupamento. Ele varia entre 0 e 1, onde valores maiores são melhores.
+
+- Índice de Rand: O índice de Rand é uma medida de similaridade entre duas estruturas de agrupamento, geralmente entre a estrutura de agrupamento gerada pelo algoritmo e a estrutura de agrupamento verdadeira. Ele varia entre 0 e 1, onde valores maiores são melhores.
+
+- Método de Elbow: O método de elbow é um método gráfico para determinar o número ótimo de clusters a serem usados. Ele se base no gráfico do erro quadrático total versus o número de clusters.
+
+- Índice Calinski-Harabasz: O índice Calinski-Harabasz é uma métrica que mede a relação entre a variância dentro de um cluster e a variância entre clusters. Quanto maior for o valor do índice, melhor é o agrupamento.
+
+
+
