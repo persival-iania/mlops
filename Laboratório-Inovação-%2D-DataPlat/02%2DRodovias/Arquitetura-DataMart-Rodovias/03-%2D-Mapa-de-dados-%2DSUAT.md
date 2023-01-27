@@ -12,7 +12,7 @@ Obs: A rodovia AUTOBAN foi parâmetro para O rastreamento de colunas diferentes 
 - SPVIAS   
 - RODONORTE
   * Tabela **ADMCOB** não possui as colunas **FLEMV** e **CDORIGEM_EMV** que estão presentes na AUTOBAN.
-  * Tabela **PRACA** não possui a coluna **CDORIGEM_EMV** que está presente na AUTOBAN.
+  * Tabela **PRACA** não possui a coluna **NMPRACA_ARTESP** que está presente na AUTOBAN.
 - VIALAGOS 
 - MSVIA
   * Tabela **CATEGORIA** possui a coluna **FLEXPORTA_SEFAZ** que não está presente na AUTOBAN.
