@@ -79,7 +79,7 @@ Verificar no arquivo MAPA_TBL_KCOR_MSVIAS disponibilizado na página abaixo.
      - TAUXVITPOSICOES
      - TAUXVITSITUACOES
      - TSYSUSUARIOS
-
+Verificar no arquivo MAPA_TBL_KCOR_VIALAGOS disponibilizado na página abaixo.
 
 **MAPA DE TABELAS:**
 
