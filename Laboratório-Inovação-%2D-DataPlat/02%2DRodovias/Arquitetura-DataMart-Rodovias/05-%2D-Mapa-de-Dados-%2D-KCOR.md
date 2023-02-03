@@ -14,7 +14,8 @@ Obs: A rodovia AUTOBAN foi parâmetro para o rastreamento de colunas diferentes 
 Verificar no arquivo MAPA_TBL_KCOR_SPVIAS disponibilizado na página abaixo.
 
 - MSVIAS
-  * As seguintes tabelas apresentam diferenças em números de colunas ou em composição de suas primary keys:
+  * As seguintes tabelas apresentam diferenças em números de colunas ou em composição de suas primary keys comparadas a estrutura da AUTOBAN:
+
     - TABACIDENTES
     - TABACIDENTES
     - TABOCORRENCIAS
@@ -46,10 +47,11 @@ Verificar no arquivo MAPA_TBL_KCOR_SPVIAS disponibilizado na página abaixo.
     - TAUXVITSITUACOES
     - TSYSUSUARIOS
 
-Verificar no arquivo MAPA_TBL_KCOR_MSVIAS disponibilizado na página abaixo.
+As diferenças podem ser verificadas no arquivo MAPA_TBL_KCOR_MSVIAS disponibilizado na página abaixo.
    
 - VIALAGOS 
-   * As seguintes tabelas apresentam diferenças em números de colunas ou em composição de suas primary keys:
+   * As seguintes tabelas apresentam diferenças em números de colunas ou em composição de suas primary keys comparadas a estrutura da AUTOBAN:
+
      - TABACIDENTES
      - TABANIMAIS
      - TABOCORRENCIAS
@@ -79,7 +81,46 @@ Verificar no arquivo MAPA_TBL_KCOR_MSVIAS disponibilizado na página abaixo.
      - TAUXVITPOSICOES
      - TAUXVITSITUACOES
      - TSYSUSUARIOS
-Verificar no arquivo MAPA_TBL_KCOR_VIALAGOS disponibilizado na página abaixo.
+
+As diferenças podem ser verificadas no  arquivo MAPA_TBL_KCOR_VIALAGOS disponibilizado na página abaixo.
+
+- NOVADUTRA
+   * As seguintes tabelas apresentam diferenças em números de colunas ou em composição de suas primary keys comparadas a estrutura da AUTOBAN:
+
+     - TABACIDENTES
+     - TABANIMAIS
+     - TABOCORRENCIAS
+     - TABPROVIDENCIASTOMADAS
+     - TABRECURSOSACIONADOS
+     - TABRECURSOSCOBERTURAS
+     - TABRECURSOSCONTROLE
+     - TABRECURSOSPERC
+     - TABVEICULOSENVOLVIDOS
+     - TABVITIMAS
+     - TAUXANIMAIS
+     - TAUXBASES
+     - TAUXCAUSASPROVAVEIS
+     - TAUXCONCESSIONARIAS
+     - TAUXCONDICOESTRAFEGO
+     - TAUXFUNCIONARIOS
+     - TAUXGPS
+     - TAUXLOCAIS
+     - TAUXRODOVIAS
+     - TAUXSENTIDOS
+     - TAUXTIPOSACIDENTES
+     - TAUXTIPOSACIDENTESSUB
+     - TAUXTIPOSATENDIMENTOS
+     - TAUXTIPOSCOBERTURAS
+     - TAUXTIPOSOCORRENCIAS
+     - TAUXTIPOSPROVANIMAIS
+     - TAUXTIPOSPROVIDENCIAS
+     - TAUXTIPOSRECURSOS
+     - TAUXVITPOSICOES
+     - TAUXVITPOSICOES
+     - TSYSUSUARIOS
+
+As diferenças podem ser verificadas no  arquivo MAPA_TBL_KCOR_NOVADUTRA disponibilizado na página abaixo.
+  
 
 **MAPA DE TABELAS:**
 
@@ -91,7 +132,10 @@ VIALAGOS - [MAPA_TBL_KCOR_VIALAGOS.xlsx](/.attachments/MAPA_TBL_KCOR_VIALAGOS-34
 
 MSVIA - [MAPA_TBL_KCOR_MSVIAS.xlsx](/.attachments/MAPA_TBL_KCOR_MSVIAS-78f7c2f7-ea1e-487c-beaa-f499b288428b.xlsx)
 
-Todos os mapeamentos estão disponíveis também no Sharepoint abaixo.
+NOVADUTRA- [MAPA_TBL_KCOR_NOVADUTRA.xlsx](/.attachments/MAPA_TBL_KCOR_NOVADUTRA-5138fff1-1e94-4fc6-81c0-57820c98d491.xlsx)
+
+Todos os mapeamentos também estão disponíveis no Sharepoint abaixo.
 
 Sharepoint:
-https://grupoccr.sharepoint.com/sites/LaboratriodeInovao/Documentos%20Compartilhados/Forms/AllItems.aspx?ga=1&id=%2Fsites%2FLaboratriodeInovao%2FDocumentos%20Compartilhados%2FProjetos%2FDocumenta%C3%A7%C3%A3o%20Projetos%2FRodovias%2FDataMart%2DRodovias%2FMapaTabelas%5FTOR%5FKCOR&viewid=92e83c7e%2D1932%2D4368%2Dbf46%2Dfac1f2309c17
+
+[https://grupoccr.sharepoint.com/sites/LaboratriodeInovao/Documentos%20Compartilhados/Forms/AllItems.aspx?ga=1&id=%2Fsites%2FLaboratriodeInovao%2FDocumentos%20Compartilhados%2FProjetos%2FDocumenta%C3%A7%C3%A3o%20Projetos%2FRodovias%2FDataMart%2DRodovias%2FMapaTabelas%5FTOR%5FKCOR%2FEngenharia&viewid=92e83c7e%2D1932%2D4368%2Dbf46%2Dfac1f2309c17]()
