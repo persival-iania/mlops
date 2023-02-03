@@ -1,4 +1,4 @@
-# Mapa de dados - SUAT
+# Mapa de dados - KCOR
 Mapeamento de dados do sistema KCOR referente as rodovias sob concessão da CCR.
 
 Obs: A rodovia AUTOBAN foi parâmetro para o rastreamento de colunas diferentes em  tabelas que são utilizadas em todas as rodovias.
