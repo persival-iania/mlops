@@ -138,4 +138,4 @@ Todos os mapeamentos também estão disponíveis no Sharepoint abaixo.
 
 Sharepoint:
 
-[=1&id=%2Fsites%2FLaboratriodeInovao%2FDocumentos%20Compartilhados%2FProjetos%2FDocumentação%20Projetos%2FRodovias%2FDataMart-Rodovias%2FMapaTabelas_TOR_KCOR%2FEngenharia&viewid=92e83c7e-1932-4368-bf46-fac1f2309c17]()
+[https://grupoccr.sharepoint.com/sites/LaboratriodeInovao/Documentos%20Compartilhados/Forms/AllItems.aspx?ga=1&id=%2Fsites%2FLaboratriodeInovao%2FDocumentos%20Compartilhados%2FProjetos%2FDocumenta%C3%A7%C3%A3o%20Projetos%2FRodovias%2FDataMart%2DRodovias%2FMapaTabelas%5FTOR%5FKCOR%2FEngenharia&viewid=92e83c7e%2D1932%2D4368%2Dbf46%2Dfac1f2309c17]()
