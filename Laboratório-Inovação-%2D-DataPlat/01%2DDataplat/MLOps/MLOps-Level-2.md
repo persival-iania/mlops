@@ -6,7 +6,7 @@ Reconhecemos 3 níveis de maturidade aqui na CCR:
 
 - *Level 0* **Manual Pipelines** todas as etapas do ciclo são executadas, porém manualmente
 - *Level 1* **Continuous Trainning** pipeline evolui para treinamento dos modelos de forma contínua
-- *Level 1* **Continuous Deployment** pipeline evolui para CI/CD+ Continuous Training
+- *Level 2* **Continuous Deployment** pipeline evolui para CI/CD+ Continuous Training
 
 
 # Level 0:  Manual Pipelines
