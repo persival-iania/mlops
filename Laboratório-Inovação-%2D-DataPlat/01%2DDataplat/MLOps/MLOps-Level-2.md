@@ -1,4 +1,4 @@
-<B style="font-weight:normal"  id="docs-internal-guid-318f9ed9-7fff-fb23-1321-68387315bdb1"><IMG  width="781px;"  height="438px;"  src="https://lh6.googleusercontent.com/bxCbUljgEQRXrXbNjCn6NOCQLtdy9paX6LC3LLNYW7U-_rVoXjPGwM-sQzpGm2wdYW-WfzY1IIuvr3QlWgd3MOHOX9dYKQY62mlCai6PqUAi7ZgCmnObsbARl9dgaj3k9NXTHOL4_uOaJyw-ic6bRGSjI0JZ06rEGaxKn07VzvMDlodzqxRKM5Pu4U2B80k1=nw"/></B>
+![DALL·E 2023-02-06 23.23.34 - Robots learning at school  digital art.png](/.attachments/DALL·E%202023-02-06%2023.23.34%20-%20Robots%20learning%20at%20school%20%20digital%20art-f8a29807-6f6f-485b-ae16-e84fb95c84fe.png)
 
 # Nível de Maturidade MLOps
 
