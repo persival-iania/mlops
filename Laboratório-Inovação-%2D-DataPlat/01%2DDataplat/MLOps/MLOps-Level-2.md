@@ -45,11 +45,10 @@ Os componentes que compõem o nível 2 do MLOps são muito semelhantes aos do n�
 - Testar e Construir serviços (Integração Contínua).
 - Serviços de implantação (implantação contínua).
 - Orquestração de pipeline.
-- O pipeline pode ser dividido em 6 etapas:
 
-## Desenvolvimento e experimentação. 
+## O pipeline pode ser dividido em 6 etapas:
 
-1. É aqui que diferentes algoritmos e técnicas de modelagem são experimentados e cada etapa do experimento é orquestrada. A saída final do estágio 1 é o código-fonte das etapas do pipeline que é enviado para um repositório de código.
+1. Desenvolvimento e experimentação: é aqui que diferentes algoritmos e técnicas de modelagem são experimentados e cada etapa do experimento é orquestrada. A saída final do estágio 1 é o código-fonte das etapas do pipeline que é enviado para um repositório de código.
 
 1. Integração Contínua de pipeline. Depois que o código é enviado para um repositório de código, ele aciona um pipeline de teste e cria os componentes necessários (pacotes, artefatos etc.) que precisam ser implantados em um estágio posterior.
 
