@@ -23,17 +23,15 @@ Embora possa variar de acordo com suas necessidades, uma configuração típica 
 
 ##Entrega Contínua (**C**ontinous **D**eployment)
 
-###1. Implantar
+###1. Implantar (deploy)
 - Implantar notebooks
 - Implantar bibliotecas
 
-###2. Testar
+###2. Testar (test)
 - executar testes automatizados
 - reportar resultados dos testes
 
-###3. Operar
-- Agendar programaticamente os fluxos de trabalho
-- engenharia de dados
-- DataOps
-- MLOps
+###3. Operar (operate)
+- Agendar programaticamente os fluxos de trabalho para DataOps e MLOps 
+
 
