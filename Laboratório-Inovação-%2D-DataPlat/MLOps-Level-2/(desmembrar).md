@@ -1,0 +1,1023 @@
+Integração e entrega contínuas no Azure Databricks usando o Azure DevOps
+Artigo
+26/01/2023
+34 minutos para o fim da leitura
+Neste artigo
+Visão geral de um pipeline típico de CI/CD do Azure Databricks
+Desenvolver e confirmar seu código
+Sobre o exemplo
+Antes de começar
+Etapa 1: definir o pipeline de build
+Etapa 2: adicionar os arquivos de origem de teste de unidade ao repositório
+Etapa 3: adicionar o script de empacotamento da roda do Python ao repositório
+Etapa 4: adicionar o notebook Python ao repositório
+Etapa 5: definir o pipeline de lançamento
+Etapa 6: definir variáveis de ambiente para o pipeline de lançamento
+Etapa 7: configurar o agente de versão para o pipeline de lançamento
+Etapa 8: definir a versão do Python para o agente de versão
+Etapa 9: desempacotar o artefato de build do pipeline de build
+Etapa 10. Instalar a CLI do Databricks e o relatórios XML unittest
+Etapa 11: implantar o notebook no workspace
+Etapa 12: implantar a biblioteca no DBFS
+Etapa 13: instalar a biblioteca no cluster
+Etapa 14: executar testes de integração no notebook Python
+Etapa 15: executar o notebook
+Etapa 16: gerar e avaliar os resultados de teste
+Etapa 17: publicar resultados de teste
+Etapa 18: executar os pipelines de lançamento e de build
+Observação
+
+Este artigo aborda o Azure DevOps, que não é fornecido nem tem suporte do Databricks. Para entrar em contato com o provedor, confira o Suporte do Azure DevOps Services .
+
+CI/CD (integração contínua e entrega contínua) refere-se ao processo de desenvolvimento e entrega de software em ciclos curtos e frequentes por meio do uso de pipelines de automação.
+
+A integração contínua começa com a prática de fazer commit do seu código com alguma frequência para um branch em um repositório de código-fonte. Cada confirmação é mesclada com as confirmações de outros desenvolvedores para garantir que nenhum conflito foi introduzido. As alterações são então validadas criando um build e executando testes automatizados nesse build. Esse processo, em última análise, resulta em um artefato ou pacote de implantação, que terminará sendo implantado em um ambiente de destino, neste caso do artigo um workspace do Azure Databricks.
+
+
+Visão geral de um pipeline típico de CI/CD do Azure Databricks
+Embora possa variar de acordo com suas necessidades, uma configuração típica de um pipeline do Azure Databricks inclui as seguintes etapas:
+
+Integração contínua:
+
+Código
+Desenvolve códigos e testes de unidade em um notebook do Azure Databricks ou usando um IDE externo.
+Executa testes manualmente.
+Faz commit de código e testa em um branch do git.
+Build
+Coleta código e testes novos e atualizados.
+Executa testes automatizados.
+Cria bibliotecas e códigos não notebook do Apache Spark.
+Versão: gere um artefato de versão.
+Entrega contínua:
+
+Implantar
+Implanta notebooks.
+Implanta bibliotecas.
+Testar: executa testes automatizados e relata os resultados.
+Operar: agenda programaticamente os fluxos de trabalho de engenharia de dados, análise e aprendizado de máquina.
+
+Desenvolver e confirmar seu código
+Uma das primeiras etapas na criação de um pipeline de CI/CD é decidir uma estratégia de confirmação e ramificação de código para gerenciar o desenvolvimento e a integração de código novo e atualizado sem afetar negativamente o código atualmente em produção. Parte dessa decisão envolve escolher um sistema de controle de versão para conter seu código e facilitar a promoção desse código. O Azure Databricks dá suporte a integrações com vários provedores Git, que permitem confirmar códigos e notebooks em um repositório Git.
+
+Se o sistema de controle de versão não estiver entre os que têm suporte por meio da integração direta do notebook, ou se você quiser mais flexibilidade e controle do que a integração de provedor Git de autoatendimento, você poderá usar a documentação de &configuração da CLI do Databricks para exportar notebooks e fazer commit deles do computador local. Esse script deve ser executado de dentro de um repositório git local que está definido para sincronizar com o repositório remoto apropriado. Quando executado, esse script deve fazer o seguinte:
+
+Fazer check-out do branch desejado.
+Efetuar pull de novas alterações do branch remoto.
+Exportar código e notebooks do workspace do Azure Databricks usando a CLI do workspace do Azure Databricks.
+Solicitar ao usuário uma mensagem de confirmação ou usar o padrão se uma mensagem não for fornecida.
+Fazer commit de código e notebooks atualizados para o branch local.
+Efetuar push das alterações para o branch no repositório remoto.
+O script a seguir executa estas etapas:
+
+git checkout <branch>
+git pull
+databricks workspace export_dir --profile <profile> -o <path> ./Workspace
+
+dt=`date '+%Y-%m-%d %H:%M:%S'`
+msg_default="DB export on $dt"
+read -p "Enter the commit comment [$msg_default]: " msg
+msg=${msg:-$msg_default}
+echo $msg
+
+git add .
+git commit -m "<commit-message>"
+git push
+Se você preferir desenvolver em um IDE em vez de em notebooks do Azure Databricks, poderá usar os recursos de integração do provedor de Git a IDEs modernos ou à CLI do Git para fazer commit do código.
+
+O Azure Databricks fornece o Databricks Connect, que conecta IDEs a clusters do Azure Databricks. Isso é especialmente útil ao desenvolver bibliotecas, pois permite que você execute e faça o teste de unidade do seu código em clusters do Azure Databricks sem precisar implantar esse código. Confira Limitações do Databricks Connect para determinar se há suporte para seu caso de uso.
+
+Observação
+
+Embora esse exemplo do artigo demonstre o Databricks Connect, o Databricks recomenda usar o dbx do Databricks Labs para desenvolvimento local em vez do Databricks Connect.
+
+Dependendo da sua estratégia de ramificação e do processo de promoção, o ponto de início de um pipeline de CI/CD vai variar. No entanto, o código confirmado de vários colaboradores acabará sendo mesclado em um branch designado a ser criado e implantado. As etapas de gerenciamento de branch são executadas fora do Azure Databricks, usando as interfaces fornecidas pelo sistema de controle de versão.
+
+Há várias ferramentas de CI/CD que você pode usar para gerenciar e executar seu pipeline. Este artigo ilustra como usar o Azure DevOps . A CI/CD é um padrão de design, portanto, as etapas e os estágios descritos neste exemplo do artigo devem ser transferidos com algumas alterações para a linguagem de definição de pipeline de cada ferramenta. Além disso, grande parte do código neste pipeline de exemplo executa o código Python padrão, que você pode invocar em outras ferramentas.
+
+O restante deste artigo descreve um par de pipelines de exemplo no Azure DevOps que você pode adaptar às suas próprias necessidades para o Azure Databricks.
+
+
+Sobre o exemplo
+O exemplo deste artigo usa dois pipelines para criar e liberar código Python de exemplo, um notebook Python de exemplo e arquivos de configurações de build e versão relacionados, todos armazenados em um repositório Git remoto.
+
+O primeiro pipeline, conhecido como pipeline de build, prepara artefatos de build para o segundo pipeline, conhecido como pipeline de lançamento. Separar o pipeline de build do pipeline de lançamento permite que você crie um build sem implantá-lo, ou implantar artefatos de vários builds de uma só vez.
+
+Neste exemplo, você cria os pipelines de build e de lançamento, que fazem o seguinte:
+
+Criam uma máquina virtual do Azure para o pipeline de build. Essa máquina virtual usa a versão correta do Python para corresponder àquela no cluster do Azure Databricks remoto.
+Instala ferramentas do Python na máquina virtual para testar e empacotar o código Python de exemplo.
+Instala e configura na máquina virtual uma versão do Databricks Connect para corresponder àquela no cluster remoto.
+Copiam os arquivos do repositório Git para a máquina virtual.
+Executam testes de unidade no código Python e publicam os resultados do teste.
+Se os testes de unidade forem aprovados, empacotam o código Python em uma roda do Python e, em seguida, cria um arquivo tar gzip'ed que contém a roda e os arquivos de configurações de versão relacionados.
+Copia o arquivo tar gzip'ed como um arquivo zip em um local para o pipeline de lançamento acessar.
+Criam outra máquina virtual do Azure para o pipeline de lançamento. Essa máquina virtual também usa a versão correta do Python para corresponder àquela no cluster do Azure Databricks remoto.
+Obtêm o arquivo zip do local do pipeline de build e, em seguida, descompactam o arquivo zip para obter a roda do Python e os arquivos de configurações de versão relacionados.
+Implantam o notebook Python de exemplo em seu workspace remoto do Azure Databricks.
+Implantam a roda do Python e os arquivos de configurações de versão relacionados ao workspace do Azure Databricks remoto.
+Instalam a roda do Python implantado no cluster do Azure Databricks remoto.
+Executam testes de integrações no notebook Python implantado e ele chama uma função na roda do Python implantado e publica os resultados do teste.
+
+Antes de começar
+Para usar o exemplo deste artigo, você deve ter:
+
+Um projeto existente do Azure DevOps.  Se ainda não tiver um projeto, criar um projeto no Azure DevOps .
+Um repositório existente com um provedor Git com suporte do Azure DevOps. Você adicionará o código de exemplo do Python, o notebook Python de exemplo e os arquivos de configurações de versão relacionados a esse repositório. Se você ainda não tiver um repositório, crie um seguindo as instruções do provedor Git. Em seguida, conecte o projeto do Azure DevOps ao repositório existente, caso ainda não tenha feito isso. Para obter instruções, siga os links em Repositórios de origem com suporte .
+
+Etapa 1: definir o pipeline de build
+O Azure DevOps oferece uma interface hospedada em nuvem para definir os estágios do seu pipeline de CI/CD usando o YAML. Para obter mais informações sobre o Azure DevOps e pipelines, consulte a documentação do Azure DevOps .
+
+Nesta etapa você define o pipeline de build, que executa testes de unidade e cria um artefato de implantação. Para implantar o código em um workspace do Azure Databricks, especifique esse pipeline de build como um artefato de implantação em um pipeline de lançamento. Defina esse pipeline de lançamento mais tarde na Etapa 5.
+
+Para executar pipelines de build, o Azure DevOps fornece agentes de execução sob demanda hospedados na nuvem que dão suporte a implantações no Kubernetes, VMs, Azure Functions, Aplicativos Web do Azure e muitos outros destinos. Neste exemplo, você usará um agente sob demanda para automatizar a implantação de código no workspace do Azure Databricks de destino. As ferramentas ou pacotes exigidos pelo pipeline de build devem ser definidos no script de pipeline de build e instalados no agente no tempo de execução. Este exemplo define e instala ferramentas e pacotes no agente que correspondem àqueles no cluster do Azure Databricks de destino e este exemplo usa o Databricks Runtime 10.4 LTS, que inclui o Python 3.8.
+
+Agora, defina o pipeline de build da seguinte maneira:
+
+Entre no Azure DevOps  e abra o projeto do Azure DevOps.
+
+Clique em Pipelines na barra lateral e clique em Pipelines no menu Pipelines.
+
+Menu do Pipeline do Azure DevOps
+
+Clique no botão Criar Pipeline para abrir o editor de pipeline, no qual você definirá seu script de pipeline de build no arquivo azure-pipelines.yml exibido. Se o editor de pipeline não estiver visível depois que você clicar no botão Criar Pipeline, selecione o nome do pipeline de build e clique em Editar.
+
+Você pode usar o seletor do GIT branch Seletor do GIT branch para personalizar o processo de build de cada branch no seu repositório Git. É uma melhor prática de CI/CD não fazer o trabalho de produção diretamente no branch main do repositório; este exemplo considera que já existe um branch chamado release no repositório a ser usado.
+
+Editor do Pipeline do Azure DevOps
+
+O script de pipeline de build azure-pipelines.yml é armazenado por padrão no diretório raiz do repositório Git remoto associado ao pipeline.
+
+Configure as variáveis de ambiente que os pipelines de build referenciam clicando no botão Variáveis.
+
+Para este exemplo, defina as cinco variáveis de ambiente a seguir e lembre-se de clicar em Salvar depois de defini-las:
+
+DATABRICKS_ADDRESS, que representa a URL por workspace do workspace do Azure Databricks, começando com https://, por exemplo https://adb-<workspace-id>.<random-number>.azuredatabricks.net. Não inclua o / à direita após .net.
+
+DATABRICKS_API_TOKEN, que representa o token de acesso pessoal do Azure Databricks ou o token do Azure AD (Azure Active Directory).
+
+DATABRICKS_CLUSTER_ID, que representa a ID do cluster do Azure Databricks em seu workspace.
+
+DATABRICKS_ORG_ID, que é a ID do workspace do seu workspace.
+
+DATABRICKS_PORT, que representa a porta usada pelo Databricks Connect. Esse valor normalmente é 15001.
+
+Substitua o conteúdo inicial do arquivo azure-pipelines.yml do pipeline pela definição a seguir e clique em Salvar.
+
+# Specify the trigger event to start the build pipeline.
+# In this case, new code merged into the release branch initiates a new build.
+trigger:
+- release
+
+# Specify the operating system for the agent that runs on the Azure virtual
+# machine for the build pipeline (known as the build agent). The virtual
+# machine image should match the one on the Azure Databricks cluster as
+# closely as possible. For example, Databricks Runtime 10.4 LTS runs
+# Ubuntu 20.04.4 LTS, which maps to the Ubuntu 20.04 virtual machine
+# image in the Azure Pipeline agent pool. See
+# https://learn.microsoft.com/azure/devops/pipelines/agents/hosted#software
+pool:
+  vmImage: ubuntu-20.04
+
+# Install Python. The version of Python must match the version on the
+# Azure Databricks cluster. This pipeline assumes that you are using
+# Databricks Runtime 10.4 LTS on the cluster.
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.8'
+  inputs:
+    versionSpec: 3.8
+
+# Install required Python modules and their dependencies. These
+# include pytest, which is needed to run unit tests on a cluster,
+# and setuptools, which is needed to create a Python wheel. Also
+# install the version of Databricks Connect that is compatible
+# with Databricks Runtime 10.4 LTS on the cluster.
+- script: |
+    pip install pytest requests setuptools wheel
+    pip install -U databricks-connect==10.4.*
+  displayName: 'Load Python dependencies'
+
+# Use environment variables to pass Azure Databricks workspace and cluster
+# information to the Databricks Connect configuration function.
+- script: |
+    echo "y
+    $(DATABRICKS_ADDRESS)
+    $(DATABRICKS_API_TOKEN)
+    $(DATABRICKS_CLUSTER_ID)
+    $(DATABRICKS_ORG_ID)
+    $(DATABRICKS_PORT)" | databricks-connect configure
+  displayName: 'Configure Databricks Connect'
+
+# Download the files from the designated branch in the Git remote repository
+# onto the build agent.
+- checkout: self
+  persistCredentials: true
+  clean: true
+
+# For library code developed outside of an Azure Databricks notebook, the
+# process is like traditional software development practices. You write a
+# unit test using a testing framework, such as the Python pytest module, and
+# you use JUnit-formatted XML files to store the test results.
+- script: |
+    python -m pytest --junit-xml=$(Build.Repository.LocalPath)/logs/TEST-LOCAL.xml $(Build.Repository.LocalPath)/libraries/python/dbxdemo/test*.py || true
+  displayName: 'Run Python unit tests for library code'
+
+# Publishes the test results to Azure DevOps. This lets you visualize
+# reports and dashboards related to the status of the build process.
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '**/TEST-*.xml'
+    failTaskOnFailedTests: true
+    publishRunAttachments: true
+
+# Package the example Python code into a Python wheel.
+- script: |
+    cd $(Build.Repository.LocalPath)/libraries/python/dbxdemo
+    python3 setup.py sdist bdist_wheel
+    ls dist/
+  displayName: 'Build Python Wheel for Libs'
+
+# Generate the deployment artifacts. To do this, the build agent gathers
+# all the new or updated code to be deployed to the Azure Databricks
+# environment, including the sample Python notebook, the Python wheel
+# library that was generated by the build process, related release settings
+# files, and the result summary of the tests for archiving purposes.
+# Use git diff to flag files that were added in the most recent Git merge.
+# Then add the Python wheel file that you just created along with utility
+# scripts used by the release pipeline.
+# The implementation in your pipeline will likely be different.
+# The objective here is to add all files intended for the current release.
+- script: |
+    git diff --name-only --diff-filter=AMR HEAD^1 HEAD | xargs -I '{}' cp --parents -r '{}' $(Build.BinariesDirectory)
+    mkdir -p $(Build.BinariesDirectory)/libraries/python/libs
+    cp $(Build.Repository.LocalPath)/libraries/python/dbxdemo/dist/*.* $(Build.BinariesDirectory)/libraries/python/libs
+    mkdir -p $(Build.BinariesDirectory)/cicd-scripts
+    cp $(Build.Repository.LocalPath)/cicd-scripts/*.* $(Build.BinariesDirectory)/cicd-scripts
+    mkdir -p $(Build.BinariesDirectory)/notebooks
+    cp $(Build.Repository.LocalPath)/notebooks/*.* $(Build.BinariesDirectory)/notebooks
+  displayName: 'Get Changes'
+
+# Create the deployment artifact and then publish it to the
+# artifact repository.
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    ArtifactName: 'DatabricksBuild'
+
+Etapa 2: adicionar os arquivos de origem de teste de unidade ao repositório
+Para permitir que o agente de build execute os testes de unidade, adicione os três arquivos addcol.py, test-addcol.py e __init__.py a seguir, conforme mostrado, em um caminho de pasta libraries/python/dbxdemo criado na raiz do repositório Git remoto associado.
+
+O primeiro arquivo, addcol.py, representa uma função de biblioteca que pode ser instalada em um cluster do Azure Databricks. Essa função simples adiciona uma nova coluna, populada por um literal, a um DataFrame do Apache Spark.
+
+# addcol.py
+import pyspark.sql.functions as F
+
+def with_status(df):
+  return df.withColumn("status", F.lit("checked"))
+O segundo arquivo, test-addcol.py, testa o código do arquivo addcol.py passando um objeto DataFrame fictício para a função with_status anterior. O resultado é então comparado a um objeto do DataFrame que contém os valores esperados. Se os valores corresponderem, o teste será aprovado.
+
+# test-addcol.py
+import pytest
+
+from pyspark.sql import SparkSession
+from .addcol import with_status
+
+@pytest.fixture
+def spark() -> SparkSession:
+  return SparkSession.builder.getOrCreate()
+
+def test_with_status(spark):
+  source_data = [
+    ("pete", "pan", "peter.pan@databricks.com"),
+    ("jason", "argonaut", "jason.argonaut@databricks.com")
+  ]
+  source_df = spark.createDataFrame(
+    source_data,
+    ["first_name", "last_name", "email"]
+  )
+
+  actual_df = with_status(source_df)
+
+  expected_data = [
+    ("pete", "pan", "peter.pan@databricks.com", "checked"),
+    ("jason", "argonaut", "jason.argonaut@databricks.com", "checked")
+  ]
+
+  expected_df = spark.createDataFrame(
+    expected_data,
+    ["first_name", "last_name", "email", "status"]
+  )
+
+  assert(expected_df.collect() == actual_df.collect())
+O terceiro arquivo, __init__.py, deve estar em branco e também deve existir no caminho da pasta libraries/python/dbxdemo. Esse arquivo permite que o arquivo test-addcol.py carregue o arquivo addcol.py como uma biblioteca.
+
+
+Etapa 3: adicionar o script de empacotamento da roda do Python ao repositório
+Para permitir que o agente de build use as Setuptools  do Python para empacotar a roda do Python para dar ao pipeline de lançamento, adicione uma versão mínima do seguinte arquivo setup.py ao caminho da pasta libraries/python/dbxdemo no repositório Git remoto associado:
+
+# setup.py
+from setuptools import setup, find_packages
+
+setup(
+  name = 'dbxdemo',
+  version = '0.1.0',
+  packages = ['.']
+)
+
+Etapa 4: adicionar o notebook Python ao repositório
+Para permitir que o agente de build forneça o notebook Python de exemplo ao pipeline de lançamento, adicione o seguinte arquivo dbxdemo-notebook.py a uma pasta notebooks criada na raiz do repositório Git remoto associado:
+
+# Databricks notebook source
+import sys
+sys.path.append("/databricks/python3/lib/python3.8/site-packages")
+
+# COMMAND ----------
+
+import unittest
+from addcol import *
+
+class TestNotebook(unittest.TestCase):
+
+  def test_with_status(self):
+    source_data = [
+      ("pete", "pan", "peter.pan@databricks.com"),
+      ("jason", "argonaut", "jason.argonaut@databricks.com")
+    ]
+
+    source_df = spark.createDataFrame(
+      source_data,
+      ["first_name", "last_name", "email"]
+    )
+
+    actual_df = with_status(source_df)
+
+    expected_data = [
+      ("pete", "pan", "peter.pan@databricks.com", "checked"),
+      ("jason", "argonaut", "jason.argonaut@databricks.com", "checked")
+    ]
+
+    expected_df = spark.createDataFrame(
+      expected_data,
+      ["first_name", "last_name", "email", "status"]
+    )
+
+    self.assertEqual(expected_df.collect(), actual_df.collect())
+
+unittest.main(argv = [''], verbosity = 2, exit = False)
+
+Etapa 5: definir o pipeline de lançamento
+O pipeline de lançamento implanta os artefatos de build em um ambiente do Azure Databricks. Separar o pipeline de liberação do pipeline de build nesta etapa permite que nas etapas anteriores você crie um build sem implantá-lo, ou que implante artefatos de vários builds de uma só vez.
+
+No projeto do Azure DevOps, no menu Pipelines na barra lateral, clique em Lançamentos.
+
+Lançamentos do Azure DevOps
+
+Clique em Novo pipeline.
+
+Na lateral da tela, há uma lista de modelos em destaque de padrões comuns de implantação. Nesse pipeline de lançamento, clique em Trabalho vazio.
+
+Pipeline de lançamento 1 do Azure DevOps
+
+Na caixa Artefatos na lateral da tela, clique em Adicionar. No painel Adicionar um artefato, em Origem (pipeline de build), selecione o pipeline de build criado anteriormente. Clique em Adicionar.
+
+Pipeline de lançamento 2 do Azure DevOps
+
+Você pode configurar como o pipeline é disparado clicando no Ícone de Raio, que exibirá as opções de disparo na lateral da tela. Se você quiser que um lançamento seja iniciado automaticamente com base na disponibilidade do artefato de compilação ou após um fluxo de trabalho de solicitação de pull, habilite o gatilho apropriado. Para este exemplo, na última etapa deste artigo, você dispara manualmente o pipeline de build e, em seguida, o pipeline de lançamento.
+
+Fase 1 do pipeline de lançamento do Azure DevOps
+
+Clique em Salvar> OK.
+
+
+Etapa 6: definir variáveis de ambiente para o pipeline de lançamento
+O pipeline de lançamento depende das três variáveis de ambiente a seguir, que você pode adicionar clicando em Adicionar na seção Variáveis de pipeline na guia Variáveis, com um Escopo do Estágio 1:
+
+DATABRICKS_HOST, que representa a URL por workspace do workspace do Azure Databricks, começando com https://, por exemplo https://adb-<workspace-id>.<random-number>.azuredatabricks.net. Não inclua o / à direita após .net. Esse deve ser o mesmo valor que DATABRICKS_ADDRESS definido anteriormente no pipeline de build. (O Databricks Connect no pipeline de build espera encontrar uma variável de ambiente DATABRICKS_ADDRESS, enquanto a CLI do Databricks no pipeline de lançamento espera que essa variável de ambiente seja nomeada como DATABRICKS_HOST.)
+
+DATABRICKS_TOKEN, que representa o token de acesso pessoal do Azure Databricks ou o token do Azure AD (Azure Active Directory). Esse deve ser o mesmo valor que DATABRICKS_API_TOKEN definido anteriormente no pipeline de build. (No pipeline de build, o Databricks Connect espera encontrar uma variável de ambiente DATABRICKS_API_TOKEN. No pipeline de lançamento, a CLI do Databricks espera que essa variável de ambiente seja nomeada como DATABRICKS_TOKEN.)
+
+DATABRICKS_CLUSTER_ID, que representa a ID do cluster do Azure Databricks em seu workspace. Esse deve ser o mesmo valor que a variável de ambiente DATABRICKS_CLUSTER_ID definida anteriormente no pipeline de build.
+
+Variáveis de ambiente do pipeline de lançamento do Azure DevOps
+
+
+Etapa 7: configurar o agente de versão para o pipeline de lançamento
+Clique no link 1 trabalho, 0 tarefa no objeto Estágio 1.
+
+Adicionar fase do pipeline de lançamento do Azure DevOps
+
+Na guia Tarefas, clique em Trabalho do agente.
+
+Na seção Seleção do agente, para Pool de agentes, selecione Azure Pipelines.
+
+Para Especificação do Agente, selecione o mesmo agente que você especificou para o agente de build anteriormente, neste exemplo ubuntu-20.04.
+
+Definição de trabalho do agente de pipeline de lançamento do Azure DevOps
+
+Clique em Salvar> OK.
+
+
+Etapa 8: definir a versão do Python para o agente de versão
+Clique no sinal de adição na seção Trabalho do agente, indicada pela seta vermelha na figura a seguir. Uma lista pesquisável de tarefas disponíveis será exibida. Há também uma guia Marketplace para plug-ins de terceiros que podem ser usados para complementar as tarefas padrão do Azure DevOps. Você adicionará várias tarefas ao agente de versão durante as próximas etapas.
+
+Adicionar tarefa do Azure DevOps
+
+A primeira tarefa adicionada é Usar a versão do Python, localizada na guia Ferramenta. Se você não encontrar essa tarefa, use a caixa Pesquisar para procurá-la. Ao encontrar a caixa, selecione-a e clique no botão Adicionar próximo à tarefa Usar versão do Python.
+
+Definir versão 1 do Python do Azure DevOps
+
+Assim como no pipeline de build, você deseja garantir que a versão do Python seja compatível com os scripts chamados nas tarefas subsequentes. Nesse caso, clique na tarefa Usar Python 3.x próxima ao Trabalho do agente e, em seguida, defina a Especificação de versão como 3.8. Defina também o Nome de exibição como Use Python 3.8.
+
+Definir versão 2 do Python do Azure DevOps
+
+Clique em Salvar> OK.
+
+
+Etapa 9: desempacotar o artefato de build do pipeline de build
+Em seguida, faça com que o agente de versão extraia a roda do Python, os arquivos de configurações de versão relacionados e o notebook Python de exemplo do arquivo zip usando a tarefa Extrair arquivos: clique no sinal de adição na seção Trabalho do agente, selecione a tarefa Extrair arquivos na guia Utilitário e clique em Adicionar.
+
+Clique na tarefa Extrair arquivos próxima ao Trabalho do agente, defina Padrões de arquivo morto como **/*.zip e defina a pasta de destino como a variável do sistema $(Release.PrimaryArtifactSourceAlias)/Databricks. Defina também o Nome de exibição como Extract build pipeline artifact.
+
+Observação
+
+$(Release.PrimaryArtifactSourceAlias) representa um alias gerado pelo Azure DevOps para identificar o local de origem do artefato primário no agente de versão, por exemplo _<your-github-alias>.<your-github-repo-name>. O pipeline de lançamento define esse valor como a variável de ambiente RELEASE_PRIMARYARTIFACTSOURCEALIAS na fase Inicializar trabalho para o agente de versão. Confira Variáveis de lançamento e artefatos clássicos .
+
+Defina o Nome de exibição como Extract build pipeline artifact.
+
+Desempacotar Azure DevOps
+
+Clique em Salvar> OK.
+
+
+Etapa 10. Instalar a CLI do Databricks e o relatórios XML unittest
+Em seguida, instale a CLI do Databricks e o pacote de relatórios XML unittest no agente de versão, pois o agente de versão chamará a CLI do Databricks e unittest nas próximas tarefas. Para fazer isso, use a tarefa Bash: clique no sinal de adição novamente na seção Trabalho do agente, selecione a tarefa Bash na guia Utilitário e clique em Adicionar.
+
+Clique na tarefa Script bash próxima ao Trabalho do agente.
+
+Em Tipo, selecione Embutido.
+
+Substitua o conteúdo do Script pelo seguinte comando, que instala a CLI do Databricks:
+
+pip install databricks-cli
+pip install unittest-xml-reporting
+Defina o Nome de exibição como Install Databricks CLI and unittest XML reporting.
+
+Pacotes de instalação do pipeline de lançamento do Azure DevOps
+
+Clique em Salvar> OK.
+
+
+Etapa 11: implantar o notebook no workspace
+Em seguida, faça com que o agente de versão use a CLI do Databricks para implantar o notebook Python de exemplo no workspace do Azure Databricks usando outra tarefa bash: clique no sinal de adição novamente na seção Trabalho do agente, selecione a tarefa Bash na guia Utilitário e clique em Adicionar.
+
+Clique na tarefa Script bash próxima ao Trabalho do agente.
+
+Em Tipo, selecione Embutido.
+
+Substitua o conteúdo do Script pelo seguinte comando, que executa o subcomando databricks workspace import para copiar o notebook Python do agente de versão para o workspace do Azure Databricks:
+
+databricks workspace import --language=PYTHON --format=SOURCE --overwrite $(System.ArtifactsDirectory)/$(Release.PrimaryArtifactSourceAlias)/Databricks/notebooks/dbxdemo-notebook.py /Shared/dbxdemo-notebook.py
+Observação
+
+$(System.ArtifactsDirectory) representa o diretório do qual os artefatos são baixados durante a implantação de uma versão, por exemplo /home/vsts/work/r1/a. O pipeline de lançamento define esse valor como a variável de ambiente SYSTEM_ARTIFACTSDIRECTORY na fase Inicializar trabalho para o agente de versão. Confira Variáveis de lançamento e artefatos clássicos .
+
+Defina o Nome de exibição como Copy notebook to workspace.
+
+Notebook de cópia do pipeline de lançamento para o workspace do Azure DevOps
+
+Clique em Salvar> OK.
+
+
+Etapa 12: implantar a biblioteca no DBFS
+Em seguida, faça com que o agente de versão use a CLI do Databricks para implantar a biblioteca Python em um local DBFS no workspace do Azure Databricks usando outra tarefa bash: clique no sinal de adição novamente na seção Trabalho do agente, selecione a tarefa Bash na guia Utilitário e clique em Adicionar.
+
+Clique na tarefa Script bash próxima ao Trabalho do agente.
+
+Em Tipo, selecione Embutido.
+
+Substitua o conteúdo do Script pelo seguinte comando, que executa o subcomando databricks fs cp para copiar a biblioteca Python do agente de versão para o workspace do Azure Databricks:
+
+databricks fs cp  --overwrite $(System.ArtifactsDirectory)/$(Release.PrimaryArtifactSourceAlias)/Databricks/libraries/python/libs/dbxdemo-0.1.0-py3-none-any.whl dbfs:/libraries/python/libs/dbxdemo-0.1.0-py3-none-any.whl
+Defina o Nome de exibição como Copy Python wheel to workspace.
+
+Roda de cópia do pipeline de lançamento para o workspace do Azure DevOps
+
+Clique em Salvar> OK.
+
+
+Etapa 13: instalar a biblioteca no cluster
+Em seguida, faça com que o agente de versão instale a biblioteca que acabou de ser copiada para o workspace em um cluster específico dentro desse workspace. Para fazer isso, crie uma tarefa de Script Python: clique no sinal de adição novamente na seção Trabalho do agente, selecione a tarefa Script Python na guia Utilitário e clique em Adicionar.
+
+Clique na tarefa Executar um script Python próxima ao Trabalho do agente.
+
+Defina o Caminho do script como $(Release.PrimaryArtifactSourceAlias)/Databricks/cicd-scripts/installWhlLibrary.py. O script Python, installWhlLibrary.py, está no artefato criado pelo nosso pipeline de build. O script installWhlLibrary.py usa cinco argumentos, que você definirá nesta tarefa da seguinte maneira:
+
+shard - A URL do workspace de destino (por exemplo, https://<region>.azuredatabricks.net). Isso mapeia para a variável de ambiente DATABRICKS_HOST definida anteriormente para o pipeline de lançamento. Essa URL não deve incluir o / à direita após .net.
+
+token - Um token de acesso pessoal do Azure Databricks ou token do Azure AD para workspace. Isso mapeia para a variável de ambiente DATABRICKS_TOKEN definida anteriormente para o pipeline de lançamento.
+
+clusterid - A ID do cluster no qual será instalada a biblioteca. Isso mapeia para a variável de ambiente DATABRICKS_CLUSTER_ID definida anteriormente para o pipeline de lançamento.
+
+libs - O diretório extraído que contém as bibliotecas. Isso mapeia para o caminho no agente de versão que contém a roda do Python. O local deve incluir / à direita.
+
+dbfspath - O caminho dentro do sistema de arquivos DBFS para recuperar as bibliotecas. O caminho não deve incluir o dbfs: inicial, mas deve incluir o / inicial. Além disso, o caminho não deve incluir o / à direita.
+
+Defina Argumentos para o seguinte:
+
+--shard=$(DATABRICKS_HOST) --token=$(DATABRICKS_TOKEN) --clusterid=$(DATABRICKS_CLUSTER_ID) --libs=$(System.ArtifactsDirectory)/$(Release.PrimaryArtifactSourceAlias)/Databricks/libraries/python/libs/ --dbfspath=/libraries/python/libs
+Instalar biblioteca do Azure DevOps
+
+Defina Nome de exibição como Instalar a roda do Python no cluster.
+
+Clique em Salvar> OK.
+
+O arquivo installWhlLibrary.py anterior verifica se, antes de instalar uma nova versão de uma biblioteca em um cluster do Azure Databricks, a biblioteca existente foi desinstalada primeiro. Para fazer isso, o arquivo installWhlLibrary.py chama a API REST do Databricks para executar as seguintes etapas:
+
+Verificar se a biblioteca está instalada.
+Se estiver, desinstale a biblioteca.
+Reiniciar o cluster se alguma desinstalação for executada.
+Aguardar até que o cluster esteja em execução antes de continuar.
+Instalar a biblioteca.
+O conteúdo do arquivo installWhlLibrary.py é o seguinte. Para que o pipeline de lançamento execute esse script, crie uma pasta chamada cicd-scripts na raiz do repositório Git e adicione esse arquivo installWhlLibrary.py à pasta cicd-scripts:
+
+# installWhlLibrary.py
+#!/usr/bin/python3
+import json
+import requests
+import sys
+import getopt
+import time
+import os
+
+def main():
+  shard = ''
+  token = ''
+  clusterid = ''
+  libspath = ''
+  dbfspath = ''
+
+  try:
+    opts, args = getopt.getopt(sys.argv[1:], 'hstcld',
+      ['shard=', 'token=', 'clusterid=', 'libs=', 'dbfspath='])
+  except getopt.GetoptError:
+    print(
+      'installWhlLibrary.py -s <shard> -t <token> -c <clusterid> -l <libs> -d <dbfspath>')
+    sys.exit(2)
+
+  for opt, arg in opts:
+    if opt == '-h':
+      print(
+        'installWhlLibrary.py -s <shard> -t <token> -c <clusterid> -l <libs> -d <dbfspath>')
+      sys.exit()
+    elif opt in ('-s', '--shard'):
+      shard = arg
+    elif opt in ('-t', '--token'):
+      token = arg
+    elif opt in ('-c', '--clusterid'):
+      clusterid = arg
+    elif opt in ('-l', '--libs'):
+      libspath=arg
+    elif opt in ('-d', '--dbfspath'):
+      dbfspath=arg
+
+  print('-s is ' + shard)
+  print('-t is ' + token)
+  print('-c is ' + clusterid)
+  print('-l is ' + libspath)
+  print('-d is ' + dbfspath)
+
+  # Generate the list of files from walking the local path.
+  libslist = []
+  for path, subdirs, files in os.walk(libspath):
+    for name in files:
+
+      name, file_extension = os.path.splitext(name)
+      if file_extension.lower() in ['.whl']:
+        print('Adding ' + name + file_extension.lower() + ' to the list of .whl files to evaluate.')
+        libslist.append(name + file_extension.lower())
+
+  for lib in libslist:
+    dbfslib = 'dbfs:' + dbfspath + '/' + lib
+    print('Evaluating whether ' + dbfslib + ' must be installed, or uninstalled and reinstalled.')
+
+    if (getLibStatus(shard, token, clusterid, dbfslib)) is not None:
+      print(dbfslib + ' status: ' + getLibStatus(shard, token, clusterid, dbfslib))
+      if (getLibStatus(shard, token, clusterid, dbfslib)) == "not found":
+        print(dbfslib + ' not found. Installing.')
+        installLib(shard, token, clusterid, dbfslib)
+      else:
+        print(dbfslib + ' found. Uninstalling.')
+        uninstallLib(shard, token, clusterid, dbfslib)
+        print("Restarting cluster: " + clusterid)
+        restartCluster(shard, token, clusterid)
+        print('Installing ' + dbfslib + '.')
+        installLib(shard, token, clusterid, dbfslib)
+
+def uninstallLib(shard, token, clusterid, dbfslib):
+  values = {'cluster_id': clusterid, 'libraries': [{'whl': dbfslib}]}
+  requests.post(shard + '/api/2.0/libraries/uninstall', data=json.dumps(values), auth=("token", token))
+
+def restartCluster(shard, token, clusterid):
+  values = {'cluster_id': clusterid}
+  requests.post(shard + '/api/2.0/clusters/restart', data=json.dumps(values), auth=("token", token))
+
+  waiting = True
+  p = 0
+  while waiting:
+    time.sleep(30)
+    clusterresp = requests.get(shard + '/api/2.0/clusters/get?cluster_id=' + clusterid,
+      auth=("token", token))
+    clusterjson = clusterresp.text
+    jsonout = json.loads(clusterjson)
+    current_state = jsonout['state']
+    print(clusterid + " state: " + current_state)
+    if current_state in ['TERMINATED', 'RUNNING','INTERNAL_ERROR', 'SKIPPED'] or p >= 10:
+      break
+      p = p + 1
+
+def installLib(shard, token, clusterid, dbfslib):
+  values = {'cluster_id': clusterid, 'libraries': [{'whl': dbfslib}]}
+  requests.post(shard + '/api/2.0/libraries/install', data=json.dumps(values), auth=("token", token))
+
+def getLibStatus(shard, token, clusterid, dbfslib):
+
+  resp = requests.get(shard + '/api/2.0/libraries/cluster-status?cluster_id='+ clusterid, auth=("token", token))
+  libjson = resp.text
+  d = json.loads(libjson)
+  if (d.get('library_statuses')):
+    statuses = d['library_statuses']
+
+    for status in statuses:
+      if (status['library'].get('whl')):
+        if (status['library']['whl'] == dbfslib):
+          return status['status']
+  else:
+    # No libraries found.
+    return "not found"
+
+if __name__ == '__main__':
+  main()
+
+Etapa 14: executar testes de integração no notebook Python
+Você também pode executar testes diretamente de notebooks que contenham declarações usando unittest. Nesse caso, você usará os mesmos testes usado nos testes de unidade anteriores, mas agora eles importarão a biblioteca addcol instalada do whl que você acabou de instalar no cluster.
+
+Para automatizar esses testes e incluí-los no pipeline de CI/CD, use a API REST do Databricks para executar o notebook a partir do servidor de CI/CD. Isso permite verificar se a execução do notebook foi aprovada ou falhou usando unittest. Falhas de declaração aparecerão na saída JSON retornada pela API REST e nos resultados do teste JUnit.
+
+Adicione uma tarefa de linha de comando ao pipeline de lançamento: clique no sinal de adição novamente na seção Trabalho do agente, selecione a tarefa Linha de comando na guia Utilitário e clique em Adicionar.
+
+Clique na tarefa Script de linha de comando próxima ao Trabalho do agente.
+
+Substitua o conteúdo da caixa script pelo seguinte script. Esses comandos criam diretórios para os logs de execução do notebook e os resumos do teste. Esses comandos também incluem um comando pip para instalar os módulos requests e pytest necessários.
+
+mkdir -p $(System.ArtifactsDirectory)/$(Release.PrimaryArtifactSourceAlias)/Databricks/logs/json
+mkdir -p $(System.ArtifactsDirectory)/$(Release.PrimaryArtifactSourceAlias)/Databricks/logs/xml
+pip install pytest requests
+Defina Nome de exibição como Criar diretórios de testes de integração.
+
+Configurar o ambiente de teste do Azure DevOps
+
+Clique em Salvar> OK.
+
+
+Etapa 15: executar o notebook
+Crie uma tarefa de Script Python: clique no sinal de adição novamente na seção Trabalho do agente, selecione a tarefa Script Python na guia Utilitário e clique em Adicionar.
+
+Clique na tarefa Executar um script Python próxima ao Trabalho do agente.
+
+Com o caminho do arquivo selecionado, defina o caminho do script como $(Release.PrimaryArtifactSourceAlias)/Databricks/cicd-scripts/executenotebook.py. O script Python, executeNotebook.py, está no artefato criado pelo nosso pipeline de build. O script executeNotebook.py usa cinco argumentos, que você definirá nesta tarefa da seguinte maneira:
+
+shard - A URL do workspace de destino (por exemplo, https://<region>.azuredatabricks.net). Isso mapeia para a variável de ambiente DATABRICKS_HOST definida anteriormente para o pipeline de lançamento. Essa URL não deve incluir o / à direita após .net.
+
+token - Um token de acesso pessoal do Azure Databricks ou token do Azure AD para workspace. Isso mapeia para a variável de ambiente DATABRICKS_TOKEN definida anteriormente para o pipeline de lançamento.
+
+clusterid - A ID do cluster no qual será instalada a biblioteca. Isso mapeia para a variável de ambiente DATABRICKS_CLUSTER_ID definida anteriormente para o pipeline de lançamento.
+
+localpath - O diretório extraído que contém os notebooks de teste. O caminho não deve incluir o / à direita.
+
+workspacepath - O caminho no workspace no qual os notebooks de teste foram implantados. O local deve incluir o / inicial. Além disso, o caminho não deve incluir o / à direita.
+
+outfilepath - O caminho que você criou para armazenar a saída JSON retornada pela API REST.
+
+Defina Argumentos para o seguinte:
+
+--shard=$(DATABRICKS_HOST) --token=$(DATABRICKS_TOKEN) --clusterid=$(DATABRICKS_CLUSTER_ID) --localpath=$(System.ArtifactsDirectory)/$(Release.PrimaryArtifactSourceAlias)/Databricks/notebooks --workspacepath=/Shared --outfilepath=$(System.ArtifactsDirectory)/$(Release.PrimaryArtifactSourceAlias)/Databricks/logs/json
+Defina Nome de exibição como Executar notebook.
+
+Executar notebooks do Azure DevOps
+
+Clique em Salvar> OK.
+
+O script executenotebook.py a seguir executa o notebook usando o ponto de extremidade de envio de execuções dos trabalhos, que envia um trabalho anônimo. Por ser este um ponto de extremidade assíncrono, ele usa a ID do trabalho retornada inicialmente pela chamada REST para a sondagem do status do trabalho. Após a conclusão do trabalho, a saída JSON é salva no caminho especificado pelos argumentos da função passados na invocação.
+
+Para que o pipeline de lançamento execute esse script, adicione esse arquivo executenotebook.py à pasta cicd-scripts na raiz do repositório Git, na qual você adicionou o arquivo installWhlLibrary.py anteriormente:
+
+# executenotebook.py
+#!/usr/bin/python3
+import json
+import requests
+import os
+import sys
+import getopt
+import time
+
+def main():
+  shard = ''
+  token = ''
+  clusterid = ''
+  localpath = ''
+  workspacepath = ''
+  outfilepath = ''
+
+  try:
+    opts, args = getopt.getopt(sys.argv[1:], 'hs:t:c:lwo',
+      ['shard=', 'token=', 'clusterid=', 'localpath=', 'workspacepath=', 'outfilepath='])
+  except getopt.GetoptError:
+    print(
+      'executenotebook.py -s <shard> -t <token>  -c <clusterid> -l <localpath> -w <workspacepath> -o <outfilepath>)')
+    sys.exit(2)
+
+  for opt, arg in opts:
+    if opt == '-h':
+      print(
+        'executenotebook.py -s <shard> -t <token> -c <clusterid> -l <localpath> -w <workspacepath> -o <outfilepath>')
+      sys.exit()
+    elif opt in ('-s', '--shard'):
+        shard = arg
+    elif opt in ('-t', '--token'):
+        token = arg
+    elif opt in ('-c', '--clusterid'):
+        clusterid = arg
+    elif opt in ('-l', '--localpath'):
+        localpath = arg
+    elif opt in ('-w', '--workspacepath'):
+        workspacepath = arg
+    elif opt in ('-o', '--outfilepath'):
+        outfilepath = arg
+
+  print('-s is ' + shard)
+  print('-t is ' + token)
+  print('-c is ' + clusterid)
+  print('-l is ' + localpath)
+  print('-w is ' + workspacepath)
+  print('-o is ' + outfilepath)
+
+  # Generate the list of notebooks from walking the local path.
+  notebooks = []
+  for path, subdirs, files in os.walk(localpath):
+    for name in files:
+      fullpath = path + '/' + name
+      # Remove the localpath to the repo but keep the workspace path.
+      fullworkspacepath = workspacepath + path.replace(localpath, '')
+
+      name, file_extension = os.path.splitext(fullpath)
+      if file_extension.lower() in ['.scala', '.sql', '.r', '.py']:
+        row = [fullpath, fullworkspacepath, 1]
+        notebooks.append(row)
+
+  # Run each notebook in the list.
+  for notebook in notebooks:
+    nameonly = os.path.basename(notebook[0])
+    workspacepath = notebook[1]
+
+    name, file_extension = os.path.splitext(nameonly)
+
+    # workspacepath removes the extension, so now add it back.
+    fullworkspacepath = workspacepath + '/' + name + file_extension
+
+    print('Running job for: ' + fullworkspacepath)
+    values = {'run_name': name, 'existing_cluster_id': clusterid, 'timeout_seconds': 3600, 'notebook_task': {'notebook_path': fullworkspacepath}}
+
+    resp = requests.post(shard + '/api/2.0/jobs/runs/submit',
+      data=json.dumps(values), auth=("token", token))
+    runjson = resp.text
+    print("runjson: " + runjson)
+    d = json.loads(runjson)
+    runid = d['run_id']
+
+    i=0
+    waiting = True
+    while waiting:
+      time.sleep(10)
+      jobresp = requests.get(shard + '/api/2.0/jobs/runs/get?run_id='+str(runid),
+        data=json.dumps(values), auth=("token", token))
+      jobjson = jobresp.text
+      print("jobjson: " + jobjson)
+      j = json.loads(jobjson)
+      current_state = j['state']['life_cycle_state']
+      runid = j['run_id']
+      if current_state in ['TERMINATED', 'INTERNAL_ERROR', 'SKIPPED'] or i >= 12:
+        break
+      i=i+1
+
+    if outfilepath != '':
+      file = open(outfilepath + '/' +  str(runid) + '.json', 'w')
+      file.write(json.dumps(j))
+      file.close()
+
+if __name__ == '__main__':
+  main()
+
+Etapa 16: gerar e avaliar os resultados de teste
+Esta tarefa executa um script Python usando pytest para determinar se as declarações nos notebooks de teste passaram ou falharam.
+
+Adicione uma tarefa de Script Python ao pipeline de lançamento: clique no sinal de adição novamente na seção Trabalho do agente, selecione a tarefa Script Python na guia Utilitário e clique em Adicionar.
+
+Clique na tarefa Executar um script Python próxima ao Trabalho do agente.
+
+Com o caminho do arquivo selecionado, defina o caminho do script como $(Release.PrimaryArtifactSourceAlias)/Databricks/cicd-scripts/evaluatenotebookruns.py.
+
+Defina Nome de exibição como Criar e avaliar resultados de teste do notebook.
+
+Gerar resultados do teste do Azure DevOps
+
+Clique em Salvar> OK.
+
+O script evaluatenotebookruns.py define a função test_job_run, que analisa e avalia o JSON gerado pela tarefa anterior. Outro teste, test_performance, procura testes que estão mais tempo em execução do que o esperado.
+
+Para que o pipeline de lançamento execute esse script, adicione esse arquivo cicd-scripts à pasta evaluatenotebookruns.py na raiz do repositório Git, na qual você adicionou o arquivo installWhlLibrary.py e executenotebook.py anteriormente:
+
+# evaluatenotebookruns.py
+#!/usr/bin/python3
+import io
+import xmlrunner
+from xmlrunner.extra.xunit_plugin import transform
+import unittest
+import json
+import glob
+import os
+
+class TestJobOutput(unittest.TestCase):
+
+  test_output_path = '<path-to-json-logs-on-release-agent>'
+
+  def test_performance(self):
+    path = self.test_output_path
+    statuses = []
+
+    for filename in glob.glob(os.path.join(path, '*.json')):
+      print('Evaluating: ' + filename)
+      data = json.load(open(filename))
+      duration = data['execution_duration']
+      if duration > 100000:
+        status = 'FAILED'
+      else:
+        status = 'SUCCESS'
+
+      statuses.append(status)
+
+    self.assertFalse('FAILED' in statuses)
+
+  def test_job_run(self):
+    path = self.test_output_path
+    statuses = []
+
+    for filename in glob.glob(os.path.join(path, '*.json')):
+      print('Evaluating: ' + filename)
+      data = json.load(open(filename))
+      status = data['state']['result_state']
+      statuses.append(status)
+
+    self.assertFalse('FAILED' in statuses)
+
+if __name__ == '__main__':
+  out = io.BytesIO()
+
+  unittest.main(testRunner=xmlrunner.XMLTestRunner(output=out),
+    failfast=False, buffer=False, catchbreak=False, exit=False)
+
+  with open('TEST-report.xml', 'wb') as report:
+    report.write(transform(out.getvalue()))
+No script anterior, substitua <path-to-json-logs-on-release-agent> pelo caminho absoluto completo para a pasta Databricks/logs/json/ no agente de build. Por exemplo, isso pode ser algo como /home/vsts/work/r1/a/_<your-github-alias>.<your-github-repo-name>/Databricks/logs/json/. Consulte a discussão anterior sobre $(System.ArtifactsDirectory) e $(Release.PrimaryArtifactSourceAlias) nas Etapas 9 e 11.
+
+
+Etapa 17: publicar resultados de teste
+Use a tarefa Publicar resultados de teste para arquivar os resultados JSON e publicar os resultados do teste em um hub de testes do Azure DevOps. Isso permite que você visualize relatórios e dashboards relacionados ao status das execuções de teste.
+
+Adicione uma tarefa Publicar Resultados de Teste ao pipeline de lançamento: clique no sinal de adição novamente na seção Trabalho do agente, selecione a tarefa Publicar Resultados de Teste na guia Teste e clique em Adicionar.
+
+Clique na tarefa **Publicar Resultados de Teste /TEST-*.xml próxima ao Trabalho do agente.
+
+Mantenha todas as configurações padrão inalteradas.
+
+Publicar resultados do teste do Azure DevOps
+
+Observação
+
+$(System.DefaultWorkingDirectory) representa o caminho local dele no agente em que os arquivos de código-fonte são baixados, por exemplo /home/vsts/work/r1/a. O pipeline de lançamento define esse valor como a variável de ambiente SYSTEM_DEFAULTWORKINGDIRECTORY na fase Inicializar trabalho para o agente de versão. Confira Usar variáveis predefinidas .
+
+Clique em Salvar> OK.
+
+Você concluiu neste ponto um ciclo de integração e implantação usando o pipeline de CI/CD. Ao automatizar esse processo, você garante que seu código seja testado e implantado por meio de um processo eficiente, consistente e repetível.
+
+
+Etapa 18: executar os pipelines de lançamento e de build
+Nesta etapa, você executará os pipelines de build e de lançamento manualmente. Para saber como configurar isso mais tarde para executar os pipelines automaticamente, consulte o comentário na Etapa 5 anterior.
+
+Execute o pipeline de build:
+
+No menu Pipelines na barra lateral, clique em Pipelines.
+Clique no nome do pipeline e clique em Executar pipeline.
+Para Branch/tag, selecione o nome do branch no repositório Git que contém todo o código-fonte que você adicionou. Este exemplo considera que ele esteja no branch de lançamento.
+Clique em Executar. A página de execução do pipeline de build é exibida.
+Para exibir o progresso do pipeline de build e os logs relacionados, clique no ícone de rotação próximo ao Trabalho.
+Execute o pipeline de lançamento:
+
+Depois que o pipeline de build for executado com êxito (há todos os ícones de marca de seleção na lista de detalhes do trabalho), no menu Pipelines na barra lateral, clique em Lançamentos.
+Clique no nome do pipeline de lançamento e clique em Criar lançamento.
+Clique em Criar.
+Para ver o progresso do pipeline de lançamento, clique no lançamento mais recente na guia Lançamentos.
+Clique na caixa Estágio 1.
+Clique em Exibir logs.
+Exiba os resultados da execução de teste para os pipelines de build e de lançamento:
+
+No menu Test Plans na barra lateral, clique em Execuções.
+Na seção Execuções de teste recentes, na guia Execuções de teste, clique duas vezes nas entradas mais recentes do painel de log na lista.
+Conteúdo recomendado
+[
+
+CI/CD com o Jenkins no Azure Databricks – Azure Databricks
+](chrome-extension://pcmpcfapbekmbjjkdalcgopdkipoggdi/pt-br/azure/databricks/dev-tools/ci-cd/ci-cd-jenkins?source=recommendations)
+
+Saiba como usar Jenkins para habilitar a CI/CD para projetos do Azure Databricks.
+
+[
+
+Configuração do Repos do Databricks – Azure Databricks
+](chrome-extension://pcmpcfapbekmbjjkdalcgopdkipoggdi/pt-br/azure/databricks/repos/repos-setup?source=recommendations)
+
+Configure o Repos do Databricks para usar o Git para controle de versão. O Repos dá suporte a operações comuns do Git, como clonar, fazer check-out, confirmar, efetuar pull e push.
+
+[
+
+Teste de unidade para notebooks – Azure Databricks
+](chrome-extension://pcmpcfapbekmbjjkdalcgopdkipoggdi/pt-br/azure/databricks/notebooks/testing?source=recommendations)
+
+Saiba como aplicar técnicas e estruturas para funções de código de teste de unidade para os notebooks do Azure Databricks.
+
+[
+
+Obter um token de acesso do Git e conectar um repositório remoto ao Azure Databricks – Azure Databricks
+](chrome-extension://pcmpcfapbekmbjjkdalcgopdkipoggdi/pt-br/azure/databricks/repos/get-access-tokens-from-git-provider?source=recommendations)
+
+Saiba como obter um token de acesso do Git e conectar um repositório remoto ao Databricks Repos. Conecte-se a provedores Git como o GitHub, o Gitlab, o Bitbucket e o Azure DevOps.
+
+[
+
+Usar CI/CD – Azure Databricks
+](chrome-extension://pcmpcfapbekmbjjkdalcgopdkipoggdi/pt-br/azure/databricks/dev-tools/index-ci-cd?source=recommendations)
+
+Saiba como usar sistemas de CI/CD (integração contínua e entrega contínua) com o Databricks.
+
+[
+
+Integração do Git com Repos do Databricks – Azure Databricks
+](chrome-extension://pcmpcfapbekmbjjkdalcgopdkipoggdi/pt-br/azure/databricks/repos/?source=recommendations)
+
+Saiba como usar o Git para controle de versão de seus notebooks e outros arquivos para desenvolvimento no Azure Databricks.
+
+[
+
+Fluxos de trabalho de CI/CD com integração entre o Git e o Repos do Databricks – Azure Databricks
+](chrome-extension://pcmpcfapbekmbjjkdalcgopdkipoggdi/pt-br/azure/databricks/repos/ci-cd-best-practices-with-repos?source=recommendations)
+
+Conheça as melhores práticas para usar o Repos do Databricks em um fluxo de trabalho de CI/CD. A integração de repositórios Git com Repos do Databricks fornece controle do código-fonte para arquivos de projeto.
+
+[
+
+Usar Databricks CLI do Azure Cloud Shell
+](chrome-extension://pcmpcfapbekmbjjkdalcgopdkipoggdi/pt-br/azure/databricks/scenarios/databricks-cli-from-azure-cloud-shell?source=recommendations)
+
+Saiba como usar a CLI do Databricks do Azure Cloud Shell para executar operações no Azure Databricks.
+
+Recursos adicionais
+Recursos adicionais
+Visão geral de um pipeline típico de CI/CD do Azure Databricks
+Desenvolver e confirmar seu código
+Sobre o exemplo
+Antes de começar
+Etapa 1: definir o pipeline de build
+Etapa 2: adicionar os arquivos de origem de teste de unidade ao repositório
+Etapa 3: adicionar o script de empacotamento da roda do Python ao repositório
+Etapa 4: adicionar o notebook Python ao repositório
+Etapa 5: definir o pipeline de lançamento
+Etapa 6: definir variáveis de ambiente para o pipeline de lançamento
+Etapa 7: configurar o agente de versão para o pipeline de lançamento
+Etapa 8: definir a versão do Python para o agente de versão
+Etapa 9: desempacotar o artefato de build do pipeline de build
+Etapa 10. Instalar a CLI do Databricks e o relatórios XML unittest
+Etapa 11: implantar o notebook no workspace
+Etapa 12: implantar a biblioteca no DBFS
+Etapa 13: instalar a biblioteca no cluster
+Etapa 14: executar testes de integração no notebook Python
+Etapa 15: executar o notebook
+Etapa 16: gerar e avaliar os resultados de teste
+Etapa 17: publicar resultados de teste
+Etapa 18: executar os pipelines de lançamento e de build
+1 visit in last 30 days
