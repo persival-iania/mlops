@@ -1,6 +1,7 @@
 #**O Que é CI/CD?**
 
 
+<IMG  src="https://imgs.search.brave.com/3pkFfDhswr0CtgRSyAEPo1dztDDjzNm3QLvGxxhkQSw/rs:fit:948:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5P/Ri1UeFJDMmJKRXpo/QVpqcEU4dC13SGFE/dCZwaWQ9QXBp"/>
 
 CI/CD (integração contínua e entrega contínua) refere-se ao processo de desenvolvimento e entrega de software em ciclos curtos e frequentes por meio do uso de pipelines de automação.
 
