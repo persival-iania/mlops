@@ -47,6 +47,7 @@ VIARIO - [MAPA_TBL_SUAT_VIARIO.xlsx](/.attachments/MAPA_TBL_SUAT_VIARIO-ff04fb36
 
 COSTEIRA - [MAPA_TBL_SUAT_COSTEIRA.xlsx](/.attachments/MAPA_TBL_SUAT_COSTEIRA-eee3e8d9-0350-43a3-8596-87f00ef9d790.xlsx)
  
+RENOVIAS - Não esta sendo utilizada*
 
 Todos os mapeamentos estão disponíveis também no Sharepoint abaixo.
 
@@ -59,18 +60,18 @@ https://grupoccr.sharepoint.com/sites/LaboratriodeInovao/Documentos%20Compartilh
 | **Codigo Rodovia** |**Nome Rodovia** |
 |--|--|
 |00019|VIASUL|
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+|00005|VIARIO|
+|00267|VIAOESTE|
+|00021|VIACOSTEIRA|
+|00770|VIALAGOS|
+|00269|SPVIAS|
+|00002|RODNORTE|
+|00271|RODOANEL|
+|00022|RIOSP|
+|00004|NOVADUTRA|
+|00016|MSVIA|
+|00259|AUTOBAN|
+|00266|RENOVIAS *|
 
 
 
