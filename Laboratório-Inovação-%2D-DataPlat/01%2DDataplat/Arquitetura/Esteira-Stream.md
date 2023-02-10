@@ -7,3 +7,16 @@ Quando você precisa de informações processadas imediatamente (Como monitoria 
 
 **Near Real Time**
 Quando a velocidade é importante, mas você não precisa dela imediatamente (como produzir inteligência operacional). Esse processamento é quando a velocidade é importante, mas o tempo de processamento em minutos é aceitável em vez de segundos.
+
+Ferramentas utulizadas:
+
+**- IoTHub**
+**- Stream AnaLytics**
+**- Azure Function (App Function)**
+
+
+Uma das ferramentas utilizadas é o Stream Analytics, que foi escolhido por sua facilidade de manutenção e implementação dos Pipelines.
+
+A seguir imagem de arquitetura para Near Realtime e Realtime:
+
+![image.png](/.attachments/image-0f4c9bee-9db0-43a5-a4d3-6b6fa5e7e1ec.png)
