@@ -1,5 +1,4 @@
-![Items (2).png](/.attachments/Items%20(2)-22f82653-9e50-40c0-9d3a-3867bea2d1a7.png)
-
+![Logo-grupo-ccr-Editado-v3.png](/.attachments/Logo-grupo-ccr-Editado-v3-c966143a-ebc6-4b44-9548-395e41aac6ab.png)
 # Introdução
 
 ###Objetivo Inicial
