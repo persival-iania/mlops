@@ -12,7 +12,12 @@ Ferramentas utulizadas:
 
 **- IoTHub**: A IoT (Internet das Coisas) é uma rede de dispositivos físicos que se conectam e trocam dados com outros dispositivos e serviços pela Internet ou por outra rede. Atualmente, há mais de 10 bilhões de dispositivos conectados no mundo, e todos os anos são adicionados ainda mais dispositivos. Qualquer coisa que ter sensores inseridos e os softwares necessários pode ser conectada pela Internet.
 
+O Hub IoT pode ser dimensionado para milhões de dispositivos conectados simultaneamente, além de milhões de eventos por segundo para dar suporte a suas cargas de trabalho de IoT.
 O Hub IoT do Azure é um serviço gerenciado hospedado na nuvem que atua como um hub central de mensagens para comunicação entre um aplicativo de IoT e os dispositivos anexados a ele. Você pode conectar milhões de dispositivos e suas soluções de back-end de maneira confiável e segura. Quase todos os dispositivos podem ser conectados a um hub IoT.
+
+_Figura 1- A imagem a seguir aponta um exemplo de configuração e aplicação para um IoT. Uma placa para configurada para acesso ao IotHub envia mensagens que poderá ter gatilhos de alertas , seja para e-mail da CCR seja para mensagens como no Teams._
+![image_0.png](/.attachments/image_0-457304ce-8668-411b-9625-5c63a0258885.png)
+
 **- Stream AnaLytics**
 **- Azure Function (App Function)**
 
