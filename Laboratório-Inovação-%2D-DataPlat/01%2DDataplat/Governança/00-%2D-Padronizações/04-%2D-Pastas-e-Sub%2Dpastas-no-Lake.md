@@ -126,4 +126,9 @@ devem ser carregados, como delta tables
 
 versão: v1-2022-10-11
 
-**Obs: Estamos em construção, as referencias acima podem sofrer alterações**
+
+#Stream
+
+A seguir um padrão de armazenamento para Iot e mensagens tartadas no EventHub. Poderá ser aplicado também a CDC.
+
+![Arquitetura_All-V3-Stream Iot.jpg](/.attachments/Arquitetura_All-V3-Stream%20Iot-f5c2bca9-17db-4641-92b1-cf9afc8984e2.jpg)
