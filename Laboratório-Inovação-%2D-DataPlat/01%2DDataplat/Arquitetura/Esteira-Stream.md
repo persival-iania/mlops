@@ -10,7 +10,9 @@ Quando a velocidade é importante, mas você não precisa dela imediatamente (co
 
 Ferramentas utulizadas:
 
-**- IoTHub**
+**- IoTHub**: A IoT (Internet das Coisas) é uma rede de dispositivos físicos que se conectam e trocam dados com outros dispositivos e serviços pela Internet ou por outra rede. Atualmente, há mais de 10 bilhões de dispositivos conectados no mundo, e todos os anos são adicionados ainda mais dispositivos. Qualquer coisa que ter sensores inseridos e os softwares necessários pode ser conectada pela Internet.
+
+O Hub IoT do Azure é um serviço gerenciado hospedado na nuvem que atua como um hub central de mensagens para comunicação entre um aplicativo de IoT e os dispositivos anexados a ele. Você pode conectar milhões de dispositivos e suas soluções de back-end de maneira confiável e segura. Quase todos os dispositivos podem ser conectados a um hub IoT.
 **- Stream AnaLytics**
 **- Azure Function (App Function)**
 
