@@ -15,6 +15,20 @@ Realizar a monitoramento das potências das subestações, aumentando a eficiên
 
 - A coleta de informações poderá ser individualmente por subestação, por meio de microcontroladores específicos para essa finalidade;
 
+#Fases
+
+- Criação de épicos e estórias para o projeto no Jira;
+- Levantamento das fontes de dados e requisitos das informações;
+- Levantamento de requisitos para ingestão de dados;
+- Processamento das regras de negócio;
+- Desenvolvimento da camada Informacional;
+- Análise dos dados;
+- Construção da camada  de visualização (interface);
+- Desenvolvimento da camada de Documentação;
+
+
+
+
 A comunicação com as subestações poderá ocorrer por meio de telefonia móvel.
 
 ![Arquitetura_All-V3-Monitoria de Potência.jpg](/.attachments/Arquitetura_All-V3-Monitoria%20de%20Potência-d9d34b08-7f5b-4951-829d-4a5e1c088175.jpg)
