@@ -46,6 +46,8 @@ Existem na CCR muitos projetos de Iot. A seguir alguns deles:
 - Monitoria 
 - Subestações de trens
 
+Esses projetos estão detalhados em uma página específica da Wiki. Para saber mais acesse: 
+
 #Diagrama de Arquitetura
 
 A seguir imagem de arquitetura para Near Realtime e Realtime:
