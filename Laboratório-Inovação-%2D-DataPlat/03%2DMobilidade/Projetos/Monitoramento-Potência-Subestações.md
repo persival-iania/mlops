@@ -26,7 +26,7 @@ Realizar a monitoramento das potências das subestações, aumentando a eficiên
 - Construção da camada  de visualização (interface);
 - Desenvolvimento da camada de Documentação;
 
-
+#Arquitetura
 
 
 A comunicação com as subestações poderá ocorrer por meio de telefonia móvel.
@@ -39,3 +39,11 @@ _Figura 2 - Atualização da arquitetura com time Dataplat._
 
 _Feigura 3 - Particionamento dos Arquivos e ciclo dos dados._
 ![Arquitetura_All-V3-Stream Iot.jpg](/.attachments/Arquitetura_All-V3-Stream%20Iot-93b963c0-a20a-44bd-bb62-8f7fb4725d0a.jpg)
+
+# Indicadores
+Medir a eficácia e eficiência dos dados apurados nos primeiros meses de solução;
+Medir a geração do valor apurado com os dados gerados pela solução;
+Apurar a economia de custos na compra de ativos ao se antecipar ao reparo na manutenção;
+Quantificar medidas proativas que geraram valor ao negócio.
+
+#Ativos
