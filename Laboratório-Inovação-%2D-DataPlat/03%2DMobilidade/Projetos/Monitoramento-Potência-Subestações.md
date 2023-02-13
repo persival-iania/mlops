@@ -31,8 +31,11 @@ Realizar a monitoramento das potências das subestações, aumentando a eficiên
 
 A comunicação com as subestações poderá ocorrer por meio de telefonia móvel.
 
-_Figura 1 - Arquitetura proposta, primeira versão_
+_Figura 1 - Arquitetura proposta, primeira versão._
 ![image.png](/.attachments/image-b2496187-2213-4172-9226-e8f3fddaa63d.png)
 
-_Figura 2 - Atualização da arquitetura com time Dataplat_
+_Figura 2 - Atualização da arquitetura com time Dataplat._
 ![Arquitetura_All-V3-Monitoria de Potência.jpg](/.attachments/Arquitetura_All-V3-Monitoria%20de%20Potência-d9d34b08-7f5b-4951-829d-4a5e1c088175.jpg)
+
+_Feigura 3 - Particionamento dos Arquivos e ciclo dos dados._
+![Arquitetura_All-V3-Stream Iot.jpg](/.attachments/Arquitetura_All-V3-Stream%20Iot-93b963c0-a20a-44bd-bb62-8f7fb4725d0a.jpg)
