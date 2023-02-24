@@ -7,6 +7,8 @@
 
 No processo de novos projetos, que serão inseridos na plataforma de dados, desenhamos o desenho lógico com o fluxo completo e passo a passo para implementar uma nova solução na plataforma de dados.
 
+A seguir um desenho para entendimento do processo:
+
 ![Arquitetura_All-V3-Novos Projetos.jpg](/.attachments/Arquitetura_All-V3-Novos%20Projetos-4a416b38-0583-4322-adbe-283704c97eec.jpg)
 - #  Workflow de Novos Projetos
 
