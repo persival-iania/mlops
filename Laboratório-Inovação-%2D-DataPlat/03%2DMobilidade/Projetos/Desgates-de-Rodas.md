@@ -22,7 +22,7 @@ De forma preventiva e automatizada, obter a correção da curva de desgaste das 
 # Estrutura de Dados
 
 ###Arquitetura  
-![ArquiteturaConsumoRodas.PNG](/.attachments/ArquiteturaConsumoRodas-0425ee7b-a37a-451a-91f3-9af57a20c2a3.PNG)
+![Items.png](/.attachments/Items-e40fe4be-59e8-4c5c-9026-0fc24531bc95.png)
 
 ##Especificações
 ###Equipamento Calipri:
@@ -68,4 +68,3 @@ https://app.powerbi.com/groups/063f6905-9119-43c1-82c6-a0a3bece1cd1/dashboards/2
 Estação Osasco
 https://app.powerbi.com/groups/063f6905-9119-43c1-82c6-a0a3bece1cd1/dashboards/78b20734-f692-460e-b5d9-5d6ec2b98616
 
-![Items (3).png](/.attachments/Items%20(3)-80899a9b-69e9-4a18-876b-1686dc57c294.png)
