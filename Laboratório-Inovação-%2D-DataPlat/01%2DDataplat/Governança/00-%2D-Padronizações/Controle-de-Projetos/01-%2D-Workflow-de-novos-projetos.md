@@ -26,7 +26,7 @@ A seguir um desenho para entendimento do processo:
 
 3. **Gerenciamento dos acessos do Portal Azure**
 
-![Workflow_Novos_Projetos_portal_azure.png](/.attachments/Workflow_Novos_Projetos_portal_azure-4e95f9e1-632b-4f67-b127-1cc48b9d8dd1.png)
+![Workflow_Novos_Projetos_v3.png](/.attachments/Workflow_Novos_Projetos_v3-dbaca3c1-4bca-43f3-b7db-8238a77f0fc4.png)
 
 4. **Gerenciamento dos Treinamentos para o novo colaborador**
 
