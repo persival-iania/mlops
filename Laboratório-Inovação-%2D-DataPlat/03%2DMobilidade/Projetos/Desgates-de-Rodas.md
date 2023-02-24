@@ -88,3 +88,10 @@ https://app.powerbi.com/groups/063f6905-9119-43c1-82c6-a0a3bece1cd1/dashboards/2
 Estação Osasco
 https://app.powerbi.com/groups/063f6905-9119-43c1-82c6-a0a3bece1cd1/dashboards/78b20734-f692-460e-b5d9-5d6ec2b98616
 
+
+#Aplicação do projeto no Dataplat:
+
+Foi criado inicialmente na plataforma de dados do "Data Intelligence" mas está sendo migrado para Dataplat. Uma rota do "Integration Runtime" do Data Project de produção para o fileserver  **\\172.24.2.80\GESTAO-CONSUMIVEIS**.
+
+Após criação da rota, será necessário concluir migração pipeline do DataFactory.
+
