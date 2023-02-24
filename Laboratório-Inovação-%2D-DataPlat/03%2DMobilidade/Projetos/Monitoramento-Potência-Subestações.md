@@ -46,4 +46,11 @@ Medir a geração do valor apurado com os dados gerados pela solução;
 Apurar a economia de custos na compra de ativos ao se antecipar ao reparo na manutenção;
 Quantificar medidas proativas que geraram valor ao negócio.
 
-#Ativos
+#Entregáveis:
+* Dashboards online com interface para análise dos dados;
+* Relatório para consulta na camada informacional;
+* Proposta para arquitetura do projeto;
+* Entrega da Documentação;
+* AS IS e TO BE;
+* Entregar OKRs.
+
