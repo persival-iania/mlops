@@ -54,3 +54,6 @@ Quantificar medidas proativas que geraram valor ao negócio.
 * AS IS e TO BE;
 * Entregar OKRs.
 
+# Latência RealTime
+Com o objetivo de menor latência e simplicidade do código, foi realizada uma POC com testes em algumas ferramentas como Stream Analytics. Os testes mostraram um tempo médio de 13 segundos, abaixo dos 20 segundos esperados.
+
