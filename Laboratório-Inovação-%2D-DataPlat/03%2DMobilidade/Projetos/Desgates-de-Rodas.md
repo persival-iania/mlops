@@ -24,6 +24,9 @@ De forma preventiva e automatizada, obter a correção da curva de desgaste das 
 ###Arquitetura  
 ![Items.png](/.attachments/Items-e40fe4be-59e8-4c5c-9026-0fc24531bc95.png)
 
+Figura 2 - Segunda versão de arquitetura.
+![Arquitetura_All-V3-Desgaest de Rodas.jpg](/.attachments/Arquitetura_All-V3-Desgaest%20de%20Rodas-fd380db3-f4f0-450b-b780-706695f369e0.jpg)
+
 ##Especificações
 ###Equipamento Calipri:
  Equipamento físico utilizado para medição das rodas do trem.
