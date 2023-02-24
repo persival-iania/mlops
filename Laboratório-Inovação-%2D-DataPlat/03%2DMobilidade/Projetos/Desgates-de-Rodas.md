@@ -81,7 +81,7 @@ c. Tabela com os detalhes de posicionamento das rodas non trem (numeração, lad
 * Protótipo será implantado na Linha 05.
 
 
-# Link para os dashboards - linhas 8 e 9
+# Acesso aos Dashboards - linhas 8 e 9
 Estação Pinheiros:
 https://app.powerbi.com/groups/063f6905-9119-43c1-82c6-a0a3bece1cd1/dashboards/20ae3191-ff00-4469-981c-c6ac3c6601fc
 
