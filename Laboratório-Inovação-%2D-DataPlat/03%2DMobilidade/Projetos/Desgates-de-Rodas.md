@@ -95,3 +95,5 @@ Foi criado inicialmente na plataforma de dados do "Data Intelligence" mas está 
 
 Após criação da rota, será necessário concluir migração pipeline do DataFactory.
 
+
+A seguir formulário preenchido para a migração do projeto Dataplat.[Formulário_Regras_Firewall_V1 - Projeto Desgaste de Rodas.xls](/.attachments/Formulário_Regras_Firewall_V1%20-%20Projeto%20Desgaste%20de%20Rodas-ec5817ab-1fd5-4db9-bebc-a8b1ff50ae33.xls)
