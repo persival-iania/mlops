@@ -9,7 +9,7 @@ No processo de novos projetos, que serão inseridos na plataforma de dados, dese
 
 A seguir um desenho para entendimento do processo:
 
-![Arquitetura_All-V3-Novos Projetos.jpg](/.attachments/Arquitetura_All-V3-Novos%20Projetos-4a416b38-0583-4322-adbe-283704c97eec.jpg)
+![Arquitetura_All-V3-Novos Projetos.jpg](/.attachments/Arquitetura_All-V3-Novos%20Projetos-91ef5375-93f9-4836-9b94-7938adebb36b.jpg)
 - #  Workflow de Novos Projetos
 
 ![Workflow_Novos_Projetos_macro.png](/.attachments/Workflow_Novos_Projetos_macro-daf986b6-f7f1-4a61-8fbe-466528b77c63.png)
