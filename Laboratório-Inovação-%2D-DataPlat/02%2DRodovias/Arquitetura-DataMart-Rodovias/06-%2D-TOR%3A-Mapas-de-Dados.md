@@ -48,3 +48,9 @@ Todos os mapeamentos também estão disponíveis no Sharepoint abaixo.
 Sharepoint:
 
 https://grupoccr.sharepoint.com/sites/LaboratriodeInovao/Documentos%20Compartilhados/Forms/AllItems.aspx?ga=1&id=%2Fsites%2FLaboratriodeInovao%2FDocumentos%20Compartilhados%2FProjetos%2FDocumenta%C3%A7%C3%A3o%20Projetos%2FRodovias%2FDataMart%2DRodovias%2FMapaTabelas%5FTOR%5FKCOR%2FEngenharia%2FMapeamentos%20Rodovias&viewid=92e83c7e%2D1932%2D4368%2Dbf46%2Dfac1f2309c17
+
+**ARQUIVOS JSON**
+
+Todos os arquivos json para criação das tabelas na camada bronze estão disponíveis no Sharepoint abaixo.
+
+https://grupoccr.sharepoint.com/sites/LaboratriodeInovao/Documentos%20Compartilhados/Forms/AllItems.aspx?ga=1&id=%2Fsites%2FLaboratriodeInovao%2FDocumentos%20Compartilhados%2FProjetos%2FDocumenta%C3%A7%C3%A3o%20Projetos%2FRodovias%2FDataMart%2DRodovias%2FMapaTabelas%5FTOR%5FKCOR%2FEngenharia%2FArquivos%20Json%2FTOR&viewid=92e83c7e%2D1932%2D4368%2Dbf46%2Dfac1f2309c17
