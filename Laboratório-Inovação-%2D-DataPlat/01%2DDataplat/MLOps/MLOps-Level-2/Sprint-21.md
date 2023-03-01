@@ -2,6 +2,8 @@
 
 **Objetivo:** `Criação da esteira Nivel 2 de MLOPS, utilizando o Databricks como Framework / Cluster, orquestração sendo realizada pelo Factory e versioning/ CI CD sendo realizando pelo Az DevOps` 
 
+**Será feito no ambiente usado atualmente**
+
 - Parâmetros de Entrada: Modelo do Data Scientist
 - Saída Esperada: Dados Treinados, Métricas calculadas, Retreino Automático e Deploy Automático.
 - Formato do Entregável: notebook do Databricks , config. Az. DevOps, Parte do Projeto do Data Factory Orquestração 
