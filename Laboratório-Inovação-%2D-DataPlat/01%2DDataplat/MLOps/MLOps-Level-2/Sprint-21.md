@@ -54,9 +54,9 @@
 1. JSON e configurações necessárias ao Azure DevOps
 1. Desenho arquitetura e fluxo da esteira
 
-##2. CI do Databricks com o Azure DevOps
+##2. CI\CD do Databricks com o Azure DevOps
 
-- Definir fluxo de CI dos notebooks
+- Definir fluxo de CI\CD dos notebooks
 - Etapas manuais
 - Etapas automatizadas integradas ao Azure DevOps
 - Testes CI com os notebooks criados na "sub-estória"
