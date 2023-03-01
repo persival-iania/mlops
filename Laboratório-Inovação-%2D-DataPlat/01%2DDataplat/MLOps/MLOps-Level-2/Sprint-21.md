@@ -20,15 +20,16 @@
 
 1. Eleger um modelo de um data Scientist
 1. Efetuar o split do notebook nas 6 etapas MLOps
+1. Permitir CI/CD integrado ao Azure DevOps
 1. Identificar métricas a serem monitoradas
+1. Registrar métricas dos modelos em uma tabela para monitoramento pelo Data Factory
 1. Definir triggers para as métricas
+1. Entregar notebooks de cada etapa/fase
 1. Criar tabela ou ponto de referência no Data Factory para monitorar as métricas
 1. Desenvolver orquestração Data Factory para monitoramento e acionamento da esteira MLOps nível 2
 1. Esteira 1 Treino (Coleta, Limpeza, Feature Store, Treino, Versionamento do Modelo, Versionamento do Codigo, Gravação Dados, Metricas
 1. Esteira 2 Execucao ( Subir O modelo em Execução, Acionamento, Fazer Predição, Gravar os Dados, Calcular as Metricas, AvaliarMetricas                                                      
 1. Se metrica for satisfatória, então encerrar, senão chamar a esteira de treino novamente.
-1. Permitir CI/CD integrado ao Azure DevOps
-1. Entregar notebooks de cada etapa/fase
 1. Gerar documentação do processo
 
 
