@@ -47,13 +47,20 @@
 - CD: promoção staging e/ou production
 - Serve 
 - monitoramento de métricas
+###Entregáveis:
+1. Notebooks criados no Databricks
+1. JSON e configurações necessárias ao Azure DevOps
+1. Desenho arquitetura e fluxo da esteira
 
 ##2. Testar o CI do Databricks com o Azure DevOps
 
 - Definir fluxo de CI dos notebooks
 - Etapas manuais
 - Etapas automatizadas integradas ao Azure DevOps
-- Testes CI com os notebooks criados na "sub-estória" 
+- Testes CI com os notebooks criados na "sub-estória"
+###Entregáveis:
+1. JSON e configurações necessárias ao Azure DevOps 
+1. Evidências dos testes
 
 ## 3. Criar Esteiras Data Factory
 - Criar tabela com registro das métricas para acesso pelo Data Factory
@@ -62,9 +69,17 @@
 - Manter indicadores de histórico e resultados das execuções de cada esteira
 - Eleger `caso de teste`: dados de entrada esperados, condições do trigger, saida esperada
 - `Esteira 1`: **Treino** feature engineering, feature Store, treino, versionamento do modelo, versionamento do código, gravação Dados, métricas
-- `Esteira 2` **Execução** Subir modelo em execução, acionamento, fazer predição, gravar os dados, calcular as métricas, avaliar métricas         
+- `Esteira 2` **Execução** Subir modelo em execução, acionamento, fazer predição, gravar os dados, calcular as métricas, avaliar métricas
+###Entregáveis:
+1. Definição das tabelas utilizadas
+1. Pipeline criado no Data Factory
+1. Parametrização dos Pipelines
+1. Integração Databricks
+1. Integração Azure DevOps
+1. Evidências dos testes         
                            
               
 ## 4. Backlog ou itens adicionais
 -  Documentação Final na Wiki
 - Avaliar o uso de mais de uma instância na esteira (decidir após reunião com Databricks)
+- Treinamento
