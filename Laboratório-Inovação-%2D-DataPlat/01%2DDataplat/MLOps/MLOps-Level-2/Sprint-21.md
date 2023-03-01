@@ -1,7 +1,4 @@
-# 5) Título Estória: 
-
-
-Esteira NIvel 2 MLOPS
+# 5) Título Estória:  Esteira Nível 2 MLOps
 
 ####Objetivo: 
 `Criação da esteira Nivel 2 de MLOPS, utilizando o Databricks como Framework / Cluster, orquestração sendo realizada pelo Factory e versioning/ CI CD sendo realizando pelo Az DevOps` 
