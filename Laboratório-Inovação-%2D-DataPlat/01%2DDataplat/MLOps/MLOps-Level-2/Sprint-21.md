@@ -1,7 +1,6 @@
 # 5) Título Estória:  Esteira Nível 2 MLOps
 
-####Objetivo: 
-`Criação da esteira Nivel 2 de MLOPS, utilizando o Databricks como Framework / Cluster, orquestração sendo realizada pelo Factory e versioning/ CI CD sendo realizando pelo Az DevOps` 
+**Objetivo:** `Criação da esteira Nivel 2 de MLOPS, utilizando o Databricks como Framework / Cluster, orquestração sendo realizada pelo Factory e versioning/ CI CD sendo realizando pelo Az DevOps` 
 
 - Parâmetros de Entrada: Modelo do Data Scientist
 - Saída Esperada: Dados Treinados, Métricas calculadas, Retreino Automático e Deploy Automático.
@@ -35,9 +34,10 @@
 
 `(avaliar se iremos ter a situação de atuarmos em 3 instâncias do Databricks DEV/UAT/PROD) - dúvida...`
 
-#Desmembramento da Estória na visão técnica
+#Desmembramento da estória na visão técnica
+### Grupo de tarefas, sub-tarefas e entregáveis
 
-## 1. Criar todos os componentes do Databricks e testar manualmente
+## 1. Componentes do Databricks
 
 - split do modelo do Data Scientist
 - **alternativa** Persival e Fabricio criam o modelo com dados reais em cima de uma esteira DataOps já existente e em uso por Analytics ou BI
@@ -52,7 +52,7 @@
 1. JSON e configurações necessárias ao Azure DevOps
 1. Desenho arquitetura e fluxo da esteira
 
-##2. Testar o CI do Databricks com o Azure DevOps
+##2. CI do Databricks com o Azure DevOps
 
 - Definir fluxo de CI dos notebooks
 - Etapas manuais
@@ -62,7 +62,7 @@
 1. JSON e configurações necessárias ao Azure DevOps 
 1. Evidências dos testes
 
-## 3. Criar Esteiras Data Factory
+## 3. Esteiras Data Factory
 - Criar tabela com registro das métricas para acesso pelo Data Factory
 - Pipeline programado(pode ser diário ou configurável) para monitoramento de métricas
 - Manter métricas dos modelos atualizadas na tabela (Databricks)
