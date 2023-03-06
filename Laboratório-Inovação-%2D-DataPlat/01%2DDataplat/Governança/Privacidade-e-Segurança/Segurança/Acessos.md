@@ -54,3 +54,5 @@ A seguir um desenho para facilitar entendimento em relação dos acesso RBAC x A
 Figura de acesso RBAC x ACL x Grant
 ![Arquitetura_All-V1-Acessos-RBAC&ACL.jpg](/.attachments/Arquitetura_All-V1-Acessos-RBAC&ACL-d4297b46-d732-4444-9436-fedfa785d6b2.jpg)
 
+Com intuito de facilitar o entendimento, um diagrama foi criado com a relação dos acessos e grupos:
+![Arquitetura_All-V3-IAM.png](/.attachments/Arquitetura_All-V3-IAM-5e961900-8cbe-430d-afda-a5a477c912d7.png)
