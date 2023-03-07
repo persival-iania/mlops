@@ -5,8 +5,7 @@ O Grupo CCR está entre as maiores companhias de infraestrutura e mobilidade da 
 
 # Visão Geral do Projeto e Laboratório DataPlat
 
-O Lab-Dataplat é um projeto muito estratégico para a CCR, que visa um crescimento orgânico com MVP de Analytics mas que pretende estender seus horizontes a um nível organizacional. 
-Esse poderá acoplar outras áreas como:
+Trata-se...
 
 - ## Rodovias:
 
