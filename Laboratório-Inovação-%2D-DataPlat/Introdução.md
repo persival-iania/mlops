@@ -1,4 +1,4 @@
-Grupo CCR
+#Grupo CCR
 O Grupo CCR está entre as maiores companhias de infraestrutura e mobilidade da América Latina. Pioneira na estreia do Novo Mercado da B3 (antiga BM & FBovespa), a CCR é reconhecida pela adoção constante das mais rígidas regras de Governança Corporativa, o que marca a sua atuação ética e transparente junto à sociedade, meio ambiente e colaboradores.
 
 ![Logo-grupo-ccr-Editado-v3.png](/.attachments/Logo-grupo-ccr-Editado-v3-c966143a-ebc6-4b44-9548-395e41aac6ab.png)
