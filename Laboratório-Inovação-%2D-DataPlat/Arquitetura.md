@@ -75,7 +75,7 @@ A camada `gold` é a área de visualização dos dados. Inicialmente, essa camad
 
 ![Items.jpg](/.attachments/Items-af198bbe-2d8a-4ae3-bc5b-c619ade36177.jpg)
 
-Veja aqui, mais informações sobre o [Data Lake](/Arquitetura/Data-Lake).
+Veja aqui, mais informações sobre o [Data Lake](https://dev.azure.com/CCR-DEVOPS/ccr-gbs-labinov-dataplat/_wiki/wikis/ccr-gbs-labinov-dataplat.wiki/99/Datalake).
 
 ### Visualização
 
