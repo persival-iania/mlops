@@ -30,10 +30,10 @@ Dentre as principais dificuldades que a CCR tem com esta arquitetura apontamos:
 - Há ainda falta de governança e monitoramento sobre as implementações tecnológicas e sobre os dados, segurança na leitura, dificuldade na distribuição para parceiros, baixa confiabilidade, latência na atualização do Data Warehouse e lógica de carga executada na madrugada, o que exige constante reparo e intervenção devido à baixa performance.
 - Podemos citar ainda os relatórios sem padrão de desenvolvimento, o que impacta na performance de atualização e geração de painéis excessivo s, e a inexistência de um ambiente adequado para criação, treinamento e aplicação de modelos estatísticos e inteligência artificial.
 - Tempo elevado por tratar o dado sobre demanda, o que dificulta a solicitação de novos projetos, fazendo com que o usuário procure um caminho mais simples, como o uso do PowerBI diretamente na fonte. Essa solução mais “simples”, acarreta em outros problemas como impacto no banco de origem, quando o PowerBI utiliza o DirectQuery, para se conectar Oracle por exemplo. Nesse cenário, podem gerar sérios problemas de performance no dado produtivo, além de inconsistências, pois a regra não obedece um padrão gera, documentadol e homologado, produzindo um resultado e relatórios divergentes entre as áreas que deveriam exibir a mesma informação.
-Espera-se, como resultado do projeto, a implantação da Nova Arquitetura (figura 2-2) e padrões de governança, que tem como objetivo resolver a totalidade dos problemas acima além de inserir a organização em um novo patamar tecnológico e processual para apoio aos seus processos atuais além de fomentar seus novos projetos de inovação como as do RDT.
+Espera-se, como resultado do projeto, a implantação da Nova Arquitetura (figura 1-1) e padrões de governança, que tem como objetivo resolver a totalidade dos problemas acima além de inserir a organização em um novo patamar tecnológico e processual para apoio aos seus processos atuais além de fomentar seus novos projetos de inovação como as do RDT.
 
 
-
+![Items (1).png](/.attachments/Items%20(1)-faebc3f0-742a-4517-80a8-62be2dbc4f5a.png)
 #Laboratório de Inovação da CCR
 Nosso laboratório foi criado no intuito de trabalharmos com o que há de melhor da tecnologia trazendo inovação para a CCR, além de estabelecer padrões de governança e melhores práticas com dados.
 
@@ -42,9 +42,6 @@ Contamos com um time altamente especializado de Data Science, Engenheiro de Dado
 #Plataforma dataPlat
 
 Trata-se de uma plataforma de dados estruturante com que há de melhor da tecnologia alicerçado com plicares de Governança de Dados (DmBok).
-
-#Missão
-Produzir dados, informação inteligência confiável, com alta qualidade alinhado a direção estratégica da CCR
 
 #Time Atual
 ![image.png](/.attachments/image-57f61326-5459-403d-978c-2af12ca3ea4f.png)
