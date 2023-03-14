@@ -1,0 +1,1 @@
+O projeto dataplat além de um repositório empresarial e estruturado de dados da CCR, é também um provedor de padrões de governança e melhores práticas com dados.
