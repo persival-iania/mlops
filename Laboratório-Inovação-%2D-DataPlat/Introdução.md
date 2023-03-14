@@ -49,4 +49,6 @@ Trata-se de uma plataforma de dados estruturante com que há de melhor da tecnol
 #Time Atual
 ![image.png](/.attachments/image-57f61326-5459-403d-978c-2af12ca3ea4f.png)
 
+#Continue Lendo
+[]()
 ### By Daniel Reis - Radix 2023/03/14
