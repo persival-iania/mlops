@@ -22,8 +22,11 @@ O Grupo CCR está entre as maiores companhias de infraestrutura e mobilidade da 
 A concessão do Aeroporto Carlos Drummond de Andrade (SBBH) - Aeroporto da Pampulha, localizado na zona norte de Belo Horizonte, no Estado de Minas Gerais, prevê a exploração, ampliação e manutenção do ativo pelo prazo de 30 anos. O aeroporto encontra-se a 8,3 km do centro da capital, entre as avenidas Cristiano Machado e Dom Pedro I, importantes acessos para a cidade e outras localidades da região metropolitana de BH, além de estar próximo à Lagoa da Pampulha, bairro com relevância arquitetônica e turística.
 ![Aeroportos-img.jpg](/.attachments/Aeroportos-img-8f49c388-9c17-4e58-892a-146393977335.jpg)
 
-#Legados e “Dores”
+#Principais  “Dores”
+
 Um dos maiores desafios é a integração com diferentes plataformas de áreas heterogêneas da CCR, "silos de dados" que dificultam integração e que não permitem o consumo de dados semi ou não estruturados para montagem de datasets, relatórios e aplicação de Machine Learning de maneira fluída, combinados com os dados estruturados dos sistemas transacionais. A figura abaixo mostra de forma esquemática a arquitetura atual.
+
+![dor-cabeca-5.jpg](/.attachments/dor-cabeca-5-32a5c382-c352-468f-8310-d03308dfb8e8.jpg)
 
 Dentre as principais dificuldades que a CCR tem com esta arquitetura apontamos:
 - Os dados estão atualmente espalhados pela companhia pela grande área de atuação como rodovias, aeroportos e mobilidade de maneira não governada, além do alto risco de gerar conflito de informação e de demandar grande esforço de times de negócio para aquisição e tratamento de dados.
