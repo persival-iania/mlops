@@ -4,7 +4,7 @@
 
 Foi construído um padrão para armazenagem das automações construídas, por pastas e subpastas, conforme o conjunto de assuntos e sub-assuntos para cada ferramenta disponibilizada no portal
 
-
+<IMG  src="https://geekshangout.com/wp-content/uploads/2021/11/azure-data-factory-feature-e1637705398102.png"  alt="Azure Data Factory – How to backup and restore a pipeline – Geeks Hangout"/>
 1. **ADF: Padronização dos caminhos, pastas e subpastas**
 
 ![adf_pastas.JPG](/.attachments/adf_pastas-3c6a415c-2cac-40f1-8c51-e1ea3bcedf9a.JPG)
