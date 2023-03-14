@@ -50,5 +50,5 @@ Trata-se de uma plataforma de dados estruturante com que há de melhor da tecnol
 ![image.png](/.attachments/image-57f61326-5459-403d-978c-2af12ca3ea4f.png)
 
 #Continue Lendo
-[]()
+[Arquitetura](https://dev.azure.com/CCR-DEVOPS/ccr-gbs-labinov-dataplat/_wiki/wikis/ccr-gbs-labinov-dataplat.wiki/201/Arquitetura)
 ### By Daniel Reis - Radix 2023/03/14
