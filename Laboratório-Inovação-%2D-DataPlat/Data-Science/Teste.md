@@ -1,0 +1,1 @@
+# Projetos Desenvolvidos pelo time de Ciência de Dados do Laboratório da CCR
