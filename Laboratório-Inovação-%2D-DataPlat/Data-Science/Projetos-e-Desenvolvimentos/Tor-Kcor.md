@@ -42,7 +42,9 @@ Página com as informações levantadas sobre a base do Tor e Kcor.
   - tipo_veiculo 
   - usuario 
   - vitima_situacao
-- As tabelas que possuem no nome 
+- As tabelas que possuem no nome "tipo_" são tabelas de-para.
+
+
 
  
 ## Projeto dos Tempos Médios
