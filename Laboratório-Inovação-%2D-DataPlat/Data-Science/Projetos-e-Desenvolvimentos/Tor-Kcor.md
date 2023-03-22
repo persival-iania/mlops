@@ -104,6 +104,10 @@ Foi solicitado pela área de negócio o valor de um tempo médio entre o momento
   - [Tor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/3955256019522656/command/3955256019522657)
   - [Kcor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/1436695849975907/command/1436695849975932)  
 
+- Regras de Negócio para análise dos dados
+  - Foram observados alguns valores de **Delta extremamente altos**, que iriam afetar no valores das médias. 
+Foi desconsiderado os 15% dos deltas mais altos (outliers) e calculado a média com os 85% restantes. Os demais 15% são considerados expurgos e permitido por contrato.
+
 O Intervalo de Tempo entre a Chegada no Local da Ocorrência e o Momento do Acionamento do recurso foi chamado de **Delta**.
 
 Há casos obtidos do Delta Negativo (chegada anterior ao acionamento). Nestes casos, por meio de alinhamentos com a cliente, o tempo de chegada foi igualado ao tempo de acionamento (Transformado em Delta = Zero) e foi considerado para o cálculo da média
@@ -114,8 +118,4 @@ Estas ocorrências foram consideradas para um cenário do cálculo de média (De
 
 Esta segunda situação, que foi considerado apenas o Delta Positivo, foi considerado para as situações que somente há deslocamento, um dos focos de interesse.
 
-
-
-- Regras de Negócio para análise dos dados
-  - Foram observados alguns valores de **Delta extremamente altos**, que iriam afetar no valores das médias. 
-Foi desconsiderado os 15% dos deltas mais altos (outliers) e calculado a média com os 85% restantes. Os demais 15% são considerados expurgos e permitido por contrato.
+Há casos que não haviam informações do momento da chegada do recurso, só havia o momento da saída. Estes casos estão relacionados com o cancelamento da ocorrência pelo usuário e foi desconsiderado para o cálculo da média.
