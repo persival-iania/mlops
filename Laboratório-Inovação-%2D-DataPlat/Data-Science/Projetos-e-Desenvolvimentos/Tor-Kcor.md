@@ -108,6 +108,7 @@ O Intervalo de Tempo entre a Chegada no Local da Ocorrência e o Momento do Acio
 
 
 
-- Regras de Negócio para análise dos dados
 
-Foram considerados valores até o Percentil 85, por regra de negócio (os demais 15% são considerados expurgos e permitido por contrato).
+- Regras de Negócio para análise dos dados
+  - Foram observados alguns valores de **Delta extremamente altos**, que iriam afetar no valores das médias. 
+Foi desconsiderado os 15% dos deltas mais altos (outliers) e calculado a média com os 85% restantes. Os demais 15% são considerados expurgos e permitido por contrato.
