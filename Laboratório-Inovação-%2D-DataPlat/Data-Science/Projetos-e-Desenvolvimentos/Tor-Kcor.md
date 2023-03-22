@@ -45,7 +45,7 @@ Esta base possui informação da **Rodovia ViaSul** e possui estas 36 tabelas:
 - As tabelas que possuem no nome "tipo_" são tabelas de-para.
 
 ## Kcor
-Esta base possui informação destas rodovias: **AutoBAn, Msvias, Rodonorte, Spvias, Vialagos e Viaoeste-Rodoanel** (Rio-SP, Dutra e ViaRio estão apenas no Suat).
+Esta base possui informação destas rodovias: **AutoBAn, Msvias, Rodonorte, Spvias, Vialagos e Viaoeste-Rodoanel**. Rio-SP, Dutra e ViaRio estão apenas no Suat. Os dados do Rodoanel (Suat) e ViaOeste (Suat) estão na ViaOeste-Rodoanel (Kcor).
 
 A base Kcor possui estas 45 tabelas:
  - tabacidentes  
