@@ -5,7 +5,7 @@ Página com as informações levantadas sobre a base do Tor e Kcor.
 ), com as respectivas colunas, tipo do dado e alguns relacionamentos entre as tabelas.
 
 ## TOR
-- A base TOR possui estas tabelas:
+Esta base possui informação da **Rodovia ViaSul** e possui estas 36 tabelas:
   - acidente_condicoes_metereologicas 
   - animal 
   - base_operacional 
@@ -44,9 +44,58 @@ Página com as informações levantadas sobre a base do Tor e Kcor.
   - vitima_situacao
 - As tabelas que possuem no nome "tipo_" são tabelas de-para.
 
+## Kcor
+Esta base possui informação destas rodovias: **AutoBAn, Msvias, Rodonorte, Spvias, Vialagos e Viaoeste-Rodoanel** (Rio-SP, Dutra e ViaRio estão apenas no Suat).
 
+A base Kcor possui estas 45 tabelas:
+ - tabacidentes  
+ - tabanimais  
+ - tabocorrencias  
+ - tabprovidenciastomadas  
+ - tabrecursosacionados  
+ - tabrecursoscoberturas  
+ - tabrecursoscontrole  
+ - tabrecursosperc  
+ - tabveiculosenvolvidos  
+ - tabvitimas  
+ - tauxacidentes  
+ - tauxanimais  
+ - tauxbases  
+ - tauxcausasprovaveis  
+ - tauxconcessionarias  
+ - tauxcondicoesmeteorologicas  
+ - tauxcondicoestrafego  
+ - tauxcondicoesvisibilidade  
+ - tauxfuncionarios  
+ - tauxgps  
+ - tauxlocais  
+ - tauxmanuttipos  
+ - tauxmunicipios  
+ - tauxrecursos  
+ - tauxrodovias  
+ - tauxsentidos  
+ - tauxtiposacidentes  
+ - tauxtiposacidentessub  
+ - tauxtiposatendimentos  
+ - tauxtiposcoberturas  
+ - tauxtiposocorrencias  
+ - tauxtiposocorrenciassub  
+ - tauxtiposprovanimais  
+ - tauxtiposprovidencias  
+ - tauxtiposrecursos  
+ - tauxtiposveiculos  
+ - tauxvitlesoestipos  
+ - tauxvitmateriais  
+ - tauxvitnaturezas  
+ - tauxvitposicoes  
+ - tauxvitprocedimentos  
+ - tauxvitsituacoes  
+ - tauxvittiposatendclinico  
+ - tauxvittiposremocoes  
+ - tsysusuarios
 
- 
+As tabelas "taux" são tabelas auxiliares de-para.
+
 ## Projeto dos Tempos Médios
 - Notebook com os cálculos dos tempos médios
   - [Tor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/3955256019522656/command/3955256019522657)
@@ -55,3 +104,4 @@ Página com as informações levantadas sobre a base do Tor e Kcor.
 
 - Regras de Negócio para análise dos dados
 
+Foram considerados valores até o Percentil 85, por regra de negócio (os demais 15% são considerados expurgos e permitido por contrato).
