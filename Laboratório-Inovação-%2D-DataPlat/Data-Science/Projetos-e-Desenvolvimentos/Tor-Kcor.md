@@ -4,7 +4,7 @@ Página com as informações levantadas sobre a base do Tor e Kcor.
 - [Planilha](https://grupoccr-my.sharepoint.com/:x:/g/personal/marcelomine_triad_grupoccr_com_br/EcMc_Ynr2fVDtzd4_7sx3vYBS5EkACSucw9Ak4ZAbbK0oQ
 ), com as respectivas colunas, tipo do dado e alguns relacionamentos entre as tabelas.
 
-## TOR
+## Tor
 Esta base possui informação da **Rodovia ViaSul** e possui estas 36 tabelas:
   - acidente_condicoes_metereologicas 
   - animal 
@@ -97,6 +97,9 @@ A base Kcor possui estas 45 tabelas:
 As tabelas "taux" são tabelas auxiliares de-para.
 
 ## Projeto dos Tempos Médios
+
+Foi solicitado pela área de negócio o valor de um tempo médio entre o momento do acionamento e o momento de chegada de alguns recursos como Guincho Leve e Guincho Pesado.
+
 - Notebook com os cálculos dos tempos médios
   - [Tor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/3955256019522656/command/3955256019522657)
   - [Kcor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/1436695849975907/command/1436695849975932)  
