@@ -104,6 +104,9 @@ Foi solicitado pela área de negócio o valor de um tempo médio entre o momento
   - [Tor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/3955256019522656/command/3955256019522657)
   - [Kcor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/1436695849975907/command/1436695849975932)  
 
+O Intervalo de Tempo entre a Chegada no Local da Ocorrência e o Momento do Acionamento do recurso foi chamado de **Delta**.
+
+
 
 - Regras de Negócio para análise dos dados
 
