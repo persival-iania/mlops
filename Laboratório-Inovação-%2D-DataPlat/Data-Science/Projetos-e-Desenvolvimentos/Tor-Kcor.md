@@ -106,6 +106,13 @@ Foi solicitado pela área de negócio o valor de um tempo médio entre o momento
 
 O Intervalo de Tempo entre a Chegada no Local da Ocorrência e o Momento do Acionamento do recurso foi chamado de **Delta**.
 
+Há casos obtidos do Delta Negativo (chegada anterior ao acionamento). Nestes casos, por meio de alinhamentos com a cliente, o tempo de chegada foi igualado ao tempo de acionamento (Transformado em Delta = Zero) e foi considerado para o cálculo da média
+
+Há outros casos no qual obteve-se Delta Zero (momento da chegada igual ao de acionamento). Este caso é comum e correto, pois entra no sistema de fato com os mesmos tempos (quando o recurso em andamento identifica a ocorrência na rodovia antes dela ser acionada)
+
+Estas ocorrências foram consideradas para um cenário do cálculo de média (Delta maior ou igual a Zero) e desconsiderada em outro (somente Delta maior que Zero), explicitadas em planilha do Excel
+
+Esta segunda situação, que foi considerado apenas o Delta Positivo, foi considerado para as situações que somente há deslocamento, um dos focos de interesse.
 
 
 
