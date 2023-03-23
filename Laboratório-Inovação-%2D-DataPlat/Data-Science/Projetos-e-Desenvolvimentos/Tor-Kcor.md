@@ -154,3 +154,5 @@ As tabelas "taux" são tabelas auxiliares de-para.
 - O Notebook apresenta outras métricas estatísticas em detalhes. Por exemplo, para a **AutoBAn**, todo o **histórico**, para o **Guincho Leve** (sem outliers, Delta >= 0). Tempo em minutos: 
 ![image.png](/.attachments/image-d257b476-1fa6-48da-b329-843ad6dc7c64.png)
 ![image.png](/.attachments/image-80d16873-9a64-48e5-9b3d-87a0240e1170.png) 
+- Aqui os relatórios completos de todas as unidades
+[Tempos Médios (TOR e KCOR).zip](/.attachments/Tempos%20Médios%20(TOR%20e%20KCOR)-31e779ad-0e1c-4d58-ab7d-743117cd4674.zip)
