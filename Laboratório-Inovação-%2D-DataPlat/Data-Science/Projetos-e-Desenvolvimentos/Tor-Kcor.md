@@ -110,10 +110,27 @@ As tabelas "taux" são tabelas auxiliares de-para.
   - Semestre
   - Trimestre
 
-
-- **Notebook** com os **cálculos** dos **tempos médios**: 
+## Notebooks com os cálculos dos tempos médios: 
   - [Tor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/3955256019522656/command/3955256019522657)
   - [Kcor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/1436695849975907/command/1436695849975932)  
+
+## Análise das Bases
+- Tor: 
+  - A tabela de de-para com a descrição dos tipos dos recursos é a **tipo_recurso**, identificando que os códigos para os recursos **Guincho Leve** e **Guincho Pesado** são, respectivamente, 2 e 3:
+<IMG  src="https://grupoccr.atlassian.net/secure/attachment/15295/15295_image-20230314-184243.png"/>
+    - Porém, nenhuma outra tabela com os códigos dos recursos possuem estes códigos 2 ou 3. 
+    - Em conversa com o Rogerio Aparecido Moreira, ele orientou que estes recursos possuem um identificador pra cada viatura. Por exemplo, Guincho Leve é GL-22, GL-23, etc. E Guincho Pesado é GP-01, GP-02, etc. Esta informação foi detectada na tabela **ocorrencia_recurso**, na coluna **ATIVIDADE**: 
+<IMG  src="https://grupoccr.atlassian.net/secure/attachment/15296/15296_image-20230314-184601.png"/>
+    - Por esta tabela, a lista destas viaturas destes recursos são: 'GL-13', 'GL-03', 'GL-12', 'GL-09', 'GL-02', 'GL-04', 'GL-24', 'GL-08', 'GL-25', 'GL-22', 'GL-06', 'GL-05', 'GP-02', 'GP-04', 'GL-07', 'GL-11', 'GL-23', 'GL-01','GL-21', 'GL-10', 'GL-20', 'GP-03', 'GP-01', 'GP-05'.
+  - Foi feito a filtragem por estas viaturas e um dos campos de data precisa de tratamento no tempo. Está neste formato o campo dos segundos: SS.SSSSSS, e foi alterado para SS para os cálculos. Caso não seja alterado, o cálculo para o delta não é feito:
+<IMG  src="https://grupoccr.atlassian.net/secure/attachment/15304/15304_image-20230315-120404.png"/>
+  - Arrumado este formato de data e foi calculada a média estes períodos, os mesmos períodos definidos no Kcor:
+    - Todo o Histórico (até março/2023);
+    - Anual (de 2019 a 2023);
+    - Semestral (1º Sem 2019 a 1º Sem 2023);
+    - Trimestral (1Q 2019 a 1Q 2023).
+
+
 
 
 ## Regras de Negócio para análise dos dados:
