@@ -1,10 +1,10 @@
 Página com as informações levantadas sobre a base do Tor e Kcor.
 
-## Levantamento Inicial das tabelas do Tor/Kcor
+# Levantamento Inicial das tabelas do Tor/Kcor
 - [Planilha](https://grupoccr-my.sharepoint.com/:x:/g/personal/marcelomine_triad_grupoccr_com_br/EcMc_Ynr2fVDtzd4_7sx3vYBS5EkACSucw9Ak4ZAbbK0oQ
 ), com as respectivas colunas, tipo do dado e alguns relacionamentos entre as tabelas.
 
-## Tor
+# Tor
 Esta base possui informação da **Rodovia ViaSul** e possui estas 36 tabelas:
   - acidente_condicoes_metereologicas 
   - animal 
@@ -44,7 +44,7 @@ Esta base possui informação da **Rodovia ViaSul** e possui estas 36 tabelas:
   - vitima_situacao
 - As tabelas que possuem no nome "tipo_" são tabelas de-para.
 
-## Kcor
+# Kcor
 Esta base possui informação destas rodovias: **AutoBAn, Msvias, Rodonorte, Spvias, Vialagos e Viaoeste-Rodoanel**. Rio-SP, Dutra e ViaRio estão apenas no Suat. Os dados do Rodoanel (Suat) e ViaOeste (Suat) estão na ViaOeste-Rodoanel (Kcor).
 
 A base Kcor possui estas 45 tabelas:
@@ -96,7 +96,7 @@ A base Kcor possui estas 45 tabelas:
 
 As tabelas "taux" são tabelas auxiliares de-para.
 
-## Projeto dos Tempos Médios
+# Projeto dos Tempos Médios
 
 - **Objetivo**: Obter o tempo médio que os certos recursos levam, do momento que são acionados até chegar na ocorrência
 
@@ -116,7 +116,7 @@ As tabelas "taux" são tabelas auxiliares de-para.
   - [Kcor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/1436695849975907/command/1436695849975932)  
 
 
-### Regras de Negócio para análise dos dados:
+## Regras de Negócio para análise dos dados:
 
   - O Intervalo de Tempo entre a Chegada no Local da Ocorrência e o Momento do Acionamento do recurso foi chamado de **Delta**.
     - Foram observados alguns valores de **Delta extremamente altos**, que iriam afetar no valores das médias. Foi desconsiderado os 15% dos deltas mais altos (outliers) e calculado a média com os 85% restantes. Os demais 15% são considerados expurgos e permitido por contrato;
