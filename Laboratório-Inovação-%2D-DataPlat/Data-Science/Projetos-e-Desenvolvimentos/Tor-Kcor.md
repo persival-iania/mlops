@@ -98,24 +98,30 @@ As tabelas "taux" são tabelas auxiliares de-para.
 
 ## Projeto dos Tempos Médios
 
-Foi solicitado pela área de negócio o valor de um tempo médio entre o momento do acionamento e o momento de chegada de alguns recursos como Guincho Leve e Guincho Pesado.
+- **Objetivo**: Obter o tempo médio que os certos recursos levam, do momento que são acionados até chegar na ocorrência
 
-- Notebook com os cálculos dos tempos médios
+- **Critério**: Intervalo de tempo entre o acionamento e a chegada dos recursos
+
+- **Recursos**: Guincho Leve e Guincho Pesado
+
+- **Período**:
+  - Todo o Histórico
+  - Ano
+  - Semestre
+  - Trimestre
+
+
+- **Notebook** com os **cálculos** dos **tempos médios**: 
   - [Tor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/3955256019522656/command/3955256019522657)
   - [Kcor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/1436695849975907/command/1436695849975932)  
 
-- Regras de Negócio para análise dos dados
-  - Foram observados alguns valores de **Delta extremamente altos**, que iriam afetar no valores das médias. 
-Foi desconsiderado os 15% dos deltas mais altos (outliers) e calculado a média com os 85% restantes. Os demais 15% são considerados expurgos e permitido por contrato.
 
-O Intervalo de Tempo entre a Chegada no Local da Ocorrência e o Momento do Acionamento do recurso foi chamado de **Delta**.
+- **Regras de Negócio** para análise dos dados:
 
-Há casos obtidos do Delta Negativo (chegada anterior ao acionamento). Nestes casos, por meio de alinhamentos com a cliente, o tempo de chegada foi igualado ao tempo de acionamento (Transformado em Delta = Zero) e foi considerado para o cálculo da média
-
-Há outros casos no qual obteve-se Delta Zero (momento da chegada igual ao de acionamento). Este caso é comum e correto, pois entra no sistema de fato com os mesmos tempos (quando o recurso em andamento identifica a ocorrência na rodovia antes dela ser acionada)
-
-Estas ocorrências foram consideradas para um cenário do cálculo de média (Delta maior ou igual a Zero) e desconsiderada em outro (somente Delta maior que Zero), explicitadas em planilha do Excel
-
-Esta segunda situação, que foi considerado apenas o Delta Positivo, foi considerado para as situações que somente há deslocamento, um dos focos de interesse.
-
-Há casos que não haviam informações do momento da chegada do recurso, só havia o momento da saída. Estes casos estão relacionados com o cancelamento da ocorrência pelo usuário e foi desconsiderado para o cálculo da média.
+  - O Intervalo de Tempo entre a Chegada no Local da Ocorrência e o Momento do Acionamento do recurso foi chamado de **Delta**.
+    - Foram observados alguns valores de **Delta extremamente altos**, que iriam afetar no valores das médias. Foi desconsiderado os 15% dos deltas mais altos (outliers) e calculado a média com os 85% restantes. Os demais 15% são considerados expurgos e permitido por contrato;
+    - Há casos obtidos do **Delta Negativo** (chegada anterior ao acionamento). Nestes casos, por meio de alinhamentos com a cliente, o tempo de chegada foi igualado ao tempo de acionamento (Transformado em **Delta = Zero**) e foi considerado para o cálculo da média;
+    - Há outros casos no qual obteve-se **Delta Zero** (momento da chegada igual ao de acionamento). Este caso é comum e correto, pois entra no sistema de fato com os mesmos tempos (quando o recurso em andamento identifica a ocorrência na rodovia antes dela ser acionada).
+      - Estas ocorrências foram consideradas para um cenário do cálculo de média (Delta maior ou igual a Zero) e desconsiderada em outro (somente Delta maior que Zero), explicitadas em planilha do Excel
+      - Esta segunda situação, que foi considerado apenas o Delta Positivo, foi considerado para as situações que somente há deslocamento, um dos focos de interesse.
+  - Há casos que **não haviam informações do momento da chegada do recurso**, só havia o **momento da saída**. Estes casos estão relacionados com o **cancelamento** da ocorrência pelo usuário e foi **desconsiderado** para o cálculo da média.
