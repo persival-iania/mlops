@@ -1,5 +1,3 @@
-# Projeto dos Tempos Médios
-
 - **Objetivo**: Obter o tempo médio que os certos recursos levam, do momento que são acionados até chegar na ocorrência
 
 - **Critério**: Intervalo de tempo entre o acionamento e a chegada dos recursos
