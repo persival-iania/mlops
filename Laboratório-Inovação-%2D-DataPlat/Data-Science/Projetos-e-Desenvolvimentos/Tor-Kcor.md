@@ -116,7 +116,7 @@ As tabelas "taux" são tabelas auxiliares de-para.
   - [Kcor](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/1436695849975907/command/1436695849975932)  
 
 
-- **Regras de Negócio** para análise dos dados:
+### Regras de Negócio para análise dos dados:
 
   - O Intervalo de Tempo entre a Chegada no Local da Ocorrência e o Momento do Acionamento do recurso foi chamado de **Delta**.
     - Foram observados alguns valores de **Delta extremamente altos**, que iriam afetar no valores das médias. Foi desconsiderado os 15% dos deltas mais altos (outliers) e calculado a média com os 85% restantes. Os demais 15% são considerados expurgos e permitido por contrato;
@@ -125,3 +125,5 @@ As tabelas "taux" são tabelas auxiliares de-para.
       - Estas ocorrências foram consideradas para um cenário do cálculo de média (Delta maior ou igual a Zero) e desconsiderada em outro (somente Delta maior que Zero), explicitadas em planilha do Excel
       - Esta segunda situação, que foi considerado apenas o Delta Positivo, foi considerado para as situações que somente há deslocamento, um dos focos de interesse.
   - Há casos que **não haviam informações do momento da chegada do recurso**, só havia o **momento da saída**. Estes casos estão relacionados com o **cancelamento** da ocorrência pelo usuário e foi **desconsiderado** para o cálculo da média.
+
+- DESCREVER TAMBÉM DE QUE FORMA FOI CONSEGUIDO IDENTIFICAR OS GUINCHOS LEVE E PESADO NO TOR E KCOR
