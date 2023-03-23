@@ -130,17 +130,27 @@ As tabelas "taux" são tabelas auxiliares de-para.
     - Semestral (1º Sem 2019 a 1º Sem 2023);
     - Trimestral (1Q 2019 a 1Q 2023).
 
-
-
+- Kcor: 
+  - Os recursos das unidades estão descritos na coluna "**DESCRICAORECURSO**", na tabela final "**oco_rec_a**" (Ver [Notebook](https://adb-7255094420308168.8.azuredatabricks.net/?o=7255094420308168#notebook/1436695849975907/command/1436695849975940)). Esta tabela é resultado do _join_ da **tabrecursosacionados** com a **tabocorrencias**, e posteriormente _join_ com a **tauxrecursos**.
+  - Sobre as Unidades e a forma que estão descritos os recursos
+    - As unidades **Msvias**, **Vialagos** e **ViaOeste-Rodoanel** estão com os recursos descritos desta forma: 'Guincho Leve', 'Guincho Pesado'. 
+    - A **AutoBAn**: "GUINCHO LEVE', 'GUINCHO PESADO'. 
+    - A **Spvias**: 'Inspeção/Guincho Leve', 'Guincho Pesado' (Pois o recurso Guincho Leve também é utilizado para Inspeção). 
 
 ## Regras de Negócio para análise dos dados:
 
   - O Intervalo de Tempo entre a Chegada no Local da Ocorrência e o Momento do Acionamento do recurso foi chamado de **Delta**.
-    - Foram observados alguns valores de **Delta extremamente altos**, que iriam afetar no valores das médias. Foi desconsiderado os 15% dos deltas mais altos (outliers) e calculado a média com os 85% restantes. Os demais 15% são considerados expurgos e permitido por contrato;
+    - Foram observados alguns valores de **Delta extremamente altos**, que iriam afetar no valores das médias. Foi **desconsiderado os 15%** dos deltas mais altos (_**outliers**_) e calculado a **média com os 85% restantes**. Os demais 15% são considerados **expurgos** e **permitido** por contrato;
     - Há casos obtidos do **Delta Negativo** (chegada anterior ao acionamento). Nestes casos, por meio de alinhamentos com a cliente, o tempo de chegada foi igualado ao tempo de acionamento (Transformado em **Delta = Zero**) e foi considerado para o cálculo da média;
-    - Há outros casos no qual obteve-se **Delta Zero** (momento da chegada igual ao de acionamento). Este caso é comum e correto, pois entra no sistema de fato com os mesmos tempos (quando o recurso em andamento identifica a ocorrência na rodovia antes dela ser acionada).
-      - Estas ocorrências foram consideradas para um cenário do cálculo de média (Delta maior ou igual a Zero) e desconsiderada em outro (somente Delta maior que Zero), explicitadas em planilha do Excel
-      - Esta segunda situação, que foi considerado apenas o Delta Positivo, foi considerado para as situações que somente há deslocamento, um dos focos de interesse.
+    - Há outros casos no qual obteve-se **Delta Zero** (momento da chegada igual ao de acionamento). Este caso é **comum e correto**, pois entra no sistema de fato com os mesmos tempos (quando o recurso em andamento identifica a ocorrência na rodovia antes dela ser acionada).
+      - Estas ocorrências foram consideradas para um cenário do cálculo de média (Delta maior ou igual a Zero) e desconsiderada em outro (somente Delta maior que Zero), explicitadas em planilha do Excel, anexado abaixo.
+      - Esta segunda situação, que foi considerado apenas o **Delta Positivo**, foi considerado para as situações que somente há deslocamento, um dos focos de interesse.
   - Há casos que **não haviam informações do momento da chegada do recurso**, só havia o **momento da saída**. Estes casos estão relacionados com o **cancelamento** da ocorrência pelo usuário e foi **desconsiderado** para o cálculo da média.
 
-- DESCREVER TAMBÉM DE QUE FORMA FOI CONSEGUIDO IDENTIFICAR OS GUINCHOS LEVE E PESADO NO TOR E KCOR
+## Resultados
+- Foram compilados numa planilha os resultados dos valores dos tempos médios, considerando Delta = 0 (ou seja, até o percentil 85) e desconsiderando Delta = 0 (considerando apenas quando há de fato deslocamento do recurso)
+    - [tor_kcor_medias_tempo_atendimento_guincho_leve_pesado_v1_1.xlsx](/.attachments/tor_kcor_medias_tempo_atendimento_guincho_leve_pesado_v1_1-c0dbefa2-b939-4ff1-b5da-447b81ab3383.xlsx)
+
+- O Notebook apresenta outras métricas estatísticas em detalhes. Por exemplo, para a **AutoBAn**, todo o **histórico**, para o **Guincho Leve** (sem outliers, Delta >= 0). Tempo em minutos: 
+![image.png](/.attachments/image-d257b476-1fa6-48da-b329-843ad6dc7c64.png)
+![image.png](/.attachments/image-80d16873-9a64-48e5-9b3d-87a0240e1170.png) 
