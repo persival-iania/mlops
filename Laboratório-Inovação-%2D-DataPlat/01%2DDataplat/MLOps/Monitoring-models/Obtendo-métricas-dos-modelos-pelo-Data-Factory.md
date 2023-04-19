@@ -1,14 +1,18 @@
+# Acessando o Model Registry do Databricks pelo Data Factory
 
+## API Metrics do Databricks
 
-Para obter as métricas de modelo no Azure Databricks através do Data Factory, você pode usar a API de Metrics do Databricks para coletar as métricas de treinamento do modelo. Em seguida, você pode enviar as métricas para o Data Factory usando a API REST do Data Factory.
+Para obter as métricas de modelo no Azure Databricks através do Data Factory, usamos a API de `Metrics` do Databricks para coletar as métricas de treinamento do modelo. 
 
-Para isso, você pode seguir os seguintes passos:
+Em seguida enviar as métricas para o Data Factory usando a API REST do Data Factory.
 
-1. Configure o ambiente de trabalho do Databricks no Azure.
-2. Crie um modelo de treinamento no Databricks.
-3. Defina as métricas de treinamento no modelo. Por exemplo, você pode definir as métricas de precisão, recall e F1-score.
-4. Use a API de Metrics do Databricks para coletar as métricas de treinamento do modelo.
-5. Envie as métricas para o Data Factory usando a API REST do Data Factory.
+Descrição do processo:
+
+1. Configuração do ambiente de trabalho do Databricks no Azure.
+2. Criar um modelo de treinamento no Databricks.
+3. Definer as métricas de treinamento no modelo, exemplo: de precisão, recall e F1-score.
+4. Usar a API de Metrics do Databricks para coletar as métricas de treinamento do modelo.
+5. Enviar as métricas para o Data Factory usando a API REST do Data Factory.
 
 O código em Python para obter as métricas do modelo e enviar para o Data Factory pode ser semelhante ao seguinte:
 
@@ -46,4 +50,8 @@ else:
     print('Falha ao enviar métricas para o Data Factory.')
 ```
 
-Certifique-se de substituir as informações de credenciais e configurações do modelo com as informações relevantes para o seu ambiente. Além disso, certifique-se de que as APIs do Databricks e do Data Factory estejam habilitadas e configuradas corretamente.
+## Ajustando o código
+
+Certifique-se de substituir as informações de credenciais e configurações do modelo com as informações relevantes para o seu ambiente.
+
+Além disso, certifique-se de que as APIs do Databricks e do Data Factory estejam habilitadas e configuradas corretamente.
