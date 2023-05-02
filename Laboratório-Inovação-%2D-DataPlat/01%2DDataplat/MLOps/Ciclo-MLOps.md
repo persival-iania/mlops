@@ -65,4 +65,8 @@ Veja: https://learn.microsoft.com/pt-br/azure/databricks/mlflow/
 
 ![Captura de Tela 2022-12-14 às 19.28.30.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2019.28.30-dae6ba6d-86b7-4634-8440-114bbcca9974.png)
 
+# 7. MLOps no Databricks em detalhes
+
+<IMG  src="https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/ai/_images/orchestrate-mlops-azure-databricks-01.png"  alt="Orchestrate MLOps by using Azure Databricks - Azure Architecture Center ..."/>
+
 
