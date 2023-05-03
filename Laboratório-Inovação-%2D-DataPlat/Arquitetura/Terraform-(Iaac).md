@@ -61,15 +61,6 @@ O código do Iaac do Terraform está sendo versionado no Azure Devops, Repositó
 
 Como política de implantação seguindo o modelo de Infraestrutura como um código ( IaaC ). Foi adotado o uso do terraform como plataforma de implantação dos recursos de nuvem do Lab-Dataplat.
 
-## O Terraform
-
-Seguindo a documentação do Terraform, temos:
-
->O HashiCorp Terraform é uma infraestrutura como ferramenta de código que permite definir recursos na nuvem e no local em arquivos de configuração legíveis por humanos que você pode versionar, reutilizar e compartilhar. Você pode então usar um fluxo de trabalho consistente para provisionar e gerenciar toda a sua infraestrutura ao longo de seu ciclo de vida. O Terraform pode gerenciar componentes de baixo nível, como recursos de computação, armazenamento e rede, bem como componentes de alto nível, como entradas DNS e recursos SaaS.
-
-
-> --<cite>https://www.terraform.io/intro#what-is-terraform</cite>
-
 ## Por que terraform ?
 
 Atualmente o terraform é uma das ferramentas de IaaC mais utilizadas no mundo:
