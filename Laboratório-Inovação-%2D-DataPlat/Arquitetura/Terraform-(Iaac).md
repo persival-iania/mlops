@@ -31,31 +31,7 @@ Está sendo criado via Terraform os recursos:
   - Pool Built-In
   - Pool Dedicado
 
-# CI/CD - Terraform
-## Introdução de CI/CD
-CI/CD designa respectivamente Continuous Integration e Continuous Delivery traduzindo: Integração Contínua e Entrega Contínua.
 
-Ambas as siglas designam processos e técnicas modernas para tornar o processo de desenvolvimento, teste e entrega de ferramentas mais ágil e eficiente. 
-
-**Continuous Integration, CI**
-Integração Contínua ou CI, significa uma automação para que todas às vezes que haja uma mudança em código de aplicação, ela seja integrada, testada e implementada.
-
-E todo esse processo acontecendo em um ambiente compartilhado, com todos os envolvidos no processo. 
-
-Uma vez que é muito comum que aplicações sejam desenvolvidas por um time não somente por uma pessoa. 
-
-Dessa forma com o CI, é possível que todas as mudanças sejam realizadas no “mesmo local”, permitindo a integração de mudanças no código de maneira mais rápida.
-
-Por meio dessa técnica há a diminuição de conflitos e problemas quando diversos projetos acontecem simultaneamente.
-
-**Continuous Delivery, CD**
-Entrega contínua ou CD, por sua vez, reúne a integração contínua e a testagem que podem ser agrupados em contêineres e depois colocado em produção.
-
-Ou seja, ele ajunta esses códigos e testes realizados, e coloca-os em produção de forma automatizada. 
-
-Mesmo que necessite da ação humana, ele se torna automatizado ao colocar tudo o que foi feito “no ar” de maneira integrada e completa. 
-## Aplicação no projeto Dataplat
-O código do Iaac do Terraform está sendo versionado no Azure Devops, Repositório Terraform - Branch Feature. 
 
 # Padronização
 
@@ -112,6 +88,32 @@ Está sendo criado via Terraform os recursos:
 - Synapse
   - Pool Built-In
   - Pool Dedicado
+
+# CI/CD - Terraform
+## Introdução de CI/CD
+CI/CD designa respectivamente Continuous Integration e Continuous Delivery traduzindo: Integração Contínua e Entrega Contínua.
+
+Ambas as siglas designam processos e técnicas modernas para tornar o processo de desenvolvimento, teste e entrega de ferramentas mais ágil e eficiente. 
+
+**Continuous Integration, CI**
+Integração Contínua ou CI, significa uma automação para que todas às vezes que haja uma mudança em código de aplicação, ela seja integrada, testada e implementada.
+
+E todo esse processo acontecendo em um ambiente compartilhado, com todos os envolvidos no processo. 
+
+Uma vez que é muito comum que aplicações sejam desenvolvidas por um time não somente por uma pessoa. 
+
+Dessa forma com o CI, é possível que todas as mudanças sejam realizadas no “mesmo local”, permitindo a integração de mudanças no código de maneira mais rápida.
+
+Por meio dessa técnica há a diminuição de conflitos e problemas quando diversos projetos acontecem simultaneamente.
+
+**Continuous Delivery, CD**
+Entrega contínua ou CD, por sua vez, reúne a integração contínua e a testagem que podem ser agrupados em contêineres e depois colocado em produção.
+
+Ou seja, ele ajunta esses códigos e testes realizados, e coloca-os em produção de forma automatizada. 
+
+Mesmo que necessite da ação humana, ele se torna automatizado ao colocar tudo o que foi feito “no ar” de maneira integrada e completa. 
+## Aplicação no projeto Dataplat
+O código do Iaac do Terraform está sendo versionado no Azure Devops, Repositório Terraform - Branch Feature. 
 
 A seguir ilustração de código do Terraform:
 ![image.png](/.attachments/image-926994b2-27f9-47b1-8350-36c63a66f055.png)
