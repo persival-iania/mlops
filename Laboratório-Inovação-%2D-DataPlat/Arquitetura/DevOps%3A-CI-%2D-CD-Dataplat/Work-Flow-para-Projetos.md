@@ -3,4 +3,4 @@
 
 Abaixo o fluxo de Devops para novos Projetos que utilizarem a  estrutura da DataPlat:
 
-[DEVOPS.html](/.attachments/DEVOPS-38fffffa-34e5-4425-b4b4-f647778c3d0b.html)
+![DEVOPS.jpg](/.attachments/DEVOPS-d7f5bb5b-d3eb-4fed-a3dc-38ca3a1633b0.jpg)
