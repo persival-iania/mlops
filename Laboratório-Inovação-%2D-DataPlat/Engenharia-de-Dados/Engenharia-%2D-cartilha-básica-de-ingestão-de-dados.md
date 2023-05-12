@@ -1,4 +1,5 @@
-**Este** documento tem como o objetivo auxiliar e orientar o processo de ingestão de dados na plataforma Azure CCR – Lab.
+Este documento tem como o objetivo auxiliar e orientar o processo de ingestão de dados na plataforma Azure CCR – Lab. 
+****
 
 **Favor fazer o download do PDF**
 
