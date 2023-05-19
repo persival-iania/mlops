@@ -32,6 +32,9 @@ https://hevodata.com/learn/databricks-docker-integration/
 Azure Functions
 https://learn.microsoft.com/pt-br/azure/azure-functions/functions-get-started?wt.md_id=searchAPI_azureportal_inproduct_rmskilling&sessionId=04c8365efaac4a8bb20ef46ab4fa1050&pivots=programming-language-python
 
+Azure DevOps e Azure ML **video**
+https://www.youtube.com/watch?v=-QxwB7PoSdA
+
 
 Anomaly Detection
 https://towardsdatascience.com/introduction-to-anomaly-detection-in-python-with-pycaret-2fecd7144f87
