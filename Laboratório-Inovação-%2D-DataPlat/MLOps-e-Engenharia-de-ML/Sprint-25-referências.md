@@ -25,3 +25,5 @@ https://learn.microsoft.com/pt-br/azure/azure-functions/functions-get-started?wt
 Anomaly Detection
 https://towardsdatascience.com/introduction-to-anomaly-detection-in-python-with-pycaret-2fecd7144f87
 
+Deploy MLFlow com Docker Comnpose
+https://towardsdatascience.com/deploy-mlflow-with-docker-compose-8059f16b6039
