@@ -14,7 +14,8 @@ https://docs.databricks.com/mlflow/models.html#deploy-models-for-online-serving
 From Jupyter to Kubernetes
 https://towardsdatascience.com/from-jupyter-to-kubernetes-refactoring-and-deploying-notebooks-using-open-source-tools-19f99585e923
 
-
+Databricks Conteiner Services
+https://learn.microsoft.com/en-us/azure/databricks/clusters/custom-containers
 
 # Outras referências
 
