@@ -7,6 +7,8 @@ https://docs.databricks.com/machine-learning/model-inference/index.html
 Deploy Models
 https://docs.databricks.com/mlflow/models.html#deploy-models-for-online-serving
 
+From Jupyter to Kubernetes
+https://towardsdatascience.com/from-jupyter-to-kubernetes-refactoring-and-deploying-notebooks-using-open-source-tools-19f99585e923
 
 
 # Outras referências
