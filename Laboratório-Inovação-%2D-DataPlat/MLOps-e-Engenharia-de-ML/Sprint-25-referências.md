@@ -1,6 +1,10 @@
 # Referencia para Sprint 25
 
 
+# Para esta sprint
+Pipeline Azure DataFactory com Databricks
+https://medium.com/azure-tutorials/how-to-pass-parameters-between-your-data-factory-pipeline-and-databricks-notebook-e59b4ca6b015
+
 Databricks Model Inference por default
 https://docs.databricks.com/machine-learning/model-inference/index.html
 
@@ -11,11 +15,11 @@ From Jupyter to Kubernetes
 https://towardsdatascience.com/from-jupyter-to-kubernetes-refactoring-and-deploying-notebooks-using-open-source-tools-19f99585e923
 
 
+
 # Outras referências
+
 Azure Functions
 https://learn.microsoft.com/pt-br/azure/azure-functions/functions-get-started?wt.md_id=searchAPI_azureportal_inproduct_rmskilling&sessionId=04c8365efaac4a8bb20ef46ab4fa1050&pivots=programming-language-python
-
-Pipeline Azure DataFactory com Databricks
 
 
 Anomaly Detection
