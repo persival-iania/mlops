@@ -17,6 +17,12 @@ https://towardsdatascience.com/from-jupyter-to-kubernetes-refactoring-and-deploy
 Databricks Conteiner Services
 https://learn.microsoft.com/en-us/azure/databricks/clusters/custom-containers
 
+Deploy MLFlow com Docker Comnpose
+https://towardsdatascience.com/deploy-mlflow-with-docker-compose-8059f16b6039
+
+Databricks Docker Integration
+https://hevodata.com/learn/databricks-docker-integration/
+
 # Outras referências
 
 Azure Functions
@@ -26,5 +32,3 @@ https://learn.microsoft.com/pt-br/azure/azure-functions/functions-get-started?wt
 Anomaly Detection
 https://towardsdatascience.com/introduction-to-anomaly-detection-in-python-with-pycaret-2fecd7144f87
 
-Deploy MLFlow com Docker Comnpose
-https://towardsdatascience.com/deploy-mlflow-with-docker-compose-8059f16b6039
