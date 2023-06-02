@@ -80,3 +80,28 @@ O fluxo abaixo ilustra cada uma das etapas do ciclo de vida de modelos de machin
     - salva predictions    
 - Caso contrário, se passou no loop 3 vezes e não melhorou
     - envia aviso de que o modelo precisa ser retreinado  
+
+
+# Etapas desenvolvidas
+
+1. Split notebooks
+   - data prep
+   - feature engineering
+   - model registry
+   - model promotion
+   - model serving - batch inference
+   - commit notebooks no REPO
+2. Pipeline Data Factory
+   - link com Databricks
+   - Pipeline monitoramento
+     - registro de métricas em uma tabela
+     - checagem de métricas
+     - etapas automatizadas de monitoramento
+     - gravação de métricas
+3. Teste Pipeline
+   
+
+# Itens pendentes
+
+- Auto commit de notebooks
+- Deploy integrado com Azure DevOps 
