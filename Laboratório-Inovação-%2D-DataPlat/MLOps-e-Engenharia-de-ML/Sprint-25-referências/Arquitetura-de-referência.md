@@ -25,6 +25,12 @@ O fluxo abaixo ilustra cada uma das etapas do ciclo de vida de modelos de machin
 É importante notar que essas fases não são linear e sim iterativa, e é possível retornar a uma fase anterior caso seja necessário, e que as fases não tem necessariam
 
 
+# Como fica todo um fluxo de MLOps dentro de uma squad de dados?
+
+![Captura de Tela 2022-12-14 às 19.28.30.png](/.attachments/Captura%20de%20Tela%202022-12-14%20às%2019.28.30-dae6ba6d-86b7-4634-8440-114bbcca9974.png)
+
+
+
 # Arquitetura de referência CCR
 
 
